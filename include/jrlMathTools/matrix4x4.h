@@ -12,7 +12,9 @@
 
 namespace jrlMathTools
 {
-  /*! Template to handle a 4x4 matrix*/
+  /**
+    \brief Template to handle a 4x4 matrix
+  */
   template <typename T> struct Matrix4x4
   {
     /*! The data array. */

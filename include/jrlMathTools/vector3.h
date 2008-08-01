@@ -15,7 +15,9 @@ using namespace std;
 namespace jrlMathTools
 {
   
-  /*! Template to handle 3 dimensional vector */
+  /** 
+      \brief Template to handle 3 dimensional vector 
+  */
   template <typename T>
     struct Vector3D
     {

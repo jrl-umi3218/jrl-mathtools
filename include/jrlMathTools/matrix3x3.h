@@ -11,7 +11,9 @@
 
 namespace jrlMathTools
 {
-  /*! Template to handle a  3x3 matrix*/
+  /**
+     \brief Template to handle a  3x3 matrix
+  */
   template <typename T> struct Matrix3x3
     {
       /*! The data array. */

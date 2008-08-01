@@ -11,7 +11,7 @@
 namespace jrlMathTools {
 
   /**
-     \brief This class implements angles.
+     \brief This class implements simple computations on angles.
   */
 
   class Cangle {

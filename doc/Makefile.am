@@ -1,5 +1,6 @@
 # 
-#  Copyright 
+#  Copyright 2008 AIST-CNRS 
+#  Author Florent Lamiraux
 # 
 
 
