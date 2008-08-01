@@ -15,7 +15,6 @@ fi
 AM_INIT_AUTOMAKE([no-define])
 
 AC_PROG_INSTALL
-AC_PROG_LIBTOOL
 AC_PROG_CXX
 
 if test "$setdefaultflags" = "yes"; then
