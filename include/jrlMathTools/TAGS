@@ -1,0 +1,112 @@
+
+angle.h,447
+#define JRLMATHTOOLS_ANGLE_H6,73
+  class Cangle Cangle17,222
+    Cangle(Cangle22,290
+    Cangle(Cangle28,376
+    Cangle(Cangle35,519
+    friend Cangle operator*operator72,1318
+    Cangle interpolate(interpolate85,1787
+    double distance(distance102,2221
+    friend double cos(cos107,2361
+    friend double sin(sin111,2451
+    friend double tan(tan115,2541
+    void setBetweenMinusAndPlusPI(setBetweenMinusAndPlusPI128,2730
+
+jrlMathTools.h,70
+#define jrlMathTools_H6,45
+class CjrlMathTools CjrlMathTools12,122
+
+matrix3x3.h,1345
+#define _MATRIX3D_PATTERNGENERATOR_JRL_8,184
+  template <typename T> struct Matrix3x3Matrix3x313,298
+      inline T& operator(operator55,1426
+      inline void setZero(setZero59,1552
+      void setIdentity(setIdentity67,1748
+      Matrix3x3<T>  operator*operator95,2709
+      void  CeqthismulB CeqthismulB110,3334
+      Matrix3x3<T> operator operator124,3988
+      MAL_S3_VECTOR(MAL_S3_VECTOR142,4386
+      void CeqthismulB(CeqthismulB152,4664
+      Matrix3x3<T> Transpose(Transpose161,4905
+      void Transpose(Transpose171,5153
+      void Inversion(Inversion179,5374
+      T determinant(determinant194,5868
+typedef PatternGeneratorJRL::Matrix3x3<double> matrix3d;matrix3d262,7572
+#define MAL_S3x3_MATRIX(MAL_S3x3_MATRIX264,7630
+#define MAL_S3x3_MATRIX_CLEAR(MAL_S3x3_MATRIX_CLEAR267,7712
+#define MAL_S3x3_MATRIX_SET_IDENTITY(MAL_S3x3_MATRIX_SET_IDENTITY270,7768
+#define MAL_S3x3_INVERSE(MAL_S3x3_INVERSE273,7835
+#define MAL_S3x3_RET_TRANSPOSE(MAL_S3x3_RET_TRANSPOSE276,7915
+#define MAL_S3x3_TRANSPOSE_A_in_At(MAL_S3x3_TRANSPOSE_A_in_At279,7979
+#define MAL_S3x3_RET_A_by_B(MAL_S3x3_RET_A_by_B282,8043
+#define MAL_S3x3_C_eq_A_by_B(MAL_S3x3_C_eq_A_by_B285,8085
+#define MAL_S3x3_MATRIX_ACCESS_I(MAL_S3x3_MATRIX_ACCESS_I288,8146
+#define MAL_S3x3_MATRIX_ACCESS_I_J(MAL_S3x3_MATRIX_ACCESS_I_J291,8201
+
+matrix4x4.h,1443
+#define _MATRIX4D_PATTERNGENERATOR_JRL_8,184
+  template <typename T> struct Matrix4x4Matrix4x414,298
+      inline T& operator(operator53,1315
+      inline T operator(operator57,1457
+      inline void setZero(setZero61,1581
+      void setIdentity(setIdentity68,1704
+      Matrix4x4<T>  operator*operator102,2964
+      void  CeqthismulB CeqthismulB127,4407
+      void  CeqthismulB CeqthismulB148,5775
+      Vector3D<T>  operator operator157,6196
+      Matrix4x4<T> operator operator167,6525
+      Matrix4x4<T> Transpose(Transpose193,7093
+      void Inversion(Inversion204,7471
+      Matrix4x4<T> Inversion(Inversion226,9429
+      T determinant(determinant249,11419
+      T trace(trace259,12150
+typedef PatternGeneratorJRL::Matrix4x4<double> matrix4d;matrix4d343,14876
+#define MAL_S4x4_MATRIX(MAL_S4x4_MATRIX345,14934
+#define MAL_S4x4_MATRIX_CLEAR(MAL_S4x4_MATRIX_CLEAR348,15016
+#define MAL_S4x4_MATRIX_SET_IDENTITY(MAL_S4x4_MATRIX_SET_IDENTITY351,15072
+#define MAL_S4x4_INVERSE(MAL_S4x4_INVERSE354,15139
+#define MAL_S4x4_RET_TRANSPOSE(MAL_S4x4_RET_TRANSPOSE357,15222
+#define MAL_S4x4_TRANSPOSE_A_in_At(MAL_S4x4_TRANSPOSE_A_in_At360,15286
+#define MAL_S4x4_RET_A_by_B(MAL_S4x4_RET_A_by_B363,15349
+#define MAL_S4x4_C_eq_A_by_B(MAL_S4x4_C_eq_A_by_B366,15391
+#define MAL_S4x4_MATRIX_ACCESS_I(MAL_S4x4_MATRIX_ACCESS_I369,15451
+#define MAL_S4x4_MATRIX_ACCESS_I_J(MAL_S4x4_MATRIX_ACCESS_I_J372,15506
+
+vector3.h,926
+#define _VECTOR3D_PATTERNGENERATOR_JRL_8,184
+using namespace std;13,263
+    struct Vector3DVector3D20,393
+      inline Vector3D(Vector3D28,533
+      inline T& operator(operator60,1188
+      inline Vector3D<T> operator*operator110,2239
+      inline Vector3D<T> operator*operator121,2437
+      inline void normalize(normalize159,3153
+      inline T norm(norm168,3321
+      inline T normsquared(normsquared174,3455
+typedef PatternGeneratorJRL::Vector3D<double> vector3d;vector3d197,3988
+#define MAL_S3_VECTOR(MAL_S3_VECTOR199,4045
+#define MAL_S3_VECTOR_SIZE(MAL_S3_VECTOR_SIZE202,4125
+#define MAL_S3_VECTOR_FILL(MAL_S3_VECTOR_FILL205,4167
+#define MAL_S3_VECTOR_NORM(MAL_S3_VECTOR_NORM210,4288
+#define MAL_S3_VECTOR_CROSS_PRODUCT(MAL_S3_VECTOR_CROSS_PRODUCT213,4339
+#define MAL_S3_RET_VECTOR_DATABLOCK(MAL_S3_RET_VECTOR_DATABLOCK216,4406
+#define MAL_S3_VECTOR_ACCESS(MAL_S3_VECTOR_ACCESS219,4459
+
+vector4.h,800
+#define _VECTOR4D_PATTERNGENERATOR_JRL_10,202
+using namespace std;14,264
+    struct Vector4DVector4D21,394
+      inline Vector4D(Vector4D29,539
+      inline T& operator(operator56,1109
+      inline Vector4D<T> operator*operator111,2270
+      inline void normalize(normalize153,2984
+      inline T norm(norm163,3173
+      inline T normsquared(normsquared169,3316
+typedef PatternGeneratorJRL::Vector4D<double> vector4d;vector4d184,3603
+#define MAL_S4_VECTOR(MAL_S4_VECTOR186,3660
+#define MAL_S4_VECTOR_SIZE(MAL_S4_VECTOR_SIZE189,3740
+#define MAL_S4_VECTOR_FILL(MAL_S4_VECTOR_FILL192,3782
+#define MAL_S4_VECTOR_NORM(MAL_S4_VECTOR_NORM198,3953
+#define MAL_S4_RET_VECTOR_DATABLOCK(MAL_S4_RET_VECTOR_DATABLOCK201,4004
+#define MAL_S4_VECTOR_ACCESS(MAL_S4_VECTOR_ACCESS204,4057
