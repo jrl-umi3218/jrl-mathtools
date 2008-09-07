@@ -29,6 +29,10 @@ namespace jrlMathTools
 	are set to zero. */
       inline Vector3D()
       { m_x= 0.0; m_y=0.0; m_z=0.0;};
+
+      inline Vector3D(const T x, const T y, const T z)
+	: m_x(x), m_y(y), m_z(z)
+      { };
       
       /*! Assignement operator */
       inline Vector3D<T> operator= (const struct Vector3D<T> &v)
