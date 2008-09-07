@@ -164,7 +164,8 @@ namespace jrlMathTools
       C.m_x = m[0] * B.m_x + m[1] * B.m_y + m[2] * B.m_z + m[3];
       C.m_y = m[4] * B.m_x + m[5] * B.m_y + m[6] * B.m_z + m[7];
       C.m_z = m[8] * B.m_x + m[9] * B.m_y + m[10] * B.m_z + m[11];
-	
+
+      return C;
     };
 
     /*! Multiplication operator with a constant */
@@ -224,6 +225,7 @@ namespace jrlMathTools
       A.m[13]=m[1]*m[10]*m[12] - m[2]*m[9]*m[12] + m[2]*m[8]*m[13] - m[0]*m[10]*m[13] - m[1]*m[8]*m[14] + m[0]*m[9]*m[14];
       A.m[14]=m[2]*m[5]*m[12] - m[1]*m[6]*m[12] - m[2]*m[4]*m[13] + m[0]*m[6]*m[13] + m[1]*m[4]*m[14] - m[0]*m[5]*m[14];
       A.m[15]=m[1]*m[6]*m[8] - m[2]*m[5]*m[8] + m[2]*m[4]*m[9] - m[0]*m[6]*m[9] - m[1]*m[4]*m[10] + m[0]*m[5]*m[10];
+      A = A * det;
     };
      
     /*! Inversion */
@@ -246,7 +248,7 @@ namespace jrlMathTools
       m[13] = m[1]*m[10]*m[12] - m[2]*m[9]*m[12] + m[2]*m[8]*m[13] - m[0]*m[10]*m[13] - m[1]*m[8]*m[14] + m[0]*m[9]*m[14];
       m[14] = m[2]*m[5]*m[12] - m[1]*m[6]*m[12] - m[2]*m[4]*m[13] + m[0]*m[6]*m[13] + m[1]*m[4]*m[14] - m[0]*m[5]*m[14];
       m[15] = m[1]*m[6]*m[8] - m[2]*m[5]*m[8] + m[2]*m[4]*m[9] - m[0]*m[6]*m[9] - m[1]*m[4]*m[10] + m[0]*m[5]*m[10];
-      return A;
+      return A * det;
     };
       
     /*! Determinant */
