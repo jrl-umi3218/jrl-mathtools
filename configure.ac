@@ -3,7 +3,7 @@ dnl
 dnl configure.ac file for package jrlMathTools 
 dnl
 
-AC_INIT([jrlMathTools], [1.0], [support@company.com])
+AC_INIT([jrlMathTools], [1.0.99], [support@company.com])
 AC_PREREQ(2.59)
 
 if test "$CFLAGS$CXXFLAGS" = ""; then
