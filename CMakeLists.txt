@@ -17,6 +17,8 @@ SET(PROJECT_VERSION 1.0.99)
 SET(PROJECT_NAME jrlMathTools)
 project(${PROJECT_NAME})
 
+SET(CMAKE_INSTALL_PREFIX $ENV{ROBOTPKG_PATH})
+
 # Prepare the documentation
 # -------------------------
 INCLUDE(FindDoxygen)
