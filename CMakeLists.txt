@@ -38,7 +38,7 @@ SET(install_pkg_include_dir "\${includedir}")
 # Install the file in the appropriate place.
 SET(install_libdir_pkgconfig ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
 CONFIGURE_FILE(${jrlMathTools_SOURCE_DIR}/jrlMathTools.pc.cmake
-	       ${install_libdir_pkgconfig}/jrlMathTools.pc )
+	       ${jrlMathTools_BINARY_DIR}/jrlMathTools.pc )
 
 SET(jrlMathTools_HEADERS
     ./include/jrlMathTools/angle.h
@@ -55,6 +55,13 @@ INSTALL(FILES ${jrlMathTools_HEADERS}
 	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/jrlMathTools
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
 )
+
+INSTALL(FILES ${jrlMathTools_BINARY_DIR}/jrlMathTools.pc
+	DESTINATION ${install_libdir_pkgconfig}
+        PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
+)
+
+
 
 
 
