@@ -41,6 +41,7 @@ CONFIGURE_FILE(${jrlMathTools_SOURCE_DIR}/jrlMathTools.pc.cmake
 	       ${jrlMathTools_BINARY_DIR}/jrlMathTools.pc )
 
 SET(jrlMathTools_HEADERS
+    ./include/jrlMathTools/constants.h
     ./include/jrlMathTools/angle.h
     ./include/jrlMathTools/vector3.h
     ./include/jrlMathTools/vector4.h
