@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <math.h>
+#include "jrlConstants.h"
 
 namespace jrlMathTools {
 
