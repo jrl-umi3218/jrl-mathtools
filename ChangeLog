@@ -1,3 +1,4 @@
+jrlMathTools 1.1 released Jan 29, 2009
 
 	8. Removed obsolete autotools files.
 	7. Win32 compatibility : correct the documentation command
