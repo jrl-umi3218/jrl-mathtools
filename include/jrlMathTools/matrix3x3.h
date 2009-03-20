@@ -284,6 +284,20 @@ namespace jrlMathTools
 	m[7] = temp.m[6] * B.m[1] + temp.m[7] * B.m[4] + temp.m[8] * B.m[7];
 	m[8] = temp.m[6] * B.m[2] + temp.m[7] * B.m[5] + temp.m[8] * B.m[8]; 
       };
+	  
+	  /*! Matrix product with a scalar */
+	  void operator *= (const T& t)	
+	  {	
+	m[0] *= t;
+	m[1] *= t;
+	m[2] *= t;
+	m[3] *= t;
+	m[4] *= t;
+	m[5] *= t;
+	m[6] *= t;
+	m[7] *= t;
+	m[8] *= t;
+	  }
 
       inline friend std::ostream& operator <<(std::ostream &os,Matrix3x3<T> const &A)
       {
