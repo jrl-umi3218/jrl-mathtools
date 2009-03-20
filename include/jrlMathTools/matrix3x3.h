@@ -188,7 +188,7 @@ namespace jrlMathTools
       };
 
       /*! Transposition */
-      void Transpose(Matrix3x3<T> A) const
+      void Transpose(Matrix3x3<T>& A) const
       {
 	A.m[0] = m[0]; A.m[1] = m[3]; A.m[2] = m[6];
 	A.m[3] = m[1]; A.m[4] = m[4]; A.m[5] = m[7];
