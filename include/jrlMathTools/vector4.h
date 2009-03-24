@@ -31,6 +31,9 @@ namespace jrlMathTools
       inline Vector4D()
       { m_x= 0.0; m_y=0.0; m_z=0.0; m_w=0.0;};
       
+	  explicit Vector4D<T>(const T& x, const T& y, const T& z, const T& w):m_x(x),m_y(y),m_z(z),m_w(w)
+	  {}
+
       /*! Assignement operator */
       inline Vector4D<T> operator= (const struct Vector4D<T> &v)
       {
@@ -54,6 +57,12 @@ namespace jrlMathTools
 	return ((i==0) ? m_x: (i==1)? m_y: (i==2) ? m_z : m_w);
       };
 
+	  /*! Array operator */
+	  inline const T& operator[](unsigned i) const
+	  {
+	return ((i==0) ? m_x: (i==1)? m_y: (i==2) ? m_z : m_w);
+	  }
+
       /*! Array operator */
       inline T& operator()(unsigned i) 
       {
@@ -61,7 +70,7 @@ namespace jrlMathTools
       };
 
       /*! Binary operator == */
-      inline bool operator==(const struct Vector4D<T> &v)
+      inline bool operator==(const struct Vector4D<T> &v) const
       {
 	return ((v.m_x==m_x) &&
 		(v.m_y==m_y) && 
@@ -135,10 +144,10 @@ namespace jrlMathTools
       /*! Binary operator *= */
       inline void operator*= (const T &t) 
       {
-	m_x = m_x/t;
-	m_y = m_y/t;
-	m_z = m_z/t;
-	m_w = m_w/t;
+	m_x = m_x*t;
+	m_y = m_y*t;
+	m_z = m_z*t;
+	m_w = m_w*t;
       };
     
       /*! Binary operator /= */

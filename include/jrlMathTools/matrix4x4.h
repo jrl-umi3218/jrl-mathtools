@@ -52,6 +52,10 @@ namespace jrlMathTools
     /*! ith element considering the matrix as an array. */
     inline T& operator[](unsigned int i) 
     { return m[i];};
+	
+    /*! ith element considering the matrix as an array. */
+    inline const T& operator[](unsigned int i) const
+    { return m[i];};
       
     /*! Access by giving the (i,j) element. */
     inline T& operator()(unsigned int i, unsigned int j)
@@ -76,7 +80,7 @@ namespace jrlMathTools
     };
       
     /*! Addition operator */
-    Matrix4x4<T>  operator+(const Matrix4x4<T> & B)
+    Matrix4x4<T>  operator+(const Matrix4x4<T> & B) const
     {
       Matrix4x4<T> A;
       A.m[0] = m[0] + B.m[0]; A.m[1] = m[1] + B.m[1]; A.m[2] = m[2] + B.m[2];
@@ -90,7 +94,7 @@ namespace jrlMathTools
     };
       
     /*! Substraction operator */
-    struct Matrix4x4<T>  operator-(const struct Matrix4x4<T> &B)
+    struct Matrix4x4<T>  operator-(const struct Matrix4x4<T> &B) const
     {
       Matrix4x4<T> A;
       A.m[0] = m[0] - B.m[0]; A.m[1] = m[1] - B.m[1]; A.m[2] = m[2] - B.m[2];
@@ -179,7 +183,7 @@ namespace jrlMathTools
     };
 
     /*! Multiplication operator with a constant */
-    Matrix4x4<T> operator * (const double & r) 	
+    Matrix4x4<T> operator * (const double & r) const
     {	
       struct Matrix4x4<T> result;
       result.m[0] = m[0] * r;
@@ -205,7 +209,7 @@ namespace jrlMathTools
       
       
     /*! Transposition */
-    Matrix4x4<T> Transpose()
+    Matrix4x4<T> Transpose() const
     {
       struct Matrix4x4 A;
       A.m[0]  = m[0];  A.m[1]  = m[4]; A.m[2]  = m[8];  A.m[3]  = m[12]; 
@@ -216,7 +220,7 @@ namespace jrlMathTools
     };
  
     /*! Inversion */
-    void Inversion(Matrix4x4 &A)
+    void Inversion(Matrix4x4 &A) const
     {
       T det = 1/determinant();
       A.m[0]=m[6]*m[11]*m[13] - m[7]*m[10]*m[13] + m[7]*m[9]*m[14] - m[5]*m[11]*m[14] - m[6]*m[9]*m[15] +m[5]*m[10]*m[15];
@@ -339,7 +343,28 @@ namespace jrlMathTools
       m[14] = temp.m[12] * B.m[2] + temp.m[13] * B.m[6] + temp.m[14] * B.m[10] + temp.m[15] * B.m[14];
       m[15] = temp.m[12] * B.m[3] + temp.m[13] * B.m[7] + temp.m[14] * B.m[11] + temp.m[15] * B.m[15];
     };
-      
+
+    ///Local matrix multiplication
+    void operator *= (const T &t)	
+    {	
+      m[0] *= t;
+      m[1] *= t;
+      m[2] *= t;
+      m[3] *= t;
+      m[4] *= t;
+      m[5] *= t;
+      m[6] *= t;
+      m[7] *= t;
+      m[8] *= t;
+      m[9] *= t;
+      m[10] *= t;
+      m[11] *= t;
+      m[12] *= t;
+      m[13] *= t;
+      m[14] *= t;
+      m[15] *= t;
+    };
+	
     inline friend std::ostream& operator <<(std::ostream &os,Matrix4x4<T> const &A)
     {
       for(int i=0;i<4;i++)

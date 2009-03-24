@@ -34,6 +34,18 @@ namespace jrlMathTools
 	m[6]=x; m[7] = x; m[8]=x;
       };
 	
+	  /*! Constructor from 9 scalar */
+	  explicit Matrix3x3<T> (
+	const T x0, const T x1, const T x2, 
+	const T x3, const T x4, const T x5, 
+	const T x6, const T x7, const T x8
+	  )
+	  {
+	m[0]=x0; m[1] = x1; m[2]=x2;
+	m[3]=x3; m[4] = x4; m[5]=x5;
+	m[6]=x6; m[7] = x7; m[8]=x8;
+	  };
+
       /*! Copy constructor */
       Matrix3x3<T> (const struct Matrix3x3<T> &v)
       {
@@ -80,7 +92,7 @@ namespace jrlMathTools
       };
       
       /*! Adition operator */
-      Matrix3x3<T>  operator+(const struct Matrix3x3<T> & B)
+      Matrix3x3<T>  operator+(const struct Matrix3x3<T> & B) const
       {
 	struct Matrix3x3<T> A;
 	A.m[0] = m[0] + B.m[0]; A.m[1] = m[1] + B.m[1]; A.m[2] = m[2] + B.m[2];
@@ -90,7 +102,7 @@ namespace jrlMathTools
       };
       
       /*! Substraction operator */
-      struct Matrix3x3<T>  operator-(const struct Matrix3x3<T> &B)
+      struct Matrix3x3<T>  operator-(const struct Matrix3x3<T> &B) const
       {
 	struct Matrix3x3<T> A;
 	A.m[0] = m[0] - B.m[0]; A.m[1] = m[1] - B.m[1]; A.m[2] = m[2] - B.m[2];
@@ -129,7 +141,7 @@ namespace jrlMathTools
       };
 
       /*! Multiplication operator with a constant */
-      Matrix3x3<T> operator * (const double & r) 	
+      Matrix3x3<T> operator * (const double & r) const
       {	
 	struct Matrix3x3<T> result;
 	result.m[0] = m[0] * r;
@@ -147,7 +159,7 @@ namespace jrlMathTools
 
       
       /*! Multiplication operator with a vector */
-      MAL_S3_VECTOR(,T) operator *(MAL_S3_VECTOR(v,T)) 
+      MAL_S3_VECTOR(,T) operator *(const MAL_S3_VECTOR(,T)& v) const
       {
 	MAL_S3_VECTOR(vr,T);
 	vr[0] = m[0]*v[0]+m[1]*v[1]+m[2]*v[2];
@@ -166,7 +178,7 @@ namespace jrlMathTools
       };
       
       /*! Transposition */
-      Matrix3x3<T> Transpose()
+      Matrix3x3<T> Transpose() const
       {
 	struct Matrix3x3<T> A;
 	A.m[0] = m[0]; A.m[1] = m[3]; A.m[2] = m[6];
@@ -176,7 +188,7 @@ namespace jrlMathTools
       };
 
       /*! Transposition */
-      void Transpose(Matrix3x3<T> A)
+      void Transpose(Matrix3x3<T>& A) const
       {
 	A.m[0] = m[0]; A.m[1] = m[3]; A.m[2] = m[6];
 	A.m[3] = m[1]; A.m[4] = m[4]; A.m[5] = m[7];
@@ -184,7 +196,7 @@ namespace jrlMathTools
       };
       
       /*! Inversion */
-      void Inversion(struct Matrix3x3 &A)
+      void Inversion(struct Matrix3x3 &A) const
       {
 	T det = 1/determinant();
 	A.m[0] = (m[4]*m[8] - m[5]*m[7]) *det;
@@ -208,7 +220,29 @@ namespace jrlMathTools
 	  - m[0]*m[5]*m[7]
 	  - m[1]*m[3]*m[8]; 
       };
-      
+	
+	  /*! fills with value */
+	  void Fill(T value)
+	  {
+	m[0] = value;
+	m[1] = value;
+	m[2] = value;
+	m[3] = value;
+	m[4] = value;
+	m[5] = value;
+	m[6] = value;
+	m[7] = value;
+	m[8] = value;
+	  }
+	
+	  /*! returns true if matrix is identity */
+	  bool IsIdentity() const
+	  {
+	return((m[0] == 1) && (m[4] == 1) && (m[8] == 1) && (m[1] == 0)
+		&& (m[2] == 0) && (m[3] == 0) && (m[5] == 0) && (m[6] == 0)
+		&& (m[7] == 0));
+	  }
+		
       /*! Self matrix addition */
       void operator += (const Matrix3x3<T>& B)	
       {	
@@ -237,8 +271,8 @@ namespace jrlMathTools
 	m[8] -= B.m[8]; 
       };
       
-      ///Local matrix multiplication
-      void operator *= (const Matrix3x3<T>& B)	
+      /*! Local matrix multiplication */
+      void operator *= (const Matrix3x3<T>& B)
       {	Matrix3x3<T> temp(*this);
 	m[0] = temp.m[0] * B.m[0] + temp.m[1] * B.m[3] + temp.m[2] * B.m[6];
 	m[1] = temp.m[0] * B.m[1] + temp.m[1] * B.m[4] + temp.m[2] * B.m[7];
@@ -250,7 +284,21 @@ namespace jrlMathTools
 	m[7] = temp.m[6] * B.m[1] + temp.m[7] * B.m[4] + temp.m[8] * B.m[7];
 	m[8] = temp.m[6] * B.m[2] + temp.m[7] * B.m[5] + temp.m[8] * B.m[8]; 
       };
-      
+	  
+	  /*! Matrix product with a scalar */
+	  void operator *= (const T& t)	
+	  {	
+	m[0] *= t;
+	m[1] *= t;
+	m[2] *= t;
+	m[3] *= t;
+	m[4] *= t;
+	m[5] *= t;
+	m[6] *= t;
+	m[7] *= t;
+	m[8] *= t;
+	  }
+
       inline friend std::ostream& operator <<(std::ostream &os,Matrix3x3<T> const &A)
       {
 	for(int i=0;i<3;i++)
