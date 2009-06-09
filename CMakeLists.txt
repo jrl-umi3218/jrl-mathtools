@@ -11,7 +11,7 @@ enable_language(CXX)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Set version
-SET(PROJECT_VERSION 1.1)
+SET(PROJECT_VERSION 1.2)
 
 # name of the project
 SET(PROJECT_NAME jrlMathTools)

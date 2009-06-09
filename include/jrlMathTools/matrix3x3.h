@@ -67,12 +67,16 @@ namespace jrlMathTools
       inline T& operator[](unsigned int i) 
       { return m[i];};
       
+	  /*! ith element considering the matrix as an array. */
+	  inline const T& operator[](unsigned int i) const
+	  { return m[i];};
+
       /*! Access by giving the (i,j) element. */
       inline T& operator()(unsigned int i, unsigned int j) 
       { return m[3*i+j]; };
 
       /*! Access by giving the (i,j) element. */
-      inline T operator() (unsigned int i, unsigned int j) const
+      inline const T & operator() (unsigned int i, unsigned int j) const
       { return m[3*i+j]; };
       
       /*! Set to zero matrix */
