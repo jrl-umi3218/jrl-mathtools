@@ -1,4 +1,46 @@
+2009/06/09: Nicolas Mansard <nmansard@laas.fr>
 
+	Release 1.2 for StackOfTasks release V1.0.0.
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Tue Mar 24 09:35:43 2009 +0100
+
+    Add accessor functions with const.
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Fri Mar 20 03:55:10 2009 +0100
+
+    Add the function  operator *= for T type
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Fri Mar 20 02:46:01 2009 +0100
+
+    Bug correction
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Fri Mar 20 02:02:31 2009 +0100
+
+    Improve matrix3d
+    -- add a constructor
+    -- added const when possible
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Fri Mar 20 02:01:04 2009 +0100
+
+    Improve matrix4x4.h
+    -- add an operator*=  (m *= d)
+    -- add const whenever it's possible
+
+Author: Francois Keith <francois.keith@aist.go.jp>
+Date:   Fri Mar 20 01:58:41 2009 +0100
+
+    Improve vector3.h
+    -- the operator* in v1*v2 corresponds now to a dot product.
+        the cross product is still v1^v2
+    -- add const whenever it's possible
+
+
+	
 	8. Removed obsolete autotools files.
 	7. Win32 compatibility : correct the documentation command
 	6. Addition of access function in matrix 3x3.
