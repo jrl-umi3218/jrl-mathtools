@@ -45,7 +45,7 @@ namespace jrlMathTools
 	
 	
       /*! Unary operator - */
-      inline Vector3D<T> operator-()
+      inline Vector3D<T> operator-() const
       {
 	return Vector3D<T>(-m_x, -m_y, -m_z);
       };
