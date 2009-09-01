@@ -6,8 +6,8 @@ datarootdir=${install_pkg_prefix}/share
 docdir=${install_pkg_datarootdir}/doc/${PROJECT_NAME}
 
 Name: ${PROJECT_NAME}
-Description: 
+Description: Basic mathematical functions
 Version: ${PROJECT_VERSION}
 Requires: 
-Libs: 
-Cflags: -I${install_pkg_include_dir}
+Libs: ${EXPORT_LDFLAGS}
+Cflags: ${EXPORT_CFLAGS}

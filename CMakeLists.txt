@@ -17,7 +17,17 @@ SET(PROJECT_VERSION 1.2.99)
 SET(PROJECT_NAME jrlMathTools)
 project(${PROJECT_NAME})
 
-SET(CMAKE_INSTALL_PREFIX $ENV{ROBOTPKG_PATH})
+IF(WIN32)
+  SET(LIBDIR_KW "/LIBPATH:")
+  SET(LIBINCLUSION_KW "")
+ENDIF(WIN32)
+
+IF(UNIX)
+  SET(LIBDIR_KW "-L")
+  SET(LIBINCLUSION_KW "-l")
+ENDIF(UNIX)
+
+ENABLE_TESTING()
 
 # Prepare the documentation
 # -------------------------
@@ -29,6 +39,52 @@ IF (GENERATE_DOC)
 	ADD_SUBDIRECTORY(doc)
   ENDIF(DOXYGEN_FOUND)
 ENDIF (GENERATE_DOC)
+
+# Looking for LAPACK
+# -------------------
+INCLUDE(FindLAPACK)
+
+# Looking for boost.
+# -------------------------
+INCLUDE(FindBoost)
+SET(Boost_USE_STATIC_LIBS OFF)
+SET(Boost_USE_MULTITHREAD ON)
+FIND_PACKAGE( Boost 1.33.1 COMPONENTS thread )
+
+IF(LAPACK_FOUND)
+  IF(Boost_FOUND)
+    MESSAGE(STATUS "Boost has been found")
+    SET(${PROJECT_NAME}_CFLAGS "-I${Boost_INCLUDE_DIR} ")
+    SET(${EXPORT_CFLAGS} "-I${Boost_INCLUDE_DIR}")
+	SET(${PROJECT_NAME}_LDFLAGS "")
+	SET(EXPORT_LDFLAGS "")
+	foreach(boost_lib_dir ${Boost_LIBRARY_DIRS})
+	  SET(${PROJECT_NAME}_LDFLAGS 
+	    "${${PROJECT_NAME}_LDFLAGS} ${LIBDIR_KW}${boost_lib_dir} ")
+	  SET(EXPORT_LDFLAGS 
+	    "${EXPORT_LDFLAGS} ${LIBDIR_KW}${boost_lib_dir} ")
+	endforeach(boost_lib_dir)
+	foreach(lapack_lib ${LAPACK_LIBRARIES})
+	  SET(${PROJECT_NAME}_LDFLAGS 
+	    "${${PROJECT_NAME}_LDFLAGS} ${lapack_lib} ")
+	  SET($EXPORT_LDFLAGS 
+	    "${EXPORT_LDFLAGS} ${lapack_lib} ")
+	endforeach(lapack_lib)
+	IF (WIN32)
+	  SET(${PROJECT_NAME}_CFLAGS 
+	    "${${PROJECT_NAME}_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
+	  SET(EXPORT_CFLAGS 
+	    "${EXPORT_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
+	ENDIF (WIN32)
+
+  ELSE(Boost_FOUND)
+    # TO DO : find vnl...
+  ENDIF(Boost_FOUND)
+
+ENDIF(LAPACK_FOUND)
+
+MESSAGE(STATUS "Cflags :" ${${PROJECT_NAME}_CFLAGS} )
+MESSAGE(STATUS "Ldflags :" ${${PROJECT_NAME}_LDFLAGS} )
 
 # Prepare description file for pkg-config.
 #-----------------------------------------
@@ -51,6 +107,8 @@ SET(jrlMathTools_HEADERS
     ./include/jrlMathTools/vector4.h
     ./include/jrlMathTools/matrix3x3.h
     ./include/jrlMathTools/matrix4x4.h
+    ./include/jrlMathTools/matrixNxP.h
+    ./include/jrlMathTools/vectorN.h
 )
 
 #----------------------------------------------------
