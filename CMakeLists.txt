@@ -6,6 +6,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 enable_language(CXX)
+enable_language(Fortran)
 
 # Debug mode for cmake.
 SET(CMAKE_VERBOSE_MAKEFILE ON)
@@ -29,9 +30,12 @@ ENDIF(UNIX)
 
 ENABLE_TESTING()
 
+# where are use-specific cmake modules
+SET(CMAKE_MODULE_PATH ${${PROJECT_NAME}_SOURCE_DIR}/CMakeModules)
+
 # Prepare the documentation
 # -------------------------
-OPTION(GENERATE_DOC 0 "Generate html documentation")
+OPTION(GENERATE_DOC 1 "Generate html documentation")
 IF (GENERATE_DOC)
   INCLUDE(FindDoxygen)
   IF(DOXYGEN_FOUND)
@@ -83,6 +87,17 @@ IF(LAPACK_FOUND)
 
 ENDIF(LAPACK_FOUND)
 
+# --- BOOST NUMERIC BINDINGS-------------------------------------
+
+INCLUDE(${CMAKE_MODULE_PATH}/FindBoostNumericBindings.cmake)
+MESSAGE(STATUS "BoostNumericBindings_INCLUDE_DIR=${BoostNumericBindings_INCLUDE_DIR}")
+INCLUDE_DIRECTORIES(${BoostNumericBindings_INCLUDE_DIR})
+SET(${PROJECT_NAME}_CFLAGS 
+  "${${PROJECT_NAME}_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}"
+  )
+SET(EXPORT_CFLAGS "${EXPORT_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}")
+
+
 MESSAGE(STATUS "Cflags :" ${${PROJECT_NAME}_CFLAGS} )
 MESSAGE(STATUS "Ldflags :" ${${PROJECT_NAME}_LDFLAGS} )
 
@@ -124,7 +139,7 @@ INSTALL(FILES ${jrlMathTools_BINARY_DIR}/jrlMathTools.pc
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
 )
 
-
+ADD_SUBDIRECTORY(unitTesting)
 
 
 

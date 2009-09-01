@@ -14,7 +14,7 @@ SET(${PROJECT_NAME}_test_LDFLAGS "${${PROJECT_NAME}_LDFLAGS}")
 MESSAGE(STATUS " unitTesting: ${${PROJECT_NAME}_test_CXXFLAGS}")
 MESSAGE(STATUS " unitTesting: ${${PROJECT_NAME}_test_LDFLAGS}")
 
-ADD_EXECUTABLE(	testpseudoinverse testpseudoinverse.cpp)
+ADD_EXECUTABLE(testpseudoinverse testpseudoinverse.cpp)
 SET_TARGET_PROPERTIES(testpseudoinverse
 	              PROPERTIES
 		      COMPILE_FLAGS ${${PROJECT_NAME}_test_CXXFLAGS}

@@ -7,16 +7,14 @@
 #ifndef JRLMATHTOOLS_MATRIXNXP_H
 #define JRLMATHTOOLS_MATRIXNXP_H
 
-/*
-  Avoid conflict with MatrixAbstractLayer
-*/
-#ifndef _MATRIX_ABSTRACT_LAYER_H_
-namespace boost_ublas = boost::numeric::ublas;
-namespace traits = boost::numeric::bindings::traits;
-namespace lapack = boost::numeric::bindings::lapack;
+#include "boost/numeric/ublas/matrix_proxy.hpp"
+#include "boost/numeric/ublas/matrix.hpp"
+#include "boost/numeric/ublas/io.hpp"
+#include "boost/numeric/bindings/traits/ublas_matrix.hpp"
+
+#include "jrlMathTools/vectorN.h"
 
 typedef boost_ublas::matrix<double> matrixNxP;
-#endif
 
 extern "C"
 {
@@ -26,8 +24,6 @@ extern "C"
 	       double* vt, int const* ldvt,
 	       double* work, int const* lwork, int* info);
 }
-
-class vectorN;
 
 namespace jrlMathTools {
 
@@ -46,13 +42,12 @@ namespace jrlMathTools {
    * By default, the function uses the dgesvd_ fortran routine. 
    * It should be provided by the host software. 
    */
-  virtual Matrix& 
-    pseudoInverse(const matrixNxP& matrix,
-		  matrixNxP& outInverse,
-		  const double threshold = 1e-6,
-		  matrixNxP* Uref = NULL,
-		  vectorN* Sref = NULL,
-		  matrixNxP* Vref = NULL)
+  matrixNxP& pseudoInverse(const matrixNxP& matrix,
+			   matrixNxP& outInverse,
+			   const double threshold = 1e-6,
+			   matrixNxP* Uref = NULL,
+			   vectorN* Sref = NULL,
+			   matrixNxP* Vref = NULL)
   {	
     unsigned int NR,NC;
     bool toTranspose;

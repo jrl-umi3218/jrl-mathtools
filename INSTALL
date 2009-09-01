@@ -8,5 +8,17 @@ Installation instructions for library jrlMathTools
 It is recommended to create a specific directory to install this package.
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=<installation-prefix> ..
+cmake [options] ..
 make install
+
+Options
+-------
+
+  -DCMAKE_INSTALL_PREFIX=path: define prefix as path: will install files 
+   in path.
+
+  -DBOOSTNUMERICBINDINGS_DIR=path: where path is the installation prefix of
+   boost numeric bindings. You need to add this option only if boost numeric
+   bindings is not installed in a standard prefix.
+
+

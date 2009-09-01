@@ -29,37 +29,31 @@ int main (int argc, char** argv)
  
 
   Jt.resize(3,30);
-  for(unsigned int i=0;i<3;i++)
-    {
-      for(unsigned int j=0;j<30;j++)
-	{
-	  Jt(i,j) =dJt[i][j];
-	}
+  for(unsigned int i=0;i<3;i++) {
+    for(unsigned int j=0;j<30;j++) {
+      Jt(i,j) =dJt[i][j];
     }
+  }
   
-  const unsigned int nJ = Jt.nbRows();
-  const unsigned int mJ = Jt.nbCols();
+  const unsigned int nJ = Jt.size1();
+  const unsigned int mJ = Jt.size2();
   V.resize(mJ,mJ);
   Jp.resize(mJ,nJ);
-  Jt.pseudoInverse( Jp,1e-15,NULL,NULL,&V );
+  jrlMathTools::pseudoInverse(Jt, Jp, 1e-15, NULL, NULL, &V);
 
-  matrixNxP M=Jt*Jp;
+  matrixNxP M=prod(Jt,Jp);
 
   bool result=true;
-  for(unsigned int i=0;i<3;i++)
-      for(unsigned int j=0;j<3;j++)
-	{
-	  if (i==j)
-	    {
-	      if (M(i,j)!=1.0)
-		result=false;
-	    }
-	  else
-	    if (M(i,j)>1e-15)
-	      result=false;
-	}
+  for(unsigned int i=0;i<3;i++) 
+    for(unsigned int j=0;j<3;j++) {
+      if (i==j)	{
+	if (M(i,j)!=1.0)
+	  result=false;
+      } else if (M(i,j)>1e-15)
+	result=false;
+    }
   if (false)
     return -1;
-
+  
   return 0;
 }
