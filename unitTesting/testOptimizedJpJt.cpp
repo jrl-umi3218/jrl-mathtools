@@ -6,7 +6,7 @@
 int main (int argc, char** argv)
 {
 
-  matrixNxP Jt,S,V,Jp;
+  matrixNxP Jt,U,S,Vt,Jp;
   double dJt[3][30]={
     { 0.00645703, 3.32535e-19, -0.0411488, -0.0170703, 
       -0.0019119, -3.08188e-21, -0.0649074, -4.42244e-17, 
@@ -28,31 +28,69 @@ int main (int argc, char** argv)
  
 
   Jt.resize(3,30);
-  for(unsigned int i=0;i<3;i++) {
-    for(unsigned int j=0;j<30;j++) {
-      Jt(i,j) =dJt[i][j];
+  for(unsigned int i=0;i<3;i++)
+    {
+      for(unsigned int j=0;j<30;j++)
+	{
+	  Jt(i,j) =dJt[i][j];
+	}
     }
-  }
   
   const unsigned int nJ = Jt.size1();
   const unsigned int mJ = Jt.size2();
-  V.resize(mJ,mJ);
+  Vt.resize(mJ,mJ);
+  U.resize(nJ,mJ);
+
   Jp.resize(mJ,nJ);
-  jrlMathTools::pseudoInverse(Jt, Jp, 1e-15, NULL, NULL, &V);
+  jrlMathTools::dampedInverse(Jt,Jp,1e-15,&U,0,&Vt );
 
-  matrixNxP M=prod(Jt,Jp);
+  matrixNxP Mp=prod(Jp,Jt);
+  matrixNxP P,pS;
 
-  bool result=true;
-  for(unsigned int i=0;i<3;i++) 
-    for(unsigned int j=0;j<3;j++) {
-      if (i==j)	{
-	if (M(i,j)!=1.0)
-	  result=false;
-      } else if (M(i,j)>1e-15)
-	result=false;
+  P = boost_ublas::zero_matrix<double>(mJ,mJ);
+  double *p,*v1,*v2,*vtmp1,*vtmp2;
+  p = traits::matrix_storage(P);
+
+  vtmp1 = traits::matrix_storage(Vt); 
+
+  for( unsigned int i=0;i<mJ;++i )
+    {
+      vtmp2 = traits::matrix_storage(Vt); 
+      for( unsigned int j=0;j<mJ;++j )
+	{
+	  v1 = vtmp1;   v2 =vtmp2;
+	  for( unsigned int k=0;k<3;++k )
+	    //for( unsigned int k=0;k<mJ;++k )
+	    { 
+	      (*p) +=( *v1) * (*v2); 
+	      v2+=mJ;v1+=mJ;
+	    } 
+	  p++; vtmp2++;
+	}
+
+      vtmp1++;
     }
-  if (false)
-    return -1;
+  matrixNxP C=Mp-P;
+
+  for(unsigned int i=0;i<mJ;i++)
+    for(unsigned int j=0;j<mJ;j++)
+      if (fabs(C(i,j))>1e-15)
+	return -1;
   
+  S = boost_ublas::zero_matrix<double>(mJ,mJ);
+  for(unsigned int i=0;i<3;i++)
+    S(i,i) = 1.0;
+
+  matrixNxP C2;
+  matrixNxP tmp1 = prod(S,Vt);
+  C2 = Mp-prod(trans(Vt),tmp1);
+
+  std::cout << "C2=" << C2 << std::endl;
+
+  for(unsigned int i=0;i<mJ;i++)
+    for(unsigned int j=0;j<mJ;j++)
+      if (fabs(C2(i,j))>1e-15)
+	return -1;
+
   return 0;
 }

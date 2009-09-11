@@ -30,6 +30,12 @@ namespace jrlMathTools {
   static const bool AUTORESIZE = true;
   static const bool CHECKRESIZE = true;
 
+  void _resize(matrixNxP& mat1,const matrixNxP& mat2 )
+  { if(AUTORESIZE) { 
+      mat1.resize(mat2.size1(),mat2.size2()); 
+    } 
+  }
+
   void _resizeInv(matrixNxP& res, const matrixNxP& mat2)
   { 
     if(AUTORESIZE) { 
@@ -139,6 +145,119 @@ namespace jrlMathTools {
     }
     return outInverse;
   }
+
+
+
+
+
+  matrixNxP dampedInverse(const matrixNxP& inMatrix,  
+			  matrixNxP& invMatrix,
+			  const double threshold = 1e-6,
+			  matrixNxP* Uref = NULL,
+			  vectorN* Sref = NULL,
+			  matrixNxP* Vref = NULL)  
+    {	
+      unsigned int NR,NC;
+      bool toTranspose;
+      boost_ublas::matrix<double,boost_ublas::column_major> I;
+      if( inMatrix.size1()>inMatrix.size2() )
+	{ 
+	  toTranspose=false ;  NR=inMatrix.size1(); NC=inMatrix.size2();
+	  I=inMatrix; 
+	  _resizeInv(invMatrix,inMatrix);
+	}
+      else 
+	{
+	  toTranspose=true; NR=inMatrix.size2(); NC=inMatrix.size1();
+	  I = trans(inMatrix); 
+	  _resize(invMatrix, inMatrix); // Resize the inv of the transpose.
+	}
+      boost_ublas::matrix<double,boost_ublas::column_major> U(NR,NR); 
+      boost_ublas::matrix<double,boost_ublas::column_major> VT(NC,NC);	
+      boost_ublas::vector<double> s(std::min(NR,NC));		
+      char Jobu='A'; /* Compute complete U Matrix */	
+      char Jobvt='A'; /* Compute complete VT Matrix */	
+      char Lw; Lw='O'; /* Compute the optimal size for the working vector */ 
+
+      /* Get workspace size for svd. */
+      {
+	int lw=-1;
+	{
+	  double vw;                                       
+	 
+	  int linfo; const int n=NR,m=NC;
+	  int lda = std::max(m,n);
+	  int lu = traits::leading_dimension(U); // NR
+	  int lvt = traits::leading_dimension(VT); // NC
+		
+	  dgesvd_(&Jobu, &Jobvt, &m, &n,                 
+		  traits::matrix_storage(I), &lda,       
+		  0, 0, &m, 0, &n, &vw, &lw, &linfo);    
+	  lw = int(vw)+5;                                 
+	 
+	  boost_ublas::vector<double> w(lw);		 
+	  dgesvd_(&Jobu, &Jobvt,&n,&m,
+		  traits::matrix_storage(I),
+		  &lda,
+		  traits::vector_storage(s),
+		  traits::matrix_storage(U),
+		  &lu,
+		  traits::matrix_storage(VT),
+		  &lvt,
+		  traits::vector_storage(w),&lw,&linfo);
+	}
+
+      }
+
+      const unsigned int nsv = s.size();
+      unsigned int rankJ = 0;
+      boost_ublas::vector<double> sp(nsv);
+      for( unsigned int i=0;i<nsv;++i )		
+	{
+	  if( fabs(s(i))>threshold*.1 )   rankJ++; 
+	  sp(i)=s(i)/(s(i)*s(i)+threshold*threshold);
+	}
+      invMatrix.clear();
+      {
+	double * pinv = traits::matrix_storage(invMatrix);
+	double * uptr;
+	double * uptrRow;
+	double * vptr;
+	double * vptrRow = traits::matrix_storage(VT);
+       
+	double * spptr;
+       
+	for( unsigned int i=0;i<NC;++i )
+	  {
+	    uptrRow = traits::matrix_storage(U);
+	    for( unsigned int j=0;j<NR;++j )
+	      {
+		uptr = uptrRow;  vptr = vptrRow; 
+		spptr = traits::vector_storage( sp );
+		for( unsigned int k=0;k<rankJ;++k )
+		  {
+		    (*pinv) += (*vptr) * (*spptr) * (*uptr);
+		    uptr+=NR; vptr++; spptr++;
+		  }
+		pinv++; uptrRow++; 
+	      }
+	    vptrRow += NC;
+	  }
+      }
+      if(toTranspose) {
+	invMatrix = trans(invMatrix);  
+	if(Uref) *Uref = VT;
+	if(Vref) *Vref = trans(U);
+	if(Sref) *Sref=s; 
+      } else {
+	if(Uref) *Uref = U;
+	if(Vref) *Vref = trans(VT);
+	if(Sref) *Sref=s; 
+      }
+      return invMatrix;
+    }
+
+
 };
 
 #endif

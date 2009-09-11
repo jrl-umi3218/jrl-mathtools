@@ -6,7 +6,7 @@
 int main (int argc, char** argv)
 {
 
-  matrixNxP Jt,S,V,Jp;
+  matrixNxP Jt,U,S,Vt,Jp;
   double dJt[3][30]={
     { 0.00645703, 3.32535e-19, -0.0411488, -0.0170703, 
       -0.0019119, -3.08188e-21, -0.0649074, -4.42244e-17, 
@@ -28,31 +28,51 @@ int main (int argc, char** argv)
  
 
   Jt.resize(3,30);
-  for(unsigned int i=0;i<3;i++) {
-    for(unsigned int j=0;j<30;j++) {
-      Jt(i,j) =dJt[i][j];
+  for(unsigned int i=0;i<3;i++)
+    {
+      for(unsigned int j=0;j<30;j++)
+	{
+	  Jt(i,j) =dJt[i][j];
+	}
     }
-  }
   
   const unsigned int nJ = Jt.size1();
   const unsigned int mJ = Jt.size2();
-  V.resize(mJ,mJ);
+  Vt.resize(mJ,mJ);
+  U.resize(nJ,mJ);
+
   Jp.resize(mJ,nJ);
-  jrlMathTools::pseudoInverse(Jt, Jp, 1e-15, NULL, NULL, &V);
+  jrlMathTools::dampedInverse(Jt, Jp,1e-15,&U,0,&Vt );
 
+  std::ofstream aof;
+  aof.open("V.txt", std::ofstream::out);
+  
   matrixNxP M=prod(Jt,Jp);
-
+	
   bool result=true;
-  for(unsigned int i=0;i<3;i++) 
-    for(unsigned int j=0;j<3;j++) {
-      if (i==j)	{
-	if (M(i,j)!=1.0)
-	  result=false;
-      } else if (M(i,j)>1e-15)
-	result=false;
-    }
+  for(unsigned int i=0;i<3;i++)
+      for(unsigned int j=0;j<3;j++)
+	{
+	  if (i==j)
+	    {
+	      if (M(i,j)!=1.0)
+		result=false;
+	    }
+	  else
+	    if (M(i,j)>1e-15)
+	      result=false;
+	}
   if (false)
     return -1;
+
+  double *vt = traits::matrix_storage(Vt); 
+  for(unsigned int i=0;i<mJ;i++)
+    {
+      for(unsigned int j=0;j<mJ;j++)
+	aof << "(" << Vt(i,j)<< "," << *vt++ << ") " ;
+      aof << std::endl;
+    }
+  aof.close();
   
-  return 0;
+    return 0;
 }

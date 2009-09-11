@@ -14,11 +14,26 @@ SET(${PROJECT_NAME}_test_LDFLAGS "${${PROJECT_NAME}_LDFLAGS}")
 MESSAGE(STATUS " unitTesting: ${${PROJECT_NAME}_test_CXXFLAGS}")
 MESSAGE(STATUS " unitTesting: ${${PROJECT_NAME}_test_LDFLAGS}")
 
-ADD_EXECUTABLE(testpseudoinverse testpseudoinverse.cpp)
-SET_TARGET_PROPERTIES(testpseudoinverse
+ADD_EXECUTABLE(testPseudoInverse testPseudoInverse.cpp)
+SET_TARGET_PROPERTIES(testPseudoInverse
 	              PROPERTIES
 		      COMPILE_FLAGS ${${PROJECT_NAME}_test_CXXFLAGS}
 		      LINK_FLAGS ${${PROJECT_NAME}_test_LDFLAGS}
 )
+ADD_TEST(pseudoInverse testPseudoInverse "")
 
-ADD_TEST(pseudoinverse testpseudoinverse "")
+ADD_EXECUTABLE(testDampedInverse testDampedInverse.cpp)
+SET_TARGET_PROPERTIES(testDampedInverse
+	              PROPERTIES
+		      COMPILE_FLAGS ${${PROJECT_NAME}_test_CXXFLAGS}
+		      LINK_FLAGS ${${PROJECT_NAME}_test_LDFLAGS}
+)
+ADD_TEST(dampedInverse testDampedInverse "")
+
+ADD_EXECUTABLE(testOptimizedJpJt testOptimizedJpJt.cpp)
+SET_TARGET_PROPERTIES(testOptimizedJpJt
+	              PROPERTIES
+		      COMPILE_FLAGS ${${PROJECT_NAME}_test_CXXFLAGS}
+		      LINK_FLAGS ${${PROJECT_NAME}_test_LDFLAGS}
+)
+ADD_TEST(optimizedJpJt testOptimizedJpJt "")
