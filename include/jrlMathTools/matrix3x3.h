@@ -309,7 +309,7 @@ namespace jrlMathTools
 	  {
 	    for(int j=0;j<3;j++)
 	      os << A.m[i*3+j] << " ";
-	    os << endl;
+		os << std::endl;
 	  }
 	return os;
       };
