@@ -12,7 +12,7 @@ enable_language(Fortran)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Set version
-SET(PROJECT_VERSION 1.3.0)
+SET(PROJECT_VERSION 1.3.0.99)
 
 # name of the project
 SET(PROJECT_NAME jrlMathTools)
