@@ -49,13 +49,13 @@ int main (int argc, char** argv)
 
   P = boost_ublas::zero_matrix<double>(mJ,mJ);
   double *p,*v1,*v2,*vtmp1,*vtmp2;
-  p = traits::matrix_storage(P);
+  p = P.data().begin();
 
-  vtmp1 = traits::matrix_storage(Vt); 
+  vtmp1 = Vt.data().begin(); 
 
   for( unsigned int i=0;i<mJ;++i )
     {
-      vtmp2 = traits::matrix_storage(Vt); 
+      vtmp2 = Vt.data().begin();
       for( unsigned int j=0;j<mJ;++j )
 	{
 	  v1 = vtmp1;   v2 =vtmp2;

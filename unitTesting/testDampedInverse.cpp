@@ -65,7 +65,7 @@ int main (int argc, char** argv)
   if (false)
     return -1;
 
-  double *vt = traits::matrix_storage(Vt); 
+  double *vt = Vt.data().begin(); 
   for(unsigned int i=0;i<mJ;i++)
     {
       for(unsigned int j=0;j<mJ;j++)
