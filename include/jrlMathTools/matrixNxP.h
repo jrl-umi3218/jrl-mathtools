@@ -10,7 +10,7 @@
 #include "boost/numeric/ublas/matrix_proxy.hpp"
 #include "boost/numeric/ublas/matrix.hpp"
 #include "boost/numeric/ublas/io.hpp"
-#include "boost/numeric/bindings/traits/ublas_matrix.hpp"
+#include "boost/numeric/ublas/detail/raw.hpp"
 
 #include "jrlMathTools/vectorN.h"
 
@@ -81,24 +81,24 @@ namespace jrlMathTools {
 
       int linfo; const int n=NR,m=NC;
       int lda = std::max(m,n);
-      int lu = traits::leading_dimension(U); // NR
-      int lvt = traits::leading_dimension(VT); // NC
+      int lu = raw::leading_dimension(U); // NR
+      int lvt = raw::leading_dimension(VT); // NC
 
       dgesvd_(&Jobu, &Jobvt, &m, &n,                 
-	      traits::matrix_storage(transpOrNot), &lda,       
+	      transpOrNot.data().begin(), &lda,       
 	      0, 0, &m, 0, &n, &vw, &lw, &linfo);    
       lw = int(vw)+5;                                 
        
       boost_ublas::vector<double> w(lw);		 
       dgesvd_(&Jobu, &Jobvt,&n,&m,
-	      traits::matrix_storage(transpOrNot),
+	      transpOrNot.data().begin(),
 	      &lda,
-	      traits::vector_storage(s),
-	      traits::matrix_storage(U),
+	      s.data().begin(),//vector_storage(s),
+	      U.data().begin(),
 	      &lu,
-	      traits::matrix_storage(VT),
+	      VT.data().begin(),
 	      &lvt,
-	      traits::vector_storage(w),&lw,&linfo);
+	      w.data().begin(),&lw,&linfo);
        
     }
 
@@ -111,19 +111,19 @@ namespace jrlMathTools {
       else sp(i)=0.;		
     outInverse.clear();
     {
-      double * pinv = traits::matrix_storage(outInverse);
+      double * pinv = outInverse.data().begin();
       double * uptr;
       double * uptrRow;
       double * vptr;
-      double * vptrRow = traits::matrix_storage(VT);
+      double * vptrRow = VT.data().begin();
        
       double * spptr;
        
       for( unsigned int i=0;i<NC;++i ) {
-	uptrRow = traits::matrix_storage(U);
+	uptrRow = U.data().begin();
 	for( unsigned int j=0;j<NR;++j ) {
 	  uptr = uptrRow;  vptr = vptrRow; 
-	  spptr = traits::vector_storage( sp );
+	  spptr = sp.data().begin();
 	  for( unsigned int k=0;k<rankJ;++k ) {
 	    (*pinv) += (*vptr) * (*spptr) * (*uptr);
 	    uptr+=NR; vptr++; spptr++;
@@ -187,24 +187,24 @@ namespace jrlMathTools {
 	 
 	  int linfo; const int n=NR,m=NC;
 	  int lda = std::max(m,n);
-	  int lu = traits::leading_dimension(U); // NR
-	  int lvt = traits::leading_dimension(VT); // NC
+	  int lu = raw::leading_dimension(U); // NR
+	  int lvt = raw::leading_dimension(VT); // NC
 		
 	  dgesvd_(&Jobu, &Jobvt, &m, &n,                 
-		  traits::matrix_storage(I), &lda,       
+		  I.data().begin(), &lda,       
 		  0, 0, &m, 0, &n, &vw, &lw, &linfo);    
 	  lw = int(vw)+5;                                 
 	 
 	  boost_ublas::vector<double> w(lw);		 
 	  dgesvd_(&Jobu, &Jobvt,&n,&m,
-		  traits::matrix_storage(I),
+		  I.data().begin(),
 		  &lda,
-		  traits::vector_storage(s),
-		  traits::matrix_storage(U),
+		  s.data().begin(),
+		  U.data().begin(),
 		  &lu,
-		  traits::matrix_storage(VT),
+		  VT.data().begin(),
 		  &lvt,
-		  traits::vector_storage(w),&lw,&linfo);
+		  w.data().begin(),&lw,&linfo);
 	}
 
       }
@@ -219,21 +219,21 @@ namespace jrlMathTools {
 	}
       invMatrix.clear();
       {
-	double * pinv = traits::matrix_storage(invMatrix);
+	double * pinv = invMatrix.data().begin();
 	double * uptr;
 	double * uptrRow;
 	double * vptr;
-	double * vptrRow = traits::matrix_storage(VT);
+	double * vptrRow = VT.data().begin();
        
 	double * spptr;
        
 	for( unsigned int i=0;i<NC;++i )
 	  {
-	    uptrRow = traits::matrix_storage(U);
+	    uptrRow = U.data().begin();
 	    for( unsigned int j=0;j<NR;++j )
 	      {
 		uptr = uptrRow;  vptr = vptrRow; 
-		spptr = traits::vector_storage( sp );
+		spptr = sp.data().begin();
 		for( unsigned int k=0;k<rankJ;++k )
 		  {
 		    (*pinv) += (*vptr) * (*spptr) * (*uptr);

@@ -15,7 +15,8 @@
 */
 #ifndef _MATRIX_ABSTRACT_LAYER_H_
 namespace boost_ublas = boost::numeric::ublas;
-namespace traits = boost::numeric::bindings::traits;
+namespace raw=boost_ublas::raw;
+//namespace traits = boost::numeric::bindings::traits;
 //namespace lapack = boost::numeric::bindings::lapack;
 
 typedef boost_ublas::vector<double> vectorN;
