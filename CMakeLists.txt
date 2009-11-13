@@ -81,6 +81,12 @@ IF(LAPACK_FOUND)
 	    "${EXPORT_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
 	ENDIF (WIN32)
 
+	IF    (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
+		OPTION(FORCE_COMPILATION_WITH_BOOST_1_40 "Force the compilation wit" OFF)
+		IF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
+			MESSAGE (FATAL_ERROR "It is most likely that the Visual studio compilers cl.exe and rc.exe will crash due to Boost 1.40.0\n (This issue has been observed in Windows XP/Vista and for Visual studio 8 2005 and 9 2008 Express)\nIf you want to test anyway, please switch the macro FORCE_COMPILATION_WITH_BOOST_1_40 to ON")
+		ENDIF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
+	ENDIF (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
   ELSE(Boost_FOUND)
     # TO DO : find vnl...
   ENDIF(Boost_FOUND)
