@@ -79,14 +79,15 @@ IF(LAPACK_FOUND)
 	    "${${PROJECT_NAME}_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
 	  SET(EXPORT_CFLAGS 
 	    "${EXPORT_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
+
+	  IF    (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
+	    OPTION(FORCE_COMPILATION_WITH_BOOST_1_40 "Force the compilation wit" OFF)
+	    IF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
+	      MESSAGE (FATAL_ERROR "It is most likely that the Visual studio compilers cl.exe and rc.exe will crash due to Boost 1.40.0\n (This issue has been observed in Windows XP/Vista and for Visual studio 8 2005 and 9 2008 Express)\nIf you want to test anyway, please switch the macro FORCE_COMPILATION_WITH_BOOST_1_40 to ON")
+	    ENDIF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
+	  ENDIF (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
 	ENDIF (WIN32)
 
-	IF    (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
-		OPTION(FORCE_COMPILATION_WITH_BOOST_1_40 "Force the compilation wit" OFF)
-		IF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
-			MESSAGE (FATAL_ERROR "It is most likely that the Visual studio compilers cl.exe and rc.exe will crash due to Boost 1.40.0\n (This issue has been observed in Windows XP/Vista and for Visual studio 8 2005 and 9 2008 Express)\nIf you want to test anyway, please switch the macro FORCE_COMPILATION_WITH_BOOST_1_40 to ON")
-		ENDIF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
-	ENDIF (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
   ELSE(Boost_FOUND)
     # TO DO : find vnl...
   ENDIF(Boost_FOUND)
@@ -95,14 +96,15 @@ ENDIF(LAPACK_FOUND)
 
 # --- BOOST NUMERIC BINDINGS-------------------------------------
 
-INCLUDE(${CMAKE_MODULE_PATH}/FindBoostNumericBindings.cmake)
-MESSAGE(STATUS "BoostNumericBindings_INCLUDE_DIR=${BoostNumericBindings_INCLUDE_DIR}")
-INCLUDE_DIRECTORIES(${BoostNumericBindings_INCLUDE_DIR})
-SET(${PROJECT_NAME}_CFLAGS 
-  "${${PROJECT_NAME}_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}"
-  )
-SET(EXPORT_CFLAGS "${EXPORT_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}")
-
+IF(${Boost_VERSION} LESS 104000)
+  INCLUDE(${CMAKE_MODULE_PATH}/FindBoostNumericBindings.cmake)
+  MESSAGE(STATUS "BoostNumericBindings_INCLUDE_DIR=${BoostNumericBindings_INCLUDE_DIR}")
+  INCLUDE_DIRECTORIES(${BoostNumericBindings_INCLUDE_DIR})
+  SET(${PROJECT_NAME}_CFLAGS 
+    "${${PROJECT_NAME}_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}"
+    )
+  SET(EXPORT_CFLAGS "${EXPORT_CFLAGS} -I${BoostNumericBindings_INCLUDE_DIR}")
+ENDIF(${Boost_VERSION} LESS 104000)
 
 MESSAGE(STATUS "Cflags :" ${${PROJECT_NAME}_CFLAGS} )
 MESSAGE(STATUS "Ldflags :" ${${PROJECT_NAME}_LDFLAGS} )
