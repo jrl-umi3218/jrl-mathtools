@@ -19,7 +19,7 @@
 #ifndef _MATRIX_ABSTRACT_LAYER_H_
 namespace boost_ublas = boost::numeric::ublas;
 
-#if BOOST_VERSION == 104000
+#if BOOST_VERSION >= 104000
 #include "boost/numeric/ublas/detail/raw.hpp"
 namespace traits=boost_ublas::raw;
 #define MRAWDATA(x) x.data().begin()
