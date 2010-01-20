@@ -8,6 +8,11 @@ INCLUDE(CTest)
 
 SET(${PROJECT_NAME}_test_CXXFLAGS "-I${PROJECT_SOURCE_DIR}/include/ ${${PROJECT_NAME}_CFLAGS}")
 
+if(WIN32)
+	set(WIN32_CXXFLAGS "-D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE")
+	set(${PROJECT_NAME}_test_CXXFLAGS "${${PROJECT_NAME}_test_CXXFLAGS} ${WIN32_CXXFLAGS}")
+endif(WIN32)
+
 # For the test, we link with the library corresponding to the src,  which is not installed yet
 SET(${PROJECT_NAME}_test_LDFLAGS "${${PROJECT_NAME}_LDFLAGS}")
 
