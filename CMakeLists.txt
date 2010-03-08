@@ -80,12 +80,16 @@ IF(LAPACK_FOUND)
 	  SET(EXPORT_CFLAGS 
 	    "${EXPORT_CFLAGS} -DBOOST_NUMERIC_BINDINGS_USE_CLAPACK" )
 
-	  IF    (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
-	    OPTION(FORCE_COMPILATION_WITH_BOOST_1_40 "Force the compilation wit" OFF)
-	    IF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
-	      MESSAGE (FATAL_ERROR "It is most likely that the Visual studio compilers cl.exe and rc.exe will crash due to Boost 1.40.0\n (This issue has been observed in Windows XP/Vista and for Visual studio 8 2005 and 9 2008 Express)\nIf you want to test anyway, please switch the macro FORCE_COMPILATION_WITH_BOOST_1_40 to ON")
-	    ENDIF(NOT FORCE_COMPILATION_WITH_BOOST_1_40)
-	  ENDIF (NOT ${Boost_VERSION} LESS 104000 AND NOT ${Boost_VERSION} GREATER  104100)
+	  IF (NOT ${Boost_VERSION} LESS 104000)
+	    OPTION(FORCE_COMPILATION_WITH_BOOST "Force the compilation wit" OFF)
+	    IF(NOT FORCE_COMPILATION_WITH_BOOST )
+	      MESSAGE (FATAL_ERROR "It is most likely that the Visual studio compilers cl.exe and rc.exe will crash due to Boost 1.40 or higher "
+		  "(this issue has been observed in Windows XP/Vista for Visual studio 8 2005, 9 2008, 10 beta)\n"
+		  "If you want to use this version anyway, please switch the macro FORCE_COMPILATION_WITH_BOOST to ON "
+		  "and please note that a patch consists in commenting the lines 522 to 531 and 696 to 705 of the file boost/numeric/ublas/detail/raw.hpp"
+		  )
+	    ENDIF(NOT FORCE_COMPILATION_WITH_BOOST)
+	  ENDIF (NOT ${Boost_VERSION} LESS 104000)
 	ENDIF (WIN32)
 
   ELSE(Boost_FOUND)
