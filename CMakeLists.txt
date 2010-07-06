@@ -12,7 +12,11 @@ enable_language(Fortran)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Set version
-SET(PROJECT_VERSION 1.3.0.99)
+set(CPACK_PACKAGE_VERSION_MAJOR 1)
+set(CPACK_PACKAGE_VERSION_MINOR 3)
+set(CPACK_PACKAGE_VERSION_PATCH 0)
+
+SET(PROJECT_VERSION ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}.99)
 
 # name of the project
 SET(PROJECT_NAME jrlMathTools)
@@ -123,7 +127,7 @@ SET(install_pkg_datarootdir "\${datarootdir}")
 SET(install_pkg_include_dir "\${includedir}")
 
 # Install the file in the appropriate place.
-SET(install_libdir_pkgconfig ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
+SET(install_libdir_pkgconfig lib/pkgconfig)
 CONFIGURE_FILE(${jrlMathTools_SOURCE_DIR}/jrlMathTools.pc.cmake
 	       ${jrlMathTools_BINARY_DIR}/jrlMathTools.pc )
 
@@ -142,7 +146,7 @@ SET(jrlMathTools_HEADERS
 # Install procedure for the header files
 #----------------------------------------------------
 INSTALL(FILES ${jrlMathTools_HEADERS}
-	DESTINATION ${CMAKE_INSTALL_PREFIX}/include/jrlMathTools
+	DESTINATION include/jrlMathTools
         PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
 )
 
@@ -163,6 +167,33 @@ ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 ADD_SUBDIRECTORY(unitTesting)
+
+#----------------
+# Package part
+#----------------
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "JRL Math Tools- Provides small size matrices efficient implementation")
+set(CPACK_PACKAGE_VENDOR "JRL CNRS/AIST")
+set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_CURRENT_SOURCE_DIR}/README)
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Olivier Stasse")
+set(CPACK_GENERATOR TGZ)
+set(CPACK_GENERATOR DEB)
+set(
+CPACK_SOURCE_PACKAGE_FILE_NAME
+"jrlmathtools-${PROJECT_VERSION}"
+CACHE INTERNAL "tarball basename"
+)
+set(CPACK_SOURCE_GENERATOR TGZ)
+
+# The following components are regex's to match anywhere (unless anchored)
+# in absolute path + filename to find files or directories to be excluded
+# from source tarball.
+set(CPACK_SOURCE_IGNORE_FILES
+"~$"
+"^${PROJECT_SOURCE_DIR}/build/"
+"^${PROJECT_SOURCE_DIR}/.git/"
+)
+#message("CPACK_SOURCE_IGNORE_FILES = ${CPACK_SOURCE_IGNORE_FILES}")
+include(CPack)
 
 
 
