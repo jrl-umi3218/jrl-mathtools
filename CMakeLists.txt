@@ -175,14 +175,6 @@ set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "JRL Math Tools- Provides small size matri
 set(CPACK_PACKAGE_VENDOR "JRL CNRS/AIST")
 set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_CURRENT_SOURCE_DIR}/README)
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Olivier Stasse (olivier.stasse@aist.go.jp)")
-set(CPACK_GENERATOR TGZ)
-set(CPACK_GENERATOR DEB)
-set(
-CPACK_SOURCE_PACKAGE_FILE_NAME
-"jrlmathtools-${PROJECT_VERSION}"
-CACHE INTERNAL "tarball basename"
-)
-set(CPACK_SOURCE_GENERATOR TGZ)
 
 # The following components are regex's to match anywhere (unless anchored)
 # in absolute path + filename to find files or directories to be excluded
@@ -192,6 +184,17 @@ set(CPACK_SOURCE_IGNORE_FILES
 "^${PROJECT_SOURCE_DIR}/build/"
 "^${PROJECT_SOURCE_DIR}/.git/"
 )
+
+set(
+CPACK_SOURCE_PACKAGE_FILE_NAME
+"jrlmathtools-${PROJECT_VERSION}"
+CACHE INTERNAL "tarball basename"
+)
+set(CPACK_BINARY_DEB "ON")
+set(CPACK_GENERATOR TGZ)
+set(CPACK_GENERATOR DEB)
+
+set(CPACK_PACKAGING_INSTALL_PREFIX "/usr/share/openrobots")
 #message("CPACK_SOURCE_IGNORE_FILES = ${CPACK_SOURCE_IGNORE_FILES}")
 include(CPack)
 
