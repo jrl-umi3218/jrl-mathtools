@@ -2,7 +2,6 @@
 #include <fstream>
 
 #include "jrlMathTools/matrixNxP.h"
-#include "jrlMathTools/vectorN.h"
 
 int main (int argc, char** argv)
 {
