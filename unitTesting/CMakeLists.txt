@@ -1,7 +1,18 @@
+# Copyright 2008, 2009, 2010, Olivier Stasse, 
+#                             Florent Lamiraux,JRL, CNRS/AIST
 #
-# Copyright JRL AIST-CNRS
+# This file is part of jrlMathTools.
+# jrlMathTools is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# Authors: Olivier Stasse, Florent Lamiraux
+# jrlMathTools is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Lesser Public License for more details.
+# You should have received a copy of the GNU Lesser General Public License
+# along with jrlMathTools.  If not, see <http://www.gnu.org/licenses/>.
 #
 
 INCLUDE(CTest)

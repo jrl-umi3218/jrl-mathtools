@@ -1,7 +1,26 @@
-/*! This is a very fast and simple implementation
+/*
+ * Copyright 2008, 2009, 2010, Olivier Stasse,
+ *                             Florent Lamiraux,
+ *                             Francois Keith,
+ *                             Eiichi Yoshida,  CNRS/AIST
+ *
+ * This file is part of jrlMathTools.
+ * jrlMathTools is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * jrlMathTools is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with jrlMathTools.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * This is a very fast and simple implementation
  * of a 3D matrix class of double.
  * 
- * (c) Olivier Stasse and Florent Lamiraux, JRL, CNRS-AIST, ISRI, 2007
+ * 
  */
 
 #ifndef JRLMATHTOOLS_MATRIX3x3_H
@@ -34,18 +53,18 @@ namespace jrlMathTools
 	m[6]=x; m[7] = x; m[8]=x;
       };
 	
-	  /*! Constructor from 9 scalar */
-	  explicit Matrix3x3<T> (
-	const T x0, const T x1, const T x2, 
-	const T x3, const T x4, const T x5, 
-	const T x6, const T x7, const T x8
-	  )
-	  {
+      /*! Constructor from 9 scalar */
+      explicit Matrix3x3<T> (
+			     const T x0, const T x1, const T x2, 
+			     const T x3, const T x4, const T x5, 
+			     const T x6, const T x7, const T x8
+			     )
+      {
 	m[0]=x0; m[1] = x1; m[2]=x2;
 	m[3]=x3; m[4] = x4; m[5]=x5;
 	m[6]=x6; m[7] = x7; m[8]=x8;
-	  };
-
+      };
+      
       /*! Copy constructor */
       Matrix3x3<T> (const struct Matrix3x3<T> &v)
       {
@@ -225,9 +244,9 @@ namespace jrlMathTools
 	  - m[1]*m[3]*m[8]; 
       };
 	
-	  /*! fills with value */
-	  void Fill(T value)
-	  {
+      /*! fills with value */
+      void Fill(T value)
+      {
 	m[0] = value;
 	m[1] = value;
 	m[2] = value;
@@ -237,16 +256,16 @@ namespace jrlMathTools
 	m[6] = value;
 	m[7] = value;
 	m[8] = value;
-	  }
+      }
 	
-	  /*! returns true if matrix is identity */
-	  bool IsIdentity() const
-	  {
+      /*! returns true if matrix is identity */
+      bool IsIdentity() const
+      {
 	return((m[0] == 1) && (m[4] == 1) && (m[8] == 1) && (m[1] == 0)
 		&& (m[2] == 0) && (m[3] == 0) && (m[5] == 0) && (m[6] == 0)
-		&& (m[7] == 0));
-	  }
-		
+	       && (m[7] == 0));
+      }
+      
       /*! Self matrix addition */
       void operator += (const Matrix3x3<T>& B)	
       {	
@@ -289,9 +308,9 @@ namespace jrlMathTools
 	m[8] = temp.m[6] * B.m[2] + temp.m[7] * B.m[5] + temp.m[8] * B.m[8]; 
       };
 	  
-	  /*! Matrix product with a scalar */
-	  void operator *= (const T& t)	
-	  {	
+      /*! Matrix product with a scalar */
+      void operator *= (const T& t)	
+      {	
 	m[0] *= t;
 	m[1] *= t;
 	m[2] *= t;
@@ -301,7 +320,7 @@ namespace jrlMathTools
 	m[6] *= t;
 	m[7] *= t;
 	m[8] *= t;
-	  }
+      }
 
       inline friend std::ostream& operator <<(std::ostream &os,Matrix3x3<T> const &A)
       {
@@ -321,5 +340,3 @@ namespace jrlMathTools
 };
 
 #endif
-
-
