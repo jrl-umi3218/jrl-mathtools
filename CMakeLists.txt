@@ -52,12 +52,14 @@ SET(CMAKE_MODULE_PATH ${${PROJECT_NAME}_SOURCE_DIR}/CMakeModules)
 
 # Prepare the documentation
 # -------------------------
-OPTION(GENERATE_DOC 1 "Generate html documentation")
+OPTION(GENERATE_DOC "Generate html documentation" ON)
 IF (GENERATE_DOC)
   INCLUDE(FindDoxygen)
   IF(DOXYGEN_FOUND)
     MESSAGE(STATUS "Doxygen found")
 	ADD_SUBDIRECTORY(doc)
+  ELSE(DOXYGEN_FOUND)
+    MESSAGE(STATUS "Doxygen not found" )
   ENDIF(DOXYGEN_FOUND)
 ENDIF (GENERATE_DOC)
 
@@ -112,7 +114,8 @@ IF(LAPACK_FOUND)
   ELSE(Boost_FOUND)
     # TO DO : find vnl...
   ENDIF(Boost_FOUND)
-
+ELSE(LAPACK_FOUND)
+  MESSAGE(FATAL_ERROR "Lapack not found... stop here")
 ENDIF(LAPACK_FOUND)
 
 # --- BOOST NUMERIC BINDINGS-------------------------------------
