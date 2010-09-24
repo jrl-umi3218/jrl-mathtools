@@ -189,7 +189,7 @@ ADD_SUBDIRECTORY(unitTesting)
 #----------------
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "JRL Math Tools- Provides small size matrices efficient implementation")
 set(CPACK_PACKAGE_VENDOR "JRL CNRS/AIST")
-set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_CURRENT_SOURCE_DIR}/README)
+set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_CURRENT_SOURCE_DIR}/README.md)
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Olivier Stasse (olivier.stasse@aist.go.jp)")
 
 # The following components are regex's to match anywhere (unless anchored)
