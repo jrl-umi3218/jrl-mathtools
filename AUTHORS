@@ -1,8 +1,20 @@
 This package was written by and with the assistance of
 
-* François Keith                FIXME
-* Florent Lamiraux              FIXME
+* François Keith                francois.keith@aist.go.jp
+- Windows compatibility.
+
+* Florent Lamiraux              florent@laas.fr
+- Package maintenance.
+
 * Nicolas Mansard               FIXME
+- Release v1.2.
+
 * Thomas Moulard                thomas.moulard@gmail.com
-* Olivier Stasse                FIXME
-* Eiichi Yoshida                FIXME
+- Enhancement of Debian package.
+- Aesthetic changes.
+
+* Olivier Stasse                olivier.stasse@aist.go.jp
+- Primary maintainer.
+
+* Eiichi Yoshida                yoshida@laas.fr
+- Debugging.
