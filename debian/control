@@ -16,8 +16,8 @@ Package: libjrl-mathtools-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
-Description: JRL mathematic tools library
- The JRL mathematic tools is a header-only library providing efficient
+Description: JRL mathematical tools library
+ The JRL mathematical tools is a header-only library providing efficient
  computations for small and size fixed matrices.
  .
  This package contains development files (headers and pkg-config file).
@@ -26,8 +26,8 @@ Package: libjrl-mathtools-doc
 Section: doc
 Architecture: any
 Depends: ${misc:Depends}
-Description: documentationf for the JRL mathematic tools library
- The JRL mathematic tools is a header-only library providing efficient
+Description: documentation for the JRL mathematical tools library
+ The JRL mathematical tools is a header-only library providing efficient
  computations for small and size fixed matrices.
  .
  This package contains the Doxygen documentation.
