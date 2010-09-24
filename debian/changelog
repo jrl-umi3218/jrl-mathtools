@@ -1,3 +1,11 @@
+jrl-mathtools (1.4.0.99-2) lucid; urgency=low
+
+  * Switch to lucid.
+  * Add meta-information to control file (Git and homepage).
+  * Remove build number from dependencies versions.
+
+ -- Thomas Moulard <thomas.moulard@gmail.com>  Fri, 24 Sep 2010 14:31:00 +0200
+
 jrl-mathtools (1.4.0.99-1) jaunty; urgency=low
 
   * Initial release.
