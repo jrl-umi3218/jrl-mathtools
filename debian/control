@@ -25,7 +25,7 @@ Description: JRL mathematical tools library
 
 Package: libjrl-mathtools-doc
 Section: doc
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}
 Description: documentation for the JRL mathematical tools library
  The JRL mathematical tools is a header-only library providing efficient
