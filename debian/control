@@ -16,6 +16,7 @@ Package: libjrl-mathtools-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
+Suggests: libjrl-mathtools-doc
 Description: JRL mathematical tools library
  The JRL mathematical tools is a header-only library providing efficient
  computations for small and size fixed matrices.
