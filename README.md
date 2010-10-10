@@ -20,14 +20,24 @@ It is recommended to create a specific directory to install this package.
     cmake [options] ..
     make install
 
+### Dependencies
+
+The matrix abstract layer depends on several packages which
+have to be available on your machine.
+
+ - Libraries:
+   - Boost (>= 1.40)
+     Its detection is controled by the `BOOST_ROOT` variable, see next section
+     for more information.
+   - Lapack library
+     Use the generic purpose `CMAKE_CXX_FLAGS` and `CMAKE_EXE_LINKER_FLAGS`
+     to insert the flags required for the compiler to find your Lapack library
+     if it is installed in a non-standard directory.
+ - System tools:
+   - CMake (>=2.6)
+   - pkg-config
+   - usual compilation tools (GCC/G++, make, etc.)
+
 ### Options
 
 - `-DCMAKE_INSTALL_PREFIX=<path>` defines the installation prefix to `<path>`.
-- `-DBOOSTNUMERICBINDINGS_DIR=<path>` where `<path>` is the installation
-   prefix of Boost numeric bindings. This is required is the numeric bindings
-   are not installed in a standard prefix[1].
-
-
-[1] Boost numeric bindings have been merged into Boost uBLAS in Boost
-1.41. By consequence, if your Boost version is newer than 1.41, you
-should ignore this option.
