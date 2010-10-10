@@ -3,7 +3,8 @@ Priority: extra
 Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
 Build-Depends: debhelper (>= 7), cmake (>= 2.6),
 	       doxygen (>= 1.6.3),
-	       libboost-dev (>= 1.35),
+	       libboost-dev (>= 1.40),
+	       libboost-test-dev (>= 1.40),
 	       liblapack-dev (>=1.2),
 	       gfortran (>= 4:4.4.3)
 Standards-Version: 3.8.4
@@ -15,7 +16,10 @@ Homepage: http://github.com/jrl-umi3218/jrl-mathtools
 Package: libjrl-mathtools-dev
 Section: libdevel
 Architecture: any
-Depends: libboost-dev (>= 1.35), liblapack-dev (>=1.2), ${misc:Depends}
+Depends: libboost-dev (>= 1.35),
+	 liblapack-dev (>= 1.2),
+	 libboost-test-dev (>= 1.40),
+	 ${misc:Depends}
 Suggests: libjrl-mathtools-doc
 Description: JRL mathematical tools library
  The JRL mathematical tools is a header-only library providing efficient
