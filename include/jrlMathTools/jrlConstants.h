@@ -13,15 +13,15 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with jrlMathTools.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  * Define usual constants
- * 
+ *
  */
 
 #ifndef JRLMATHTOOLS_JRLCONSTANTS_H
 #define JRLMATHTOOLS_JRLCONSTANTS_H
 
-#include <math.h>
+#include <cmath>
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif /*M_PI*/

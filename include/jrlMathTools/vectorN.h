@@ -1,5 +1,5 @@
 /*
- * 
+ *
  * Copyright 2008, 2009, 2010, Olivier Stasse,
  *                             Florent Lamiraux,  CNRS/AIST
  *
@@ -43,7 +43,7 @@ namespace traits=boost_ublas::raw;
 namespace traits = boost::numeric::bindings::traits;
 #define MRAWDATA(x) traits::matrix_storage(x)
 #define VRAWDATA(x) traits::vector_storage(x)
-#endif 
+#endif
 
 //namespace lapack = boost::numeric::bindings::lapack;
 

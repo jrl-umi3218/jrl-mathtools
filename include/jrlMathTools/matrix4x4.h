@@ -1,6 +1,6 @@
 /*! This is a very fast and simple implementation
  * of a 3D matrix class of double.
- * 
+ *
  * Copyright 2008, 2009, 2010, Olivier Stasse,
  *                             Florent Lamiraux,
  *                             Francois Keith,
@@ -32,16 +32,16 @@ namespace jrlMathTools
   /**
      \brief Template to handle a 4x4 matrix
   */
-  template <typename T> 
+  template <typename T>
     struct Matrix4x4
     {
       /*! The data array. */
       T m[16];
 
       /*! Defaut constructor. */
-      Matrix4x4<T>() 
-      {  m[0]  = 0.0;  m[1]  = 0.0; m[2]  = 0.0; m[3]  = 0.0; 
-	m[4]  = 0.0;  m[5]  = 0.0; m[6]  = 0.0; m[7]  = 0.0; 
+      Matrix4x4<T>()
+      {  m[0]  = 0.0;  m[1]  = 0.0; m[2]  = 0.0; m[3]  = 0.0;
+	m[4]  = 0.0;  m[5]  = 0.0; m[6]  = 0.0; m[7]  = 0.0;
 	m[8]  = 0.0;  m[9]  = 0.0; m[10] = 0.0; m[11] = 0.0;
 	m[12] = 0.0;  m[13] = 0.0; m[14] = 0.0; m[15] = 0.0;
       };
@@ -51,14 +51,14 @@ namespace jrlMathTools
       {
 	for(int i=0;i<16;m[i++]=x);
       };
-	
+
       /*! Copy constructor */
       Matrix4x4<T> (const struct Matrix4x4<T> &v)
       {
 	for(int i=0;i<16;i++)
 	  m[i] = v.m[i];
       };
-      
+
       /*! Hybrid copy constructor */
       template <typename T2>
       Matrix4x4<T> (const struct Matrix4x4<T2> &v)
@@ -66,37 +66,37 @@ namespace jrlMathTools
 	for(int i=0;i<16;i++)
 	  m[i] = v.m[i];
       };
-      
+
       /*! ith element considering the matrix as an array. */
-      inline T& operator[](unsigned int i) 
+      inline T& operator[](unsigned int i)
       { return m[i];};
-	
+
       /*! ith element considering the matrix as an array. */
       inline const T& operator[](unsigned int i) const
       { return m[i];};
-      
+
       /*! Access by giving the (i,j) element. */
       inline T& operator()(unsigned int i, unsigned int j)
       { return m[4*i+j]; };
-      
+
       /*! Access by giving the (i,j) element. */
       inline T operator()(unsigned int i, unsigned int j) const
       { return m[4*i+j]; };
 
       /*! Set to zero matrix */
-      inline void setZero(void) 
+      inline void setZero(void)
       {
 	for(int i=0;i<16;i++)
 	  m[i] = 0.0;
       };
-      
+
       /*! Set to identity */
       void setIdentity(void)
       {
 	setZero();
 	m[0] = m[5] = m[10] = m[15] = 1.0;
       };
-      
+
       /*! Addition operator */
       Matrix4x4<T>  operator+(const Matrix4x4<T> & B) const
       {
@@ -104,13 +104,13 @@ namespace jrlMathTools
 	A.m[0] = m[0] + B.m[0]; A.m[1] = m[1] + B.m[1]; A.m[2] = m[2] + B.m[2];
 	A.m[3] = m[3] + B.m[3]; A.m[4] = m[4] + B.m[4]; A.m[5] = m[5] + B.m[5];
 	A.m[6] = m[6] + B.m[6]; A.m[7] = m[7] + B.m[7]; A.m[8] = m[8] + B.m[8];
-	A.m[9] = m[9] + B.m[9]; 
-	A.m[10] = m[10] + B.m[10]; A.m[11] = m[11] + B.m[11];A.m[12] = m[12] + B.m[12]; 
-	A.m[13] = m[13] + B.m[13]; A.m[14] = m[14] + B.m[14];A.m[15] = m[15] + B.m[15]; 
-	
+	A.m[9] = m[9] + B.m[9];
+	A.m[10] = m[10] + B.m[10]; A.m[11] = m[11] + B.m[11];A.m[12] = m[12] + B.m[12];
+	A.m[13] = m[13] + B.m[13]; A.m[14] = m[14] + B.m[14];A.m[15] = m[15] + B.m[15];
+
 	return A;
       };
-      
+
       /*! Substraction operator */
       struct Matrix4x4<T>  operator-(const struct Matrix4x4<T> &B) const
       {
@@ -118,9 +118,9 @@ namespace jrlMathTools
 	A.m[0] = m[0] - B.m[0]; A.m[1] = m[1] - B.m[1]; A.m[2] = m[2] - B.m[2];
 	A.m[3] = m[3] - B.m[3]; A.m[4] = m[4] - B.m[4]; A.m[5] = m[5] - B.m[5];
 	A.m[6] = m[6] - B.m[6]; A.m[7] = m[7] - B.m[7]; A.m[8] = m[8] - B.m[8];
-	A.m[9] = m[9] - B.m[9]; 
-	A.m[10] = m[10] - B.m[10]; A.m[11] = m[11] - B.m[11];A.m[12] = m[12] - B.m[12]; 
-	A.m[13] = m[13] - B.m[13]; A.m[14] = m[14] - B.m[14];A.m[15] = m[15] - B.m[15]; 
+	A.m[9] = m[9] - B.m[9];
+	A.m[10] = m[10] - B.m[10]; A.m[11] = m[11] - B.m[11];A.m[12] = m[12] - B.m[12];
+	A.m[13] = m[13] - B.m[13]; A.m[14] = m[14] - B.m[14];A.m[15] = m[15] - B.m[15];
 	return A;
       };
 
@@ -146,7 +146,7 @@ namespace jrlMathTools
 	A.m[14] = m[12] * B.m[2] + m[13] * B.m[6] + m[14] * B.m[10] + m[15] * B.m[14];
 	A.m[15] = m[12] * B.m[3] + m[13] * B.m[7] + m[14] * B.m[11] + m[15] * B.m[15];
 	return A;
-	
+
       };
 
       /*! Multiplication operator with another matrix */
@@ -167,7 +167,7 @@ namespace jrlMathTools
 	C.m[12] = m[12] * B.m[0] + m[13] * B.m[4] + m[14] * B.m[8] + m[15] * B.m[12];
 	C.m[13] = m[12] * B.m[1] + m[13] * B.m[5] + m[14] * B.m[9] + m[15] * B.m[13];
 	C.m[14] = m[12] * B.m[2] + m[13] * B.m[6] + m[14] * B.m[10] + m[15] * B.m[14];
-	C.m[15] = m[12] * B.m[3] + m[13] * B.m[7] + m[14] * B.m[11] + m[15] * B.m[15];	
+	C.m[15] = m[12] * B.m[3] + m[13] * B.m[7] + m[14] * B.m[11] + m[15] * B.m[15];
       };
 
       /*! Multiplication operator with another matrix */
@@ -202,7 +202,7 @@ namespace jrlMathTools
 
       /*! Multiplication operator with a constant */
       Matrix4x4<T> operator * (const double & r) const
-      {	
+      {
 	struct Matrix4x4<T> result;
 	result.m[0] = m[0] * r;
 	result.m[1] = m[1] * r;
@@ -224,19 +224,19 @@ namespace jrlMathTools
       };
 
 
-      
-      
+
+
       /*! Transposition */
       Matrix4x4<T> Transpose() const
       {
 	struct Matrix4x4 A;
-	A.m[0]  = m[0];  A.m[1]  = m[4]; A.m[2]  = m[8];  A.m[3]  = m[12]; 
-	A.m[4]  = m[1];  A.m[5]  = m[5]; A.m[6]  = m[9];  A.m[7]  = m[13]; 
+	A.m[0]  = m[0];  A.m[1]  = m[4]; A.m[2]  = m[8];  A.m[3]  = m[12];
+	A.m[4]  = m[1];  A.m[5]  = m[5]; A.m[6]  = m[9];  A.m[7]  = m[13];
 	A.m[8]  = m[2];  A.m[9]  = m[6]; A.m[10] = m[10]; A.m[11] = m[14];
 	A.m[12] = m[3];  A.m[13] = m[7]; A.m[14] = m[11]; A.m[15] = m[15];
 	return A;
       };
- 
+
       /*! Inversion */
       void Inversion(Matrix4x4 &A) const
       {
@@ -263,7 +263,7 @@ namespace jrlMathTools
 
 	A = A * det;
       };
-     
+
       /*! Inversion */
       Matrix4x4<T> Inversion()
       {
@@ -289,23 +289,23 @@ namespace jrlMathTools
 	A[15] = m[1]*m[6]*m[8] - m[2]*m[5]*m[8] + m[2]*m[4]*m[9] - m[0]*m[6]*m[9] - m[1]*m[4]*m[10] + m[0]*m[5]*m[10];
 	return A * det;
       };
-      
+
       /*! Determinant */
-      T determinant() const	
-      { 
+      T determinant() const
+      {
 	return m[3] * m[6] * m[9] * m[12]-m[2] * m[7] * m[9] * m[12]-m[3] * m[5] * m[10] * m[12]+m[1] * m[7]* m[10] * m[12]+
 	  m[2] * m[5] * m[11] * m[12]-m[1] * m[6] * m[11] * m[12]-m[3] * m[6] * m[8] * m[13]+m[2] * m[7]* m[8] * m[13]+
 	  m[3] * m[4] * m[10] * m[13]-m[0] * m[7] * m[10] * m[13]-m[2] * m[4] * m[11] * m[13]+m[0] * m[6]*m[11]*m[13]+
 	  m[3] * m[5] * m[8] * m[14]-m[1] * m[7] * m[8] * m[14]-m[3] * m[4] * m[9] * m[14]+m[0] * m[7] * m[9] * m[14]+
 	  m[1] * m[4] * m[11] * m[14]-m[0] * m[5] * m[11] * m[14]-m[2] * m[5] * m[8] * m[15]+m[1] *m[6] * m[8] * m[15]+
-	  m[2] * m[4] * m[9] * m[15]-m[0] * m[6] * m[9] * m[15]-m[1] * m[4] * m[10] * m[15]+m[0] * m[5] * m[10] * m[15];  
+	  m[2] * m[4] * m[9] * m[15]-m[0] * m[6] * m[9] * m[15]-m[1] * m[4] * m[10] * m[15]+m[0] * m[5] * m[10] * m[15];
       };
 
       T trace() const	{ return m[0]+m[5]+m[10]+m[15]; }
 
       /*! Self matrix addition */
-      void operator += (const Matrix3x3<T>& B)	
-      {	
+      void operator += (const Matrix3x3<T>& B)
+      {
 	m[0] += B.m[0];
 	m[1] += B.m[1];
 	m[2] += B.m[2];
@@ -314,7 +314,7 @@ namespace jrlMathTools
 	m[5] += B.m[5];
 	m[6] += B.m[6];
 	m[7] += B.m[7];
-	m[8] += B.m[8]; 
+	m[8] += B.m[8];
 	m[9] += B.m[0];
 	m[10] += B.m[10];
 	m[11] += B.m[11];
@@ -327,8 +327,8 @@ namespace jrlMathTools
 
 
       /*! Local matrix substraction */
-      void operator -= (const Matrix4x4<T>& B)	
-      {	
+      void operator -= (const Matrix4x4<T>& B)
+      {
 	m[0] -= B.m[0];
 	m[1] -= B.m[1];
 	m[2] -= B.m[2];
@@ -337,7 +337,7 @@ namespace jrlMathTools
 	m[5] -= B.m[5];
 	m[6] -= B.m[6];
 	m[7] -= B.m[7];
-	m[8] -= B.m[8]; 
+	m[8] -= B.m[8];
 	m[9] -= B.m[9];
 	m[10] -= B.m[10];
 	m[11] -= B.m[11];
@@ -347,9 +347,9 @@ namespace jrlMathTools
 	m[15] -= B.m[15];
 
       };
-      
+
       ///Local matrix multiplication
-      void operator *= (const Matrix4x4<T>& B)	
+      void operator *= (const Matrix4x4<T>& B)
       {	Matrix4x4<T> temp(*this);
 	m[0] = temp.m[0] * B.m[0] + temp.m[1] * B.m[4] + temp.m[2] * B.m[8] + temp.m[3] * B.m[12];
 	m[1] = temp.m[0] * B.m[1] + temp.m[1] * B.m[5] + temp.m[2] * B.m[9] + temp.m[3] * B.m[13];
@@ -370,8 +370,8 @@ namespace jrlMathTools
       };
 
       ///Local matrix multiplication
-      void operator *= (const T &t)	
-      {	
+      void operator *= (const T &t)
+      {
 	m[0] *= t;
 	m[1] *= t;
 	m[2] *= t;
@@ -389,7 +389,7 @@ namespace jrlMathTools
 	m[14] *= t;
 	m[15] *= t;
       };
-	
+
       inline friend std::ostream& operator <<(std::ostream &os,Matrix4x4<T> const &A)
       {
 	for(int i=0;i<4;i++)
@@ -402,5 +402,5 @@ namespace jrlMathTools
       };
     };
 };
-  
+
 #endif

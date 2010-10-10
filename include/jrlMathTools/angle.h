@@ -21,7 +21,7 @@
 #define JRLMATHTOOLS_ANGLE_H
 
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include "jrlConstants.h"
 
 namespace jrlMathTools {
@@ -85,7 +85,7 @@ namespace jrlMathTools {
     /**
        \brief Multiplication of an angle by a real number.
     */
-    friend Cangle operator*(const double& coef, const Cangle& inAngle) 
+    friend Cangle operator*(const double& coef, const Cangle& inAngle)
     {
       return Cangle(coef*inAngle.attAngle);
     };
@@ -96,7 +96,7 @@ namespace jrlMathTools {
        \param inAngle second angle of interpolation.
        \return an angle between this one and inAngle along the shortest arc.
        \li if alpha = 0, return this angle,
-       \li if alpha = 1, return inAngle. 
+       \li if alpha = 1, return inAngle.
     */
     Cangle interpolate(const double& alpha, const Cangle& inAngle) const
     {
