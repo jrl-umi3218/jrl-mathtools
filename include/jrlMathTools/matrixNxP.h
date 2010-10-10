@@ -19,9 +19,9 @@
 #ifndef JRLMATHTOOLS_MATRIXNXP_H
 #define JRLMATHTOOLS_MATRIXNXP_
 
-#include "boost/numeric/ublas/matrix_proxy.hpp"
-#include "boost/numeric/ublas/matrix.hpp"
-#include "boost/numeric/ublas/io.hpp"
+#include <boost/numeric/ublas/matrix_proxy.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/io.hpp>
 
 
 #include "jrlMathTools/vectorN.h"

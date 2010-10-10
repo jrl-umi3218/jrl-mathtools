@@ -21,10 +21,10 @@
 #ifndef JRLMATHTOOLS_VECTORN_H
 #define JRLMATHTOOLS_VECTORN_H
 
-#include "boost/numeric/ublas/vector.hpp"
-#include "boost/numeric/ublas/vector_proxy.hpp"
+#include <boost/numeric/ublas/vector.hpp>
+#include <boost/numeric/ublas/vector_proxy.hpp>
 
-#include "boost/version.hpp"
+#include <boost/version.hpp>
 
 
 /*
@@ -34,12 +34,12 @@
 namespace boost_ublas = boost::numeric::ublas;
 
 #if BOOST_VERSION >= 104000
-#include "boost/numeric/ublas/detail/raw.hpp"
+#include <boost/numeric/ublas/detail/raw.hpp>
 namespace traits=boost_ublas::raw;
 #define MRAWDATA(x) x.data().begin()
 #define VRAWDATA(x) x.data().begin()
 #else
-#include "boost/numeric/bindings/traits/ublas_matrix.hpp"
+#include <boost/numeric/bindings/traits/ublas_matrix.hpp>
 namespace traits = boost::numeric::bindings::traits;
 #define MRAWDATA(x) traits::matrix_storage(x)
 #define VRAWDATA(x) traits::vector_storage(x)
