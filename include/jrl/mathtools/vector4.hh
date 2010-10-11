@@ -20,6 +20,7 @@
 
 #ifndef JRL_MATHTOOLS_VECTOR4_HH
 # define JRL_MATHTOOLS_VECTOR4_HH
+# include <cmath>
 # include <iostream>
 # include <stdexcept>
 
@@ -154,7 +155,7 @@ namespace jrlMathTools
     }
 
     /// \brief Binary operator -=.
-    inline void operator-= (const Vector4D<T>& v) const
+    inline void operator-= (const Vector4D<T>& v)
     {
       m_x -= v.m_x;
       m_y -= v.m_y;

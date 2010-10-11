@@ -41,6 +41,7 @@ JRL_MATHTOOLS_TEST(angle)
 
 # Vector tests.
 JRL_MATHTOOLS_TEST(vector3)
+JRL_MATHTOOLS_TEST(vector4)
 
 # Matrix tests.
 
