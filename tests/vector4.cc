@@ -169,12 +169,6 @@ BOOST_AUTO_TEST_CASE (divide)
   BOOST_CHECK_EQUAL (v, vres);
 }
 
-BOOST_AUTO_TEST_CASE (normalize)
-{
-  //FIXME.
-}
-
-
 BOOST_AUTO_TEST_CASE (norm)
 {
   jrlMathTools::Vector4D<double> v;
