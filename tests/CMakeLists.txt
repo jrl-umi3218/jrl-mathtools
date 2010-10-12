@@ -15,7 +15,7 @@
 # along with jrl-mathtools.  If not, see <http://www.gnu.org/licenses/>.
 
 # Add Boost path to include directories.
-INCLUDE_DIRECTORIES(${Boost_LIBRARY_DIRS})
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 
 # Make Boost.Test generates the main function in test cases.
 ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN)
