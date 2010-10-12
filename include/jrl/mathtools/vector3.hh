@@ -40,9 +40,9 @@ namespace jrlMathTools
     /// \brief Default constructor: all fields are set to zero.
     inline Vector3D ()
     {
-      m_x= 0.0;
-      m_y=0.0;
-      m_z=0.0;
+      m_x= T ();
+      m_y= T ();
+      m_z= T ();
     }
 
     inline Vector3D (const T x, const T y, const T z)

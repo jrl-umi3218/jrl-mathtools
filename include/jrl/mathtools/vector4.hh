@@ -40,10 +40,10 @@ namespace jrlMathTools
     /// Default constructor: all fields are set to zero.
     inline Vector4D ()
     {
-      m_x = 0.;
-      m_y = 0.;
-      m_z = 0.;
-      m_w = 0.;
+      m_x = T ();
+      m_y = T ();
+      m_z = T ();
+      m_w = T ();
     }
 
     explicit Vector4D<T> (const T& x,
