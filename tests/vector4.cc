@@ -22,6 +22,8 @@
 #include <boost/test/output_test_stream.hpp>
 #include <boost/mpl/list.hpp>
 
+#include "common.hh"
+
 using boost::test_tools::output_test_stream;
 
 BOOST_AUTO_TEST_CASE (display)
@@ -35,29 +37,6 @@ BOOST_AUTO_TEST_CASE (display)
 
   v.display (output);
   BOOST_CHECK (output.is_equal ("5 4 9 10"));
-}
-
-// This is a custom numeric type used to check
-// that the container can handle non-native types.
-struct MyNumericType
-{
-public:
-  MyNumericType (int i = 0)
-    : i (i)
-  {}
-
-  bool operator== (const MyNumericType& mnt) const
-  {
-    return i == mnt.i;
-  }
-
-  int i;
-};
-
-std::ostream& operator<< (std::ostream& os, const MyNumericType& mnt)
-{
-  os << mnt.i;
-  return os;
 }
 
 

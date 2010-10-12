@@ -20,6 +20,7 @@
 
 #ifndef JRL_MATHTOOLS_MATRIX3x3_HH
 # define JRL_MATHTOOLS_MATRIX3x3_HH
+# include <stdexcept>
 # include <jrl/mathtools/fwd.hh>
 # include <jrlMathTools/vector3.h>
 
@@ -38,9 +39,9 @@ namespace jrlMathTools
     /// Default constructor.
     Matrix3x3<T> ()
     {
-      m[0]=0.0; m[1] = 0.0; m[2]=0.0;
-      m[3]=0.0; m[4] = 0.0; m[5]=0.0;
-      m[6]=0.0; m[7] = 0.0; m[8]=0.0;
+      m[0]=T (); m[1] = T (); m[2]=T ();
+      m[3]=T (); m[4] = T (); m[5]=T ();
+      m[6]=T (); m[7] = T (); m[8]=T ();
     }
 
     /// \brief Constructor form a scalar.
@@ -83,41 +84,49 @@ namespace jrlMathTools
     /// \brief i-th element considering the matrix as an array.
     inline T& operator[] (unsigned int i)
     {
+      if (i >= 9)
+	throw std::logic_error ("bad index");
       return m[i];
     }
 
     /// \brief i-th element considering the matrix as an array.
     inline const T& operator[] (unsigned int i) const
     {
+      if (i >= 9)
+	throw std::logic_error ("bad index");
       return m[i];
     }
 
     /// \brief Access by giving the (i,j) element.
     inline T& operator() (unsigned int i, unsigned int j)
     {
+      if (i >= 3 || j >= 3)
+	throw std::logic_error ("bad index");
       return m[3*i+j];
     }
 
     /// \brief Access by giving the (i,j) element.
     inline const T & operator() (unsigned int i, unsigned int j) const
     {
+      if (i >= 3 || j >= 3)
+	throw std::logic_error ("bad index");
       return m[3*i+j];
     }
 
     /// \brief Set to zero matrix.
     inline void setZero ()
     {
-      m[0] = 0.0; m[1] = 0.0; m[2] = 0.0;
-      m[3] = 0.0; m[4] = 0.0; m[5] = 0.0;
-      m[6] = 0.0; m[7] = 0.0; m[8] = 0.0;
+      m[0] = T (); m[1] = T (); m[2] = T ();
+      m[3] = T (); m[4] = T (); m[5] = T ();
+      m[6] = T (); m[7] = T (); m[8] = T ();
     }
 
     /// \brief Set to identity.
     inline void setIdentity()
     {
-      m[0] = 1.0; m[1] = 0.0; m[2] = 0.0;
-      m[3] = 0.0; m[4] = 1.0; m[5] = 0.0;
-      m[6] = 0.0; m[7] = 0.0; m[8] = 1.0;
+      m[0] = 1;    m[1] = T (); m[2] = T ();
+      m[3] = T (); m[4] = 1;    m[5] = T ();
+      m[6] = T (); m[7] = T (); m[8] = 1;
     }
 
     /// \brief Adition operator.
@@ -267,9 +276,9 @@ namespace jrlMathTools
     bool IsIdentity () const
     {
       return
-	((m[0] == 1) && (m[4] == 1) && (m[8] == 1) && (m[1] == 0)
-	 && (m[2] == 0) && (m[3] == 0) && (m[5] == 0) && (m[6] == 0)
-	 && (m[7] == 0));
+	((m[0] == 1) && (m[4] == 1) && (m[8] == 1) && (m[1] == T ())
+	 && (m[2] == T ()) && (m[3] == T ()) && (m[5] == T ()) && (m[6] == T ())
+	 && (m[7] == T ()));
     }
 
     /// \brief Self matrix addition.

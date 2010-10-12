@@ -23,6 +23,8 @@
 
 #ifndef JRL_MATHTOOLS_MATRIX4x4_HH
 # define JRL_MATHTOOLS_MATRIX4x4_HH
+# include <stdexcept>
+
 # include <jrl/mathtools/fwd.hh>
 
 # include <jrl/mathtools/vector4.hh>
@@ -40,10 +42,10 @@ namespace jrlMathTools
     /// \brief Defaut constructor.
     Matrix4x4<T> ()
     {
-      m[0]  = 0.0;  m[1]  = 0.0; m[2]  = 0.0; m[3]  = 0.0;
-      m[4]  = 0.0;  m[5]  = 0.0; m[6]  = 0.0; m[7]  = 0.0;
-      m[8]  = 0.0;  m[9]  = 0.0; m[10] = 0.0; m[11] = 0.0;
-      m[12] = 0.0;  m[13] = 0.0; m[14] = 0.0; m[15] = 0.0;
+      m[0]  = T ();  m[1]  = T (); m[2]  = T (); m[3]  = T ();
+      m[4]  = T ();  m[5]  = T (); m[6]  = T (); m[7]  = T ();
+      m[8]  = T ();  m[9]  = T (); m[10] = T (); m[11] = T ();
+      m[12] = T ();  m[13] = T (); m[14] = T (); m[15] = T ();
     }
 
     /// \brief Constructor form a scalar.
@@ -71,24 +73,32 @@ namespace jrlMathTools
     /// \brief ith element considering the matrix as an array.
     inline T& operator[] (unsigned int i)
     {
+      if (i >= 16)
+	throw std::logic_error ("bad index");
       return m[i];
     }
 
     /// \brief ith element considering the matrix as an array.
     inline const T& operator[] (unsigned int i) const
     {
+      if (i >= 16)
+	throw std::logic_error ("bad index");
       return m[i];
     }
 
     /// \brief Access by giving the (i,j) element.
     inline T& operator() (unsigned int i, unsigned int j)
     {
+      if (i >= 4 || j >= 4)
+	throw std::logic_error ("bad index");
       return m[4*i+j];
     }
 
     /// \brief Access by giving the (i,j) element.
     inline T operator() (unsigned int i, unsigned int j) const
     {
+      if (i >= 4 || j >= 4)
+	throw std::logic_error ("bad index");
       return m[4*i+j];
     }
 
