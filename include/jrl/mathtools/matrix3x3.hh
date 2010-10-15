@@ -338,7 +338,7 @@ namespace jrlMathTools
       m[8] *= t;
     }
 
-    inline std::ostream& display (std::ostream& os)
+    inline std::ostream& display (std::ostream& os) const
     {
       for(int i = 0; i < 3; ++i)
 	{
