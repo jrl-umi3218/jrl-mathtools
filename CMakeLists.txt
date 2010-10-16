@@ -26,8 +26,10 @@ SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-cmakemodules")
 
 
 SET(${PROJECT_NAME}_HEADERS
-    include/jrl/mathtools/constants.hh
     include/jrl/mathtools/angle.hh
+    include/jrl/mathtools/constants.hh
+    include/jrl/mathtools/fwd.hh
+    include/jrl/mathtools/io.hh
     include/jrl/mathtools/vector3.hh
     include/jrl/mathtools/vector4.hh
     include/jrl/mathtools/matrix3x3.hh
