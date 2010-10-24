@@ -1,9 +1,11 @@
-<area shape="rect" href="$fwd_8hh.html" title="jrl/mathtools/fwd.hh" alt="" coords="433,239,580,265">
-<area shape="rect" href="$deprecated_8hh.html" title="jrl/mathtools/deprecated.hh" alt="" coords="192,84,389,111">
-<area shape="rect" href="$vector3_8hh.html" title="jrl/mathtools/vector3.hh" alt="" coords="544,161,717,188">
-<area shape="rect" href="$vector4_8hh.html" title="jrl/mathtools/vector4.hh" alt="" coords="741,161,915,188">
-<area shape="rect" href="$vectorN_8hh.html" title="jrl/mathtools/vectorN.hh" alt="" coords="2008,161,2184,188">
-<area shape="rect" href="$matrix3x3_8hh.html" title="jrl/mathtools/matrix3x3.hh" alt="" coords="1040,161,1229,188">
-<area shape="rect" href="$matrix4x4_8hh.html" title="jrl/mathtools/matrix4x4.hh" alt="" coords="733,84,923,111">
-<area shape="rect" href="$matrixNxP_8hh.html" title="jrl/mathtools/matrixNxP.hh" alt="" coords="1424,84,1613,111">
-<area shape="rect" href="$io_8hh.html" title="jrl/mathtools/io.hh" alt="" coords="947,84,1083,111">
+<map id="G" name="G">
+<area shape="rect" href="$fwd_8hh.html" title="jrl/mathtools/fwd.hh" alt="" coords="409,237,543,267"/>
+<area shape="rect" href="$deprecated_8hh.html" title="jrl/mathtools/deprecated.hh" alt="" coords="179,83,357,112"/>
+<area shape="rect" href="$vector3_8hh.html" title="jrl/mathtools/vector3.hh" alt="" coords="513,160,671,189"/>
+<area shape="rect" href="$vector4_8hh.html" title="jrl/mathtools/vector4.hh" alt="" coords="695,160,852,189"/>
+<area shape="rect" href="$vector_n_8hh.html" title="jrl/mathtools/vectorN.hh" alt="" coords="1865,160,2025,189"/>
+<area shape="rect" href="$matrix3x3_8hh.html" title="jrl/mathtools/matrix3x3.hh" alt="" coords="977,160,1148,189"/>
+<area shape="rect" href="$matrix4x4_8hh.html" title="jrl/mathtools/matrix4x4.hh" alt="" coords="688,83,859,112"/>
+<area shape="rect" href="$matrix_nx_p_8hh.html" title="jrl/mathtools/matrixNxP.hh" alt="" coords="1328,83,1504,112"/>
+<area shape="rect" href="$io_8hh.html" title="jrl/mathtools/io.hh" alt="" coords="883,83,1005,112"/>
+</map>
