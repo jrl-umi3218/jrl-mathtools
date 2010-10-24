@@ -1,0 +1,1071 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<tagfile>
+  <compound kind="page">
+    <name>main</name>
+    <title></title>
+    <filename>main</filename>
+    <docanchor file="main">intro_jrlMathTools</docanchor>
+  </compound>
+  <compound kind="file">
+    <name>angle.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00006</filename>
+    <class kind="class">jrlMathTools::Cangle</class>
+    <namespace>jrlMathTools</namespace>
+  </compound>
+  <compound kind="file">
+    <name>jrlConstants.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00007</filename>
+  </compound>
+  <compound kind="file">
+    <name>matrix3x3.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00008</filename>
+    <class kind="struct">jrlMathTools::Matrix3x3</class>
+    <namespace>jrlMathTools</namespace>
+  </compound>
+  <compound kind="file">
+    <name>matrix4x4.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00009</filename>
+    <class kind="struct">jrlMathTools::Matrix4x4</class>
+    <namespace>jrlMathTools</namespace>
+  </compound>
+  <compound kind="file">
+    <name>matrixNxP.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00010</filename>
+    <namespace>jrlMathTools</namespace>
+    <member kind="define">
+      <type>#define</type>
+      <name>JRLMATHTOOLS_MATRIXNXP_</name>
+      <anchorfile>a00010.html</anchorfile>
+      <anchor>a5e6df8936e6f46048f52f788f1fa61fb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>boost_ublas::matrix&lt; double &gt;</type>
+      <name>matrixNxP</name>
+      <anchorfile>a00010.html</anchorfile>
+      <anchor>a43dc79955cc6c385ce61d6bf515732c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>dgesvd_</name>
+      <anchorfile>a00010.html</anchorfile>
+      <anchor>a1d86742eb58e644a66462dc8ae3de148</anchor>
+      <arglist>(char const *jobu, char const *jobvt, int const *m, int const *n, double *a, int const *lda, double *s, double *u, int const *ldu, double *vt, int const *ldvt, double *work, int const *lwork, int *info)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>_resize</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>af88d2b589ae57c2c398abf6077a6d9dc</anchor>
+      <arglist>(matrixNxP &amp;mat1, const matrixNxP &amp;mat2)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>_resizeInv</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>a73eae6bf100949bd926ffa57459688f0</anchor>
+      <arglist>(matrixNxP &amp;res, const matrixNxP &amp;mat2)</arglist>
+    </member>
+    <member kind="function">
+      <type>matrixNxP &amp;</type>
+      <name>pseudoInverse</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>ac26f0d9ed57199698e6bae3e06f078f3</anchor>
+      <arglist>(const matrixNxP &amp;matrix, matrixNxP &amp;outInverse, const double threshold=1e-6, matrixNxP *Uref=NULL, vectorN *Sref=NULL, matrixNxP *Vref=NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>matrixNxP</type>
+      <name>dampedInverse</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>acb34c0db9a60dcac3e56ada048aa5cf2</anchor>
+      <arglist>(const matrixNxP &amp;inMatrix, matrixNxP &amp;invMatrix, const double threshold=1e-6, matrixNxP *Uref=NULL, vectorN *Sref=NULL, matrixNxP *Vref=NULL)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>package.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/doc/additionalDoc/</path>
+    <filename>a00011</filename>
+  </compound>
+  <compound kind="file">
+    <name>vector3.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00012</filename>
+    <class kind="struct">jrlMathTools::Vector3D</class>
+    <namespace>jrlMathTools</namespace>
+  </compound>
+  <compound kind="file">
+    <name>vector4.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00013</filename>
+    <class kind="struct">jrlMathTools::Vector4D</class>
+    <namespace>jrlMathTools</namespace>
+  </compound>
+  <compound kind="file">
+    <name>vectorN.h</name>
+    <path>/home/thomas/profiles/laas/src/unstable/jrl/jrl-mathtools/include/jrlMathTools/</path>
+    <filename>a00014</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>MRAWDATA</name>
+      <anchorfile>a00014.html</anchorfile>
+      <anchor>a57a66b4c84cff81707e398b940e1ef68</anchor>
+      <arglist>(x)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>VRAWDATA</name>
+      <anchorfile>a00014.html</anchorfile>
+      <anchor>a48c4b4430d20b6dbc58aeeefd90c0c13</anchor>
+      <arglist>(x)</arglist>
+    </member>
+    <member kind="typedef">
+      <type>boost_ublas::vector&lt; double &gt;</type>
+      <name>vectorN</name>
+      <anchorfile>a00014.html</anchorfile>
+      <anchor>aae58ddf3e4db6ecec278b41e6c958bbd</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>jrlMathTools</name>
+    <filename>a00015.html</filename>
+    <class kind="class">jrlMathTools::Cangle</class>
+    <class kind="struct">jrlMathTools::Matrix3x3</class>
+    <class kind="struct">jrlMathTools::Matrix4x4</class>
+    <class kind="struct">jrlMathTools::Vector3D</class>
+    <class kind="struct">jrlMathTools::Vector4D</class>
+    <member kind="function">
+      <type>void</type>
+      <name>_resize</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>af88d2b589ae57c2c398abf6077a6d9dc</anchor>
+      <arglist>(matrixNxP &amp;mat1, const matrixNxP &amp;mat2)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>_resizeInv</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>a73eae6bf100949bd926ffa57459688f0</anchor>
+      <arglist>(matrixNxP &amp;res, const matrixNxP &amp;mat2)</arglist>
+    </member>
+    <member kind="function">
+      <type>matrixNxP &amp;</type>
+      <name>pseudoInverse</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>ac26f0d9ed57199698e6bae3e06f078f3</anchor>
+      <arglist>(const matrixNxP &amp;matrix, matrixNxP &amp;outInverse, const double threshold=1e-6, matrixNxP *Uref=NULL, vectorN *Sref=NULL, matrixNxP *Vref=NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>matrixNxP</type>
+      <name>dampedInverse</name>
+      <anchorfile>a00015.html</anchorfile>
+      <anchor>acb34c0db9a60dcac3e56ada048aa5cf2</anchor>
+      <arglist>(const matrixNxP &amp;inMatrix, matrixNxP &amp;invMatrix, const double threshold=1e-6, matrixNxP *Uref=NULL, vectorN *Sref=NULL, matrixNxP *Vref=NULL)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>jrlMathTools::Cangle</name>
+    <filename>a00001.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Cangle</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a9bcb5ba39ecb1825f239a70e2546e484</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Cangle</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a69813e86581d57f0182579f134207f94</anchor>
+      <arglist>(const double &amp;inAngle)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Cangle</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a30369c7f8868f8af9fa3e12a27a4846d</anchor>
+      <arglist>(const Cangle &amp;inAngle)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator const double &amp;</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>ac0451f308db82a393321d84fe5847243</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>const double &amp;</type>
+      <name>operator=</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>abd6db4c11c24382bff008cbbdfcb7e94</anchor>
+      <arglist>(const double &amp;inDouble)</arglist>
+    </member>
+    <member kind="function">
+      <type>Cangle</type>
+      <name>operator-</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a1aca57dea3061f2ecedb11bdc52ca2e9</anchor>
+      <arglist>(Cangle inAngle) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Cangle</type>
+      <name>operator+</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a50ff06dc943b2856a2e6aa613ab2f873</anchor>
+      <arglist>(Cangle inAngle) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Cangle</type>
+      <name>interpolate</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>abc4e39f42842fa02169f1cbf49a511c8</anchor>
+      <arglist>(const double &amp;alpha, const Cangle &amp;inAngle) const </arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a961364551282c0b2de15b41fd0ae893f</anchor>
+      <arglist>(const Cangle &amp;inAngle) const </arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>setBetweenMinusAndPlusPI</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a2a10bb720778d7caa1e9ba1d2751fd23</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>attAngle</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>ad68f36bc031f858e66f71c91f6a6e9d2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Cangle</type>
+      <name>operator*</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>aedd9e55f92229a257296120fcf7363b6</anchor>
+      <arglist>(const double &amp;coef, const Cangle &amp;inAngle)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>aaa875fe3862857d47af539317b0c50e2</anchor>
+      <arglist>(std::ostream &amp;os, const Cangle &amp;inAngle)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend double</type>
+      <name>cos</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>ada258cf64330b8e36b3cc50df65996a6</anchor>
+      <arglist>(const Cangle &amp;inAngle)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend double</type>
+      <name>sin</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a5f6493a216aa5697e2995e8f0055a393</anchor>
+      <arglist>(const Cangle &amp;inAngle)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend double</type>
+      <name>tan</name>
+      <anchorfile>a00001.html</anchorfile>
+      <anchor>a8aea2c834539e73d0c2c9f07246f9da6</anchor>
+      <arglist>(const Cangle &amp;inAngle)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>jrlMathTools::Matrix3x3</name>
+    <filename>a00002.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>Matrix3x3</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a9fc568438b64139ed3ba42d04949148e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix3x3</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a58c9cc9571416f14900fc281beaac57e</anchor>
+      <arglist>(const T x)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix3x3</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>abab3cf9a1848636fd6f62e3e4bb14da0</anchor>
+      <arglist>(const T x0, const T x1, const T x2, const T x3, const T x4, const T x5, const T x6, const T x7, const T x8)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix3x3</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a66d0b4f24e41f209dee6fe35af3b69df</anchor>
+      <arglist>(const struct Matrix3x3&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix3x3</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>ac0136f97a52cc81ee31d380c1c0a6744</anchor>
+      <arglist>(const struct Matrix3x3&lt; T2 &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a398d1108345662fef1538b960aafce80</anchor>
+      <arglist>(unsigned int i)</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a3913c0e2ecf78dd64776f0a294611b0c</anchor>
+      <arglist>(unsigned int i) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator()</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a57384e3b477a61f89399b997e1f66143</anchor>
+      <arglist>(unsigned int i, unsigned int j)</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator()</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a8277d563bae3370f18a4c581751cc7ef</anchor>
+      <arglist>(unsigned int i, unsigned int j) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setZero</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a68789b662268a01d9ea27c1a673d507a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setIdentity</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a93ce1c6b9c1f7640e8b26b188fe78b72</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix3x3&lt; T &gt;</type>
+      <name>operator+</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a7eea0b65cc9d2bffe377b992648ca5df</anchor>
+      <arglist>(const struct Matrix3x3&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>struct Matrix3x3&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a6853587fe86cd2290d02351dc60eab38</anchor>
+      <arglist>(const struct Matrix3x3&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix3x3&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>ab4d3b0a4dc3829dfc048a0eb98b5627e</anchor>
+      <arglist>(const struct Matrix3x3&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CeqthismulB</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a8828cd0f7dc5e8d58a12b54b949dbe8a</anchor>
+      <arglist>(const Matrix3x3&lt; T &gt; &amp;B, Matrix3x3&lt; T &gt; &amp;C) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix3x3&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a3fdf63d79a1acb5394ad623d73fa647c</anchor>
+      <arglist>(const double &amp;r) const </arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MAL_S3_VECTOR</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a7be37b839417260798d6a1e79a32b492</anchor>
+      <arglist>(, T) operator*(const MAL_S3_VECTOR(</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CeqthismulB</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a6bbb77ec22940d98cd74a359f70cdcc1</anchor>
+      <arglist>(MAL_S3_VECTOR(, T)&amp;B, MAL_S3_VECTOR(, T)&amp;C) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix3x3&lt; T &gt;</type>
+      <name>Transpose</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a3d924b5bd4d6cfe87513d710ff6130ca</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Transpose</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a355e790e2cab906f95388a13c260ffb0</anchor>
+      <arglist>(Matrix3x3&lt; T &gt; &amp;A) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Inversion</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a4f4ce8ba0e9796b1a4c232cfb0aef8fb</anchor>
+      <arglist>(struct Matrix3x3 &amp;A) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>determinant</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>ab1bc4eec67b1e341bdcb0abaef54e7f1</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Fill</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>af2d25cfc2bdcd6517d493d070015f053</anchor>
+      <arglist>(T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsIdentity</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a3cd973a4af3739de9ff3ad8b5e1eb10a</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator+=</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>af2128114b05931f98b5227b0acc9dba1</anchor>
+      <arglist>(const Matrix3x3&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator-=</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>aca65c8fd0ce07d207b86b00daf329f0a</anchor>
+      <arglist>(const Matrix3x3&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a5e70f88a85449d57d8392e145db7e0cc</anchor>
+      <arglist>(const Matrix3x3&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a1653612b8815817e63f151a4173a08f6</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a7d262bf9023a8c21d30b66bfb8959074</anchor>
+      <arglist>[9]</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>a00002.html</anchorfile>
+      <anchor>a3f41f9944b70224ef2639632decf9bee</anchor>
+      <arglist>(std::ostream &amp;os, Matrix3x3&lt; T &gt; const &amp;A)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>jrlMathTools::Matrix4x4</name>
+    <filename>a00003.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>Matrix4x4</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aed686059bb8dceeaacc919172f6855d9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix4x4</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a94808a1125629cc6f78685efdecd7889</anchor>
+      <arglist>(const T x)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix4x4</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a531c79ab32d222a603e00ab545dc925e</anchor>
+      <arglist>(const struct Matrix4x4&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Matrix4x4</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a0b46981b4192f68d86af2b6effc6c98c</anchor>
+      <arglist>(const struct Matrix4x4&lt; T2 &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a9f756fd24c8e6e4941c196655bdb4bc0</anchor>
+      <arglist>(unsigned int i)</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>ab2611b15f35a403c5746b5a2ca7947a9</anchor>
+      <arglist>(unsigned int i) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator()</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>acba21c8a4bf7d3f7109281020432bbef</anchor>
+      <arglist>(unsigned int i, unsigned int j)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>operator()</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a73d2611d356a09f0e3a7df35bb421cad</anchor>
+      <arglist>(unsigned int i, unsigned int j) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setZero</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aacf81b59fbdb20259e29369c348ac2ac</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setIdentity</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aa87d9afec305e55c755e19cb26b9cefe</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix4x4&lt; T &gt;</type>
+      <name>operator+</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aeaa6ac17df642126acde1e11aa8fa92d</anchor>
+      <arglist>(const Matrix4x4&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>struct Matrix4x4&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aa9c8934f65989fd2052529b3ae028046</anchor>
+      <arglist>(const struct Matrix4x4&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix4x4&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a64ee71b44ab3ad0f7ccde923ac7c6bb3</anchor>
+      <arglist>(const Matrix4x4&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CeqthismulB</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a1de8c96e5bec2264aa32ecb3c64ddc7f</anchor>
+      <arglist>(const Matrix4x4&lt; T &gt; &amp;B, Matrix4x4&lt; T &gt; &amp;C) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CeqthismulB</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>ab80a0850658a231a63f2b8ebd24d21fb</anchor>
+      <arglist>(const Vector4D&lt; T &gt; &amp;B, Vector4D&lt; T &gt; &amp;C) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a55c3141bed8a7c9529ea5aa68113a499</anchor>
+      <arglist>(const Vector3D&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>addd60fed39507d9ee04f6104e423177f</anchor>
+      <arglist>(const Vector4D&lt; T &gt; &amp;B) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix4x4&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a41425ee098e7fda79a2ec11b09f0482a</anchor>
+      <arglist>(const double &amp;r) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix4x4&lt; T &gt;</type>
+      <name>Transpose</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a19278a9927236c1c5e2ab98eff2969b8</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Inversion</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a6a2fde300fc932f0a2cc8ed909f2bc3a</anchor>
+      <arglist>(Matrix4x4 &amp;A) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Matrix4x4&lt; T &gt;</type>
+      <name>Inversion</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a191dc2b865e1eef9f8c407bc426f8165</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>determinant</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>aa4ce7c46287268b1f6788d6a6ccddc00</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>trace</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a473940349e579d96e4c7aef89be70688</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator+=</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a06985de0a99769a10323ccd830a2c06c</anchor>
+      <arglist>(const Matrix3x3&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator-=</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a7717af1e9eeef2870db642dcdf14fcb2</anchor>
+      <arglist>(const Matrix4x4&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>ae7eac6479b38c34859208f1005030647</anchor>
+      <arglist>(const Matrix4x4&lt; T &gt; &amp;B)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a63cbad45acaad62a5a50908a4a5e3b0b</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a6d7d038b65f987b9dc2e1affecfa0bf6</anchor>
+      <arglist>[16]</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>a00003.html</anchorfile>
+      <anchor>a755f8a5fb3933715ca1971f71b7657dc</anchor>
+      <arglist>(std::ostream &amp;os, Matrix4x4&lt; T &gt; const &amp;A)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>jrlMathTools::Vector3D</name>
+    <filename>a00004.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>Vector3D</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>ac739be610398a7ebf037dcf2a709218a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Vector3D</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>aa09f73036e9e569af0b10b9972e4d87d</anchor>
+      <arglist>(const T x, const T y, const T z)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator=</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>aec1c3db082232533bfe5f0605aaffa25</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a78aa428a6d7d77d97eaec6234b7488dd</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a1d6487af83a233c8b115031fd98785d5</anchor>
+      <arglist>(unsigned i)</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>operator[]</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a2be09c0a80c551dfa98307cac63061e8</anchor>
+      <arglist>(unsigned i) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator()</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>acab29ca646350d931817fca21469e9d6</anchor>
+      <arglist>(unsigned i)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>operator==</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a714879153c2e30a750ac79a8ea6d6161</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator+</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a42a324fdc012621b6ad01d2c5e495584</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>aa03adde2a92e0f67501aa617efbbdc42</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator+=</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a872659a6d132ce37edebf13b8819753e</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator-=</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a62747d2c35372154140163ac929b02cb</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>ac4707615dd76895dbdc119f231c0fc94</anchor>
+      <arglist>(const T &amp;t) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>operator*</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a44cece23d50754084c30407d7225b70d</anchor>
+      <arglist>(const Vector3D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector3D&lt; T &gt;</type>
+      <name>operator/</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a7aea829cde39a310f223fd5bebeb1ab3</anchor>
+      <arglist>(const T &amp;t) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a45cf5e125a04ebc9fc9e3983a3feeb2e</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator/=</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>ace965cd0543e8288eb044e2f363bbd4f</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>normalize</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>adfe0ab4d02c1892c959624b5ffb6dc70</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>norm</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a98f14ea9f124f6720692a8f2f44d0866</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsZero</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a866a97e4cb1d996aa8acc456d2d496a6</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>normsquared</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a866d5db1b4d7c29c6635941deac4488c</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>struct Vector3D&lt; T &gt;</type>
+      <name>operator^</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a20f331c13ede7f692ac8cfdd12893ad0</anchor>
+      <arglist>(const struct Vector3D&lt; T &gt; &amp;v2) const </arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_x</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>a3564e904b8e66e0f0b37efb7968356b2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_y</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>ac103fe5c6a677cef6e8c0704bcfb186f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_z</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>aa0c00de7dc21201bbfe6cf577452e056</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>a00004.html</anchorfile>
+      <anchor>af05fc4447c901dd262e450d1a2dab397</anchor>
+      <arglist>(std::ostream &amp;os, Vector3D&lt; T &gt; const &amp;v)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>jrlMathTools::Vector4D</name>
+    <filename>a00005.html</filename>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>Vector4D</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>acf91f4ba8c24e00720991294e2d04c5b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Vector4D</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a3d0fc1529e11be023ac18926f358c7a0</anchor>
+      <arglist>(const T &amp;x, const T &amp;y, const T &amp;z, const T &amp;w)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator=</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a707261f0ac3637d8e8ac3858779acac6</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a52023115afa0d35b2788b7997a72d4df</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a45f0d7470f80241f6459c8b19e144a49</anchor>
+      <arglist>(unsigned i)</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>abae6719ca76d332a9b69e0ac6a8a5bdb</anchor>
+      <arglist>(unsigned i) const </arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator()</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a77e5f2144797bd1817e7d5f095b5878d</anchor>
+      <arglist>(unsigned i)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>operator==</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a557ae7fa608018fa135e381d792ea1ec</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator+</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>ae12e60b60b7c4e351659f8f7e8a33d1e</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator-</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a97f93d5f4942e5a2d07a0cab4dd416f9</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator+=</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a0abc0aab2dba583cce45c2199a48cf2a</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator-=</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a46e79fb026603f6611c25b7661a03a63</anchor>
+      <arglist>(const struct Vector4D&lt; T &gt; &amp;v) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator*</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a15abc60ac948a56cf4209c4fd6eac52f</anchor>
+      <arglist>(const T &amp;t) const </arglist>
+    </member>
+    <member kind="function">
+      <type>Vector4D&lt; T &gt;</type>
+      <name>operator/</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a7a9ccd0b4b6085dee8896297c382a631</anchor>
+      <arglist>(const T &amp;t) const </arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator*=</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>afbf6ebec15679e38d4d424595a5277f3</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>operator/=</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a186cc3ee44cd2fb5e20b02d8eca6760f</anchor>
+      <arglist>(const T &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>normalize</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a8fc5c3736c388a132de58010170e7665</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>norm</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a6fd9bc29f8deba6f039014eca2a9d1e8</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="function">
+      <type>T</type>
+      <name>normsquared</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>af97bf9e894635b5fb29c18714575ee7d</anchor>
+      <arglist>() const </arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_x</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a4a4dd8b473dfd954a2c6c3160993ae22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_y</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a12e166384cb3458106199efa7992d34d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_z</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a58de0d70d887111b524d821638546522</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>m_w</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a854f4f626461a0bfb1f0fcfb8b020d68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>a00005.html</anchorfile>
+      <anchor>a0fd867ac28219fc6266e3a0651ea2744</anchor>
+      <arglist>(std::ostream &amp;os, Vector4D&lt; T &gt; const &amp;v)</arglist>
+    </member>
+  </compound>
+</tagfile>
