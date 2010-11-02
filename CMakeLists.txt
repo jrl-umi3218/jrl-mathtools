@@ -17,6 +17,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 INCLUDE(cmake/base.cmake)
+INCLUDE(cmake/boost.cmake)
+INCLUDE(cmake/lapack.cmake)
 INCLUDE(cmake/cpack.cmake)
 
 SET(PROJECT_NAME jrl-mathtools)
@@ -41,18 +43,9 @@ SET(${PROJECT_NAME}_HEADERS
 SETUP_PROJECT()
 SETUP_PROJECT_CPACK()
 
-# Requires Fortran support as Lapack needs it.
-ENABLE_LANGUAGE(Fortran)
-
-# Search for Boost.
-SET(Boost_USE_STATIC_LIBS OFF)
-SET(Boost_USE_MULTITHREAD ON)
-FIND_PACKAGE(Boost 1.40 COMPONENTS unit_test_framework REQUIRED)
-SET(PKG_CONFIG_CFLAGS "${PKG_CONFIG_CFLAGS} -I${Boost_INCLUDE_DIR}")
-SET(PKG_CONFIG_LIBS "${PKG_CONFIG_LIBS} ${LIBDIR_KW}${Boost_LIBRARY_DIRS}")
-
-# Search for LAPACK.
-FIND_PACKAGE(LAPACK REQUIRED)
+# Search for dependencies.
+SEARCH_FOR_BOOST()
+SEARCH_FOR_LAPACK()
 
 # Deprecated headers
 # These headers are installed to preserve includes retro-compatbility.
