@@ -23,11 +23,11 @@
 
 # include <jrl/mathtools/vector3.hh>
 # include <jrl/mathtools/vector4.hh>
-# include <jrl/mathtools/vectorN.hh>
+# include <jrl/mathtools/vectorn.hh>
 
 # include <jrl/mathtools/matrix3x3.hh>
 # include <jrl/mathtools/matrix4x4.hh>
-# include <jrl/mathtools/matrixNxP.hh>
+# include <jrl/mathtools/matrixnxp.hh>
 
 # include <jrl/mathtools/io.hh>
 

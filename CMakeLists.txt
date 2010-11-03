@@ -36,8 +36,8 @@ SET(${PROJECT_NAME}_HEADERS
     include/jrl/mathtools/vector4.hh
     include/jrl/mathtools/matrix3x3.hh
     include/jrl/mathtools/matrix4x4.hh
-    include/jrl/mathtools/matrixNxP.hh
-    include/jrl/mathtools/vectorN.hh
+    include/jrl/mathtools/matrixnxp.hh
+    include/jrl/mathtools/vectorn.hh
 )
 
 SETUP_PROJECT()
@@ -46,30 +46,6 @@ SETUP_PROJECT_CPACK()
 # Search for dependencies.
 SEARCH_FOR_BOOST()
 SEARCH_FOR_LAPACK()
-
-# Deprecated headers
-# These headers are installed to preserve includes retro-compatbility.
-SET(DEPRECATED_HEADERS
-    include/jrlMathTools/jrlConstants.h
-    include/jrlMathTools/angle.h
-    include/jrlMathTools/vector3.h
-    include/jrlMathTools/vector4.h
-    include/jrlMathTools/matrix3x3.h
-    include/jrlMathTools/matrix4x4.h
-    include/jrlMathTools/matrixNxP.h
-    include/jrlMathTools/vectorN.h
-)
-INSTALL(FILES ${DEPRECATED_HEADERS}
-  DESTINATION include/jrlMathTools
-  PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
-  )
-
-# Install jrlMathTools.pc for retro-compatibility.
-INSTALL(
-  FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
-  DESTINATION "${PKG_CONFIG_DIR}"
-  RENAME jrlMathTools.pc
-  PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE)
 
 ADD_SUBDIRECTORY(tests)
 

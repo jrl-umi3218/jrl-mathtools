@@ -15,7 +15,7 @@
 
 #include <fstream>
 
-#include <jrlMathTools/matrixNxP.h>
+#include <jrl/mathtools/matrixnxp.hh>
 
 #define BOOST_TEST_MODULE damped-inverse
 

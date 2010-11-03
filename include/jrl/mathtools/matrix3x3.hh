@@ -22,7 +22,7 @@
 # define JRL_MATHTOOLS_MATRIX3x3_HH
 # include <stdexcept>
 # include <jrl/mathtools/fwd.hh>
-# include <jrlMathTools/vector3.h>
+# include <jrl/mathtools/vector3.hh>
 
 namespace jrlMathTools
 {

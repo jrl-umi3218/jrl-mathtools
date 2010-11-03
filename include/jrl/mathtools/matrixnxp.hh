@@ -24,7 +24,7 @@
 # include <boost/numeric/ublas/io.hpp>
 
 # include <jrl/mathtools/fwd.hh>
-# include <jrl/mathtools/vectorN.hh>
+# include <jrl/mathtools/vectorn.hh>
 
 typedef boost_ublas::matrix<double> matrixNxP;
 
