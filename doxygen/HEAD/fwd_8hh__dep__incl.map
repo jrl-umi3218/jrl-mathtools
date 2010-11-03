@@ -1,10 +1,10 @@
 <map id="G" name="G">
 <area shape="rect" href="$angle_8hh.html" title="angle.hh" alt="" coords="5,161,80,188"/>
 <area shape="rect" href="$deprecated_8hh.html" title="deprecated.hh" alt="" coords="59,84,173,111"/>
-<area shape="rect" href="$mathtools_8hh.html" title="mathtools.hh" alt="" coords="320,239,427,265"/>
+<area shape="rect" href="$mathtools_8hh.html" title="mathtools.hh" alt="" coords="328,239,435,265"/>
 <area shape="rect" href="$matrix3x3_8hh.html" title="matrix3x3.hh" alt="" coords="248,84,352,111"/>
-<area shape="rect" href="$matrix4x4_8hh.html" title="matrix4x4.hh" alt="" coords="321,161,425,188"/>
-<area shape="rect" href="$matrix_nx_p_8hh.html" title="matrixNxP.hh" alt="" coords="500,161,604,188"/>
-<area shape="rect" href="$vector3_8hh.html" title="vector3.hh" alt="" coords="628,161,716,188"/>
+<area shape="rect" href="$matrix4x4_8hh.html" title="matrix4x4.hh" alt="" coords="329,161,433,188"/>
+<area shape="rect" href="$vector3_8hh.html" title="vector3.hh" alt="" coords="508,161,596,188"/>
 <area shape="rect" href="$vector4_8hh.html" title="vector4.hh" alt="" coords="427,84,515,111"/>
+<area shape="rect" href="$matrix_nx_p_8hh.html" title="matrixNxP.hh" alt="" coords="620,161,724,188"/>
 </map>
