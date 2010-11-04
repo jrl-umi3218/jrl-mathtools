@@ -24,7 +24,7 @@ INCLUDE(cmake/cpack.cmake)
 SET(PROJECT_NAME jrl-mathtools)
 SET(PROJECT_VERSION 1.4.0.99)
 SET(PROJECT_DESCRIPTION "JRL mathematical tools")
-SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-cmakemodules")
+SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mathtools")
 
 
 SET(${PROJECT_NAME}_HEADERS
