@@ -132,7 +132,7 @@ namespace jrlMathTools
   inline Angle operator* (const double& coef, const Angle& angle)
   {
     return Angle (coef * angle.value ());
-  };
+  }
 
   double cos(const Angle& angle)
   {
