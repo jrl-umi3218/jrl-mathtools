@@ -58,11 +58,11 @@ Functions</h2></td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a8b51fe2c101e5f409d8554fd630288d4">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structjrl_math_tools_1_1_matrix3x3.html">Matrix3x3</a>&lt; T &gt; &amp;m)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#aa09cd96789f69321482892d4f8a0ee5b">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structjrl_math_tools_1_1_matrix4x4.html">Matrix4x4</a>&lt; T &gt; &amp;m)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#af88d2b589ae57c2c398abf6077a6d9dc">_resize</a> (<a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat1, const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv</a> (<a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;res, const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a1c6f7a4c3f358f7515dc253f4dffa0c7">pseudoInverse</a> (const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;matrix, <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;outInverse, const double threshold=1e-6, matrixNxP *Uref=0, vectorN *Sref=0, matrixNxP *Vref=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#af88d2b589ae57c2c398abf6077a6d9dc">_resize</a> (<a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat1, const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv</a> (<a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;res, const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;mat2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a1c6f7a4c3f358f7515dc253f4dffa0c7">pseudoInverse</a> (const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;matrix, <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;outInverse, const double threshold=1e-6, matrixNxP *Uref=0, vectorN *Sref=0, matrixNxP *Vref=0)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the pseudo-inverse of the matrix.  <a href="#a1c6f7a4c3f358f7515dc253f4dffa0c7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#ad8a8e76b4143d64953a36112bb130e85">dampedInverse</a> (const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;inMatrix, <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;invMatrix, const double threshold=1e-6, matrixNxP *Uref=0, vectorN *Sref=0, matrixNxP *Vref=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#ad8a8e76b4143d64953a36112bb130e85">dampedInverse</a> (const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;inMatrix, <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;invMatrix, const double threshold=1e-6, matrixNxP *Uref=0, vectorN *Sref=0, matrixNxP *Vref=0)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacejrl_math_tools.html#a78ae5e0dc46d8e2533950d2995d847ad">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structjrl_math_tools_1_1_vector3_d.html">Vector3D</a>&lt; T &gt; &amp;v)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -99,13 +99,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void jrlMathTools::_resize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>mat1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>mat2</em>&#160;</td>
         </tr>
         <tr>
@@ -130,13 +130,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void jrlMathTools::_resizeInv </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>res</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>mat2</em>&#160;</td>
         </tr>
         <tr>
@@ -176,15 +176,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> jrlMathTools::dampedInverse </td>
+          <td class="memname"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> jrlMathTools::dampedInverse </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>inMatrix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>invMatrix</em>, </td>
         </tr>
         <tr>
@@ -196,19 +196,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
           <td class="paramname"> <em>Uref</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="vector_n_8hh.html#aae58ddf3e4db6ecec278b41e6c958bbd">vectorN</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="vectorn_8hh.html#aae58ddf3e4db6ecec278b41e6c958bbd">vectorN</a> *&#160;</td>
           <td class="paramname"> <em>Sref</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
           <td class="paramname"> <em>Vref</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -220,7 +220,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>References <a class="el" href="namespacejrl_math_tools.html#af88d2b589ae57c2c398abf6077a6d9dc">_resize()</a>, <a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv()</a>, <a class="el" href="matrix_nx_p_8hh.html#a1d86742eb58e644a66462dc8ae3de148">dgesvd_()</a>, <a class="el" href="vector_n_8hh.html#a57a66b4c84cff81707e398b940e1ef68">MRAWDATA</a>, and <a class="el" href="vector_n_8hh.html#a48c4b4430d20b6dbc58aeeefd90c0c13">VRAWDATA</a>.</p>
+<p>References <a class="el" href="namespacejrl_math_tools.html#af88d2b589ae57c2c398abf6077a6d9dc">_resize()</a>, <a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv()</a>, <a class="el" href="matrixnxp_8hh.html#a1d86742eb58e644a66462dc8ae3de148">dgesvd_()</a>, <a class="el" href="vectorn_8hh.html#a57a66b4c84cff81707e398b940e1ef68">MRAWDATA</a>, and <a class="el" href="vectorn_8hh.html#a48c4b4430d20b6dbc58aeeefd90c0c13">VRAWDATA</a>.</p>
 
 </div>
 </div>
@@ -401,15 +401,15 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a>&amp; jrlMathTools::pseudoInverse </td>
+          <td class="memname"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a>&amp; jrlMathTools::pseudoInverse </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>matrix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> &amp;&#160;</td>
           <td class="paramname"> <em>outInverse</em>, </td>
         </tr>
         <tr>
@@ -421,19 +421,19 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
           <td class="paramname"> <em>Uref</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="vector_n_8hh.html#aae58ddf3e4db6ecec278b41e6c958bbd">vectorN</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="vectorn_8hh.html#aae58ddf3e4db6ecec278b41e6c958bbd">vectorN</a> *&#160;</td>
           <td class="paramname"> <em>Sref</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="matrix_nx_p_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="matrixnxp_8hh.html#a43dc79955cc6c385ce61d6bf515732c4">matrixNxP</a> *&#160;</td>
           <td class="paramname"> <em>Vref</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -448,7 +448,7 @@ template&lt;typename T &gt; </div>
 <p>Compute the pseudo-inverse of the matrix. </p>
 <p>By default, the function uses the dgesvd_ fortran routine. It should be provided by the host software. </p>
 
-<p>References <a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv()</a>, <a class="el" href="matrix_nx_p_8hh.html#a1d86742eb58e644a66462dc8ae3de148">dgesvd_()</a>, <a class="el" href="vector_n_8hh.html#a57a66b4c84cff81707e398b940e1ef68">MRAWDATA</a>, and <a class="el" href="vector_n_8hh.html#a48c4b4430d20b6dbc58aeeefd90c0c13">VRAWDATA</a>.</p>
+<p>References <a class="el" href="namespacejrl_math_tools.html#a73eae6bf100949bd926ffa57459688f0">_resizeInv()</a>, <a class="el" href="matrixnxp_8hh.html#a1d86742eb58e644a66462dc8ae3de148">dgesvd_()</a>, <a class="el" href="vectorn_8hh.html#a57a66b4c84cff81707e398b940e1ef68">MRAWDATA</a>, and <a class="el" href="vectorn_8hh.html#a48c4b4430d20b6dbc58aeeefd90c0c13">VRAWDATA</a>.</p>
 
 </div>
 </div>
