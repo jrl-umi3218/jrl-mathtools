@@ -39,11 +39,10 @@ namespace jrlMathTools
 
     /// \brief Default constructor: all fields are set to zero.
     inline Vector3D ()
-    {
-      m_x= T ();
-      m_y= T ();
-      m_z= T ();
-    }
+      : m_x (),
+	m_y (),
+	m_z ()
+    {}
 
     inline Vector3D (const T x, const T y, const T z)
       : m_x (x), m_y (y), m_z (z)
@@ -114,7 +113,7 @@ namespace jrlMathTools
     /// \brief Binary operator !=.
     inline bool operator!=(const Vector3D<T>& v) const
     {
-      return 
+      return
 	(v.m_x != m_x) ||
 	(v.m_y != m_y) ||
 	(v.m_z != m_z);

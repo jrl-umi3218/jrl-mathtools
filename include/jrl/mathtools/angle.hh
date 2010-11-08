@@ -62,11 +62,11 @@ namespace jrlMathTools
     }
 
     /// \brief Operator = with a double
-    const double& operator=(const double& value)
+    Angle& operator=(const double& value)
     {
       attAngle = value;
       setBetweenMinusAndPlusPI();
-      return value;
+      return *this;
     }
 
     /// \brief Difference between two angles
