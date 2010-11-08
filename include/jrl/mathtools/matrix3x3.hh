@@ -194,9 +194,9 @@ namespace jrlMathTools
       return result;
     }
 
-# ifdef MAL_S3_VECTOR
+# ifdef MAL_S3_VECTOR_
     /// \brief Multiplication operator with a vector.
-    MAL_S3_VECTOR (,T) operator *(const MAL_S3_VECTOR(,T)& v) const
+    MAL_S3_VECTOR_(T) operator *(const MAL_S3_VECTOR_(T)& v) const
     {
       MAL_S3_VECTOR (vr,T);
       vr[0] = m[0] * v[0] + m[1] * v[1] + m[2] * v[2];
@@ -206,13 +206,13 @@ namespace jrlMathTools
     }
 
     /// \brief Multiplication operator with a vector.
-    void CeqthismulB (const MAL_S3_VECTOR(,T)& B, MAL_S3_VECTOR(,T)& C) const
+    void CeqthismulB (const MAL_S3_VECTOR_(T)& B, MAL_S3_VECTOR_(T)& C) const
       {
 	C[0] = m[0] * B[0] + m[1] * B[1] + m[2] * B[2];
 	C[1] = m[3] * B[0] + m[4] * B[1] + m[5] * B[2];
 	C[2] = m[6] * B[0] + m[7] * B[1] + m[8] * B[2];
       }
-# endif // MAL_S3_VECTOR
+# endif // MAL_S3_VECTOR_
 
     /// \brief Transposition.
     Matrix3x3<T> Transpose () const
