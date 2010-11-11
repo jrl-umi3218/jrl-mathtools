@@ -194,9 +194,9 @@ namespace jrlMathTools
       return result;
     }
 
-# ifdef MAL_S3_VECTOR_
+# ifdef MAL_S3_VECTOR_TYPE
     /// \brief Multiplication operator with a vector.
-    MAL_S3_VECTOR_(T) operator *(const MAL_S3_VECTOR_(T)& v) const
+    MAL_S3_VECTOR_TYPE(T) operator *(const MAL_S3_VECTOR_TYPE(T)& v) const
     {
       MAL_S3_VECTOR (vr,T);
       vr[0] = m[0] * v[0] + m[1] * v[1] + m[2] * v[2];
@@ -206,7 +206,7 @@ namespace jrlMathTools
     }
 
     /// \brief Multiplication operator with a vector.
-    void CeqthismulB (const MAL_S3_VECTOR_(T)& B, MAL_S3_VECTOR_(T)& C) const
+    void CeqthismulB (const MAL_S3_VECTOR_TYPE(T)& B, MAL_S3_VECTOR_TYPE(T)& C) const
       {
 	C[0] = m[0] * B[0] + m[1] * B[1] + m[2] * B[2];
 	C[1] = m[3] * B[0] + m[4] * B[1] + m[5] * B[2];
