@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" href="$a00006.html" title="angle.hh" alt="" coords="5,161,80,188"/>
-<area shape="rect" href="$a00008.html" title="deprecated.hh" alt="" coords="65,84,180,110"/>
-<area shape="rect" href="$a00012.html" title="mathtools.hh" alt="" coords="296,316,403,342"/>
-<area shape="rect" href="$a00013.html" title="matrix3x3.hh" alt="" coords="247,161,351,188"/>
-<area shape="rect" href="$a00014.html" title="matrix4x4.hh" alt="" coords="387,238,491,265"/>
-<area shape="rect" href="$a00016.html" title="vector3.hh" alt="" coords="313,84,401,110"/>
-<area shape="rect" href="$a00017.html" title="vector4.hh" alt="" coords="476,161,564,188"/>
-<area shape="rect" href="$a00015.html" title="matrixnxp.hh" alt="" coords="565,238,669,265"/>
+<area shape="rect" href="$a00006.html" title="angle.hh" alt="" coords="5,84,80,111"/>
+<area shape="rect" href="$a00008.html" title="deprecated.hh" alt="" coords="443,84,557,111"/>
+<area shape="rect" href="$a00012.html" title="mathtools.hh" alt="" coords="289,161,396,188"/>
+<area shape="rect" href="$a00013.html" title="matrix3x3.hh" alt="" coords="291,84,395,111"/>
+<area shape="rect" href="$a00014.html" title="matrix4x4.hh" alt="" coords="765,161,869,188"/>
+<area shape="rect" href="$a00015.html" title="matrixnxp.hh" alt="" coords="581,84,685,111"/>
+<area shape="rect" href="$a00016.html" title="vector3.hh" alt="" coords="733,84,821,111"/>
+<area shape="rect" href="$a00017.html" title="vector4.hh" alt="" coords="128,84,216,111"/>
 </map>
