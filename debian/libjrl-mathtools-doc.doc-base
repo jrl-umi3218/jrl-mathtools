@@ -5,5 +5,5 @@ Abstract: Doxygen documentation of jrl-mathtools.
 Section: Programming
 
 Format: HTML
-Index: /usr/share/doc/jrlMathTools/html/index.html
-Files: /usr/share/doc/jrlMathTools/html/*.html
+Index: /opt/openrobots/share/doc/jrl-mathtools/doxygen-html/index.html
+Files: /opt/openrobots/share/doc/jrl-mathtools/doxygen-html/*.html
