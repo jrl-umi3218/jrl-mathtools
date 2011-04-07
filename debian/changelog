@@ -1,3 +1,15 @@
+jrl-mathtools (1.4.4-2) lucid; urgency=low
+
+  * Fix debian/control. Dependencies set at the top level.
+
+ -- olivier-stasse <olivier.stasse@aist.go.jp>  Thu, 07 Apr 2011 23:36:11 +0900
+
+jrl-mathtools (1.4.4-1) lucid; urgency=low
+
+  * Update debian/control policy from 1st test on launchpad
+
+ -- olivier-stasse <olivier.stasse@aist.go.jp>  Thu, 07 Apr 2011 22:48:37 +0900
+
 jrl-mathtools (1.4.3-1) lucid; urgency=low
 
   * Synchronize cmake-modules

@@ -5,6 +5,10 @@ Build-Depends: debhelper (>= 7), cmake (>= 2.6),
 	       doxygen (>= 1.6.3),
 	       libboost-dev (>= 1.40),
 	       libboost-test-dev (>= 1.40),
+	       libboost-filesystem-dev (>= 1.40),
+	       libboost-system-dev (>= 1.40),
+	       libboost-thread-dev (>= 1.40),
+ 	       libboost-program-options-dev (>= 1.40),	
 	       liblapack-dev (>=1.2),
 	       gfortran (>= 4:4.4.3)
 Standards-Version: 3.8.4
@@ -19,11 +23,9 @@ Architecture: any
 Depends: libboost-dev (>= 1.35),
 	 liblapack-dev (>= 1.2),
 	 libboost-test-dev (>= 1.40),
-	 libboost-filesystem (>= 1.40),
-	 libboost-system (>= 1.40),
+	 libboost-filesystem-dev (>= 1.40),
 	 libboost-system-dev (>= 1.40),
-	 libboost-thread (>= 1.40),
-	 libboost-program-options (>= 1.40),
+	 libboost-thread-dev (>= 1.40),
  	 libboost-program-options-dev (>= 1.40),	
 	 ${misc:Depends}
 Suggests: libjrl-mathtools-doc
