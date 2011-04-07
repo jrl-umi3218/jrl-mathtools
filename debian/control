@@ -19,6 +19,12 @@ Architecture: any
 Depends: libboost-dev (>= 1.35),
 	 liblapack-dev (>= 1.2),
 	 libboost-test-dev (>= 1.40),
+	 libboost-filesystem (>= 1.40),
+	 libboost-system (>= 1.40),
+	 libboost-system-dev (>= 1.40),
+	 libboost-thread (>= 1.40),
+	 libboost-program-options (>= 1.40),
+ 	 libboost-program-options-dev (>= 1.40),	
 	 ${misc:Depends}
 Suggests: libjrl-mathtools-doc
 Description: JRL mathematical tools library

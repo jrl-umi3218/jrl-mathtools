@@ -1,3 +1,9 @@
+jrl-mathtools (1.4.3-1) lucid; urgency=low
+
+  * Synchronize cmake-modules
+
+ -- olivier-stasse <olivier.stasse@aist.go.jp>  Wed, 06 Apr 2011 01:08:44 +0900
+
 jrl-mathtools (1.4.0.99-2) lucid; urgency=low
 
   * Switch to lucid.
