@@ -29,63 +29,153 @@
 
 namespace jrlMathTools
 {
+  inline double degreeToRadian (const double& x)
+  {
+    return x * M_PI / 180.;
+  }
+
+  inline double radianToDegree (const double& x)
+  {
+    return x * 180. / M_PI;
+  }
+
+
   /// \brief This class implements simple computations on angles.
+  ///
+  /// All angles *MUST* be expressed in radian.
+  ///
+  /// Facilities are provided for degree/radian conversion for display/debugging only.
   class Angle
   {
   public:
     Angle ()
-      : attAngle (0.)
+      : angle_ (0.)
     {}
 
     // \brief Constructor by value.
     Angle (const double& angle)
-      : attAngle(angle)
+      : angle_ (0.)
     {
-      setBetweenMinusAndPlusPI ();
+      set (angle);
     }
 
     /// \brief Copy Constructor.
     Angle (const Angle& angle)
-      : attAngle(angle.attAngle)
+      : angle_(angle.value ())
     {}
 
-    /// \brief Angle value.
-    inline const double& value () const
+    /// \brief Trivial destructor.
+    ~Angle ()
+    {}
+
+    /// \brief Named constructors.
+    static Angle radian (const double& value)
     {
-      return attAngle;
+      return Angle (value);
+    }
+
+    static Angle degree (const double& value)
+    {
+      return Angle (degreeToRadian (value));
+    }
+
+    /// \brief Angle value.
+    const double& value () const
+    {
+      return angle_;
+    }
+
+    /// \brief Return value in degrees (for output only!).
+    double degree () const
+    {
+      return radianToDegree (value ());
     }
 
     /// \brief Cast into a double.
-    inline operator const double& () const
+    operator const double& () const
     {
-      return attAngle;
+      return value ();
     }
 
-    /// \brief Operator = with a double
-    inline Angle& operator=(const double& value)
+    /// \brief Operator =.
+    Angle& operator= (const Angle& angle)
     {
-      attAngle = value;
-      setBetweenMinusAndPlusPI();
+      if (&angle == this)
+	return *this;
+      set (angle.value ());
       return *this;
     }
 
-    /// \brief Difference between two angles
-    inline Angle operator-(const Angle& angle) const
+    /// \brief Operator = with a double
+    Angle& operator= (const double& value)
     {
-      return Angle (attAngle - angle.attAngle);
+      set (value);
+      return *this;
     }
 
-    /// \brief Sum of two angles.
-    inline Angle operator+(const Angle& angle) const
+    /// Arithmetic operators overload
+    /// \{
+    Angle operator+ (const Angle& angle) const
     {
-      return Angle (attAngle + angle.attAngle);
+      return Angle (value () + angle.value ());
+    }
+    Angle operator- (const Angle& angle) const
+    {
+      return Angle (value () - angle.value ());
+    }
+    Angle& operator+= (const Angle& rhs)
+    {
+      set (value () + rhs.value ());
+      return *this;
+    }
+    Angle& operator-= (const Angle& rhs)
+    {
+      set (value () - rhs.value ());
+      return *this;
     }
 
-    /// \brief Multiplication of an angle by a real number.
-    inline Angle operator* (const double& coef)
+    template <typename T>
+    Angle operator+ (const T& angle) const
     {
-      return Angle (coef * attAngle);
-    };
+      return Angle (value () + angle);
+    }
+    template <typename T>
+    Angle operator- (const T& angle) const
+    {
+      return Angle (value () - angle);
+    }
+    template <typename T>
+    Angle& operator+= (const T& rhs)
+    {
+      set (this->value () + rhs);
+      return *this;
+    }
+    template <typename T>
+    Angle& operator-= (const T& rhs)
+    {
+      set (this->value () - rhs.value ());
+      return *this;
+    }
+
+
+    template <typename T>
+    Angle operator* (const T& rhs) const
+    {
+      return Angle (angle_ * rhs);
+    }
+    template <typename T>
+    Angle operator*= (const T& rhs) const
+    {
+      set (this->value () * rhs);
+      return *this;
+    }
+    template <typename T>
+    Angle operator/= (const T& rhs) const
+    {
+      set (this->value () / rhs);
+      return *this;
+    }
+    /// \}
 
     /// \brief Interpolation between two angles
     /// \param alpha interpolation parameter between 0 and 1.
@@ -93,59 +183,67 @@ namespace jrlMathTools
     /// \return an angle between this one and angle along the shortest arc.
     /// \li if alpha = 0, return this angle,
     /// \li if alpha = 1, return angle.
-    inline Angle
+    Angle
     interpolate (const double& alpha, const Angle& angle) const
     {
-      Angle diffAngle = angle.attAngle - attAngle;
-      return Angle(attAngle+alpha*diffAngle.attAngle);
+      Angle diffAngle = angle.value () - value ();
+      return Angle(value () + alpha * diffAngle.value ());
     };
 
     /// \brief output to a stream.
-    inline std::ostream& display (std::ostream& os) const
+    std::ostream& display (std::ostream& os) const
     {
-      os << attAngle;
+      os << angle_;
       return os;
     }
 
     /// \brief Distance on unit circle.
-    inline double distance (const Angle& angle) const
+    double distance (const Angle& angle) const
     {
       Angle diffAngle = *this - angle;
-      return fabs(diffAngle.attAngle);
+      return std::fabs (diffAngle.value ());
     }
 
     /// @}
   protected:
 
     /// \brief Set angle between -PI and PI.
-    inline void setBetweenMinusAndPlusPI ()
+    void setBetweenMinusAndPlusPI ()
     {
-      while (attAngle < -M_PI)
-	attAngle += 2*M_PI;
-      while (attAngle > M_PI)
-	attAngle -= 2*M_PI;
+      while (angle_ < -M_PI)
+	angle_ += 2. * M_PI;
+      while (angle_ > M_PI)
+	angle_ -= 2. * M_PI;
+    }
+
+    /// \brief Update angle value.
+    void set (const double& value)
+    {
+      angle_ = value;
+      setBetweenMinusAndPlusPI ();
     }
 
     /// \brief angular value.
-    double attAngle;
+    double angle_;
   };
 
-  inline Angle operator* (const double& coef, const Angle& angle)
+  template <typename T>
+  Angle operator* (const T& coef, const Angle& angle)
   {
     return Angle (coef * angle.value ());
   }
 
-  inline double cos(const Angle& angle)
+  inline double cos (const Angle& angle)
   {
     return std::cos (angle.value ());
   }
-  
-  inline double sin(const Angle& angle)
+
+  inline double sin (const Angle& angle)
   {
     return std::sin (angle.value ());
   }
-  
-  inline double tan(const Angle& angle)
+
+  inline double tan (const Angle& angle)
   {
     return std::tan (angle.value ());
   }
@@ -154,7 +252,6 @@ namespace jrlMathTools
   {
     return angle.display (os);
   }
-
 } // end of namespace jrlMathTools.
 
 #endif //! JRL_MATHTOOLS_ANGLE_HH
