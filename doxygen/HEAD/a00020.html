@@ -37,7 +37,10 @@
 <tr><td colspan="2"><h2>Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00001.html">Angle</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ae90aab22d08810a8dc31acdf33fc72ac">CAngle</a></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00001.html">Angle</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad18d0f68aadf2103fc41d249d5a5f7eb">operator*</a> (const double &amp;coef, const <a class="el" href="a00001.html">Angle</a> &amp;angle)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ad4aa97ea7ad4829e890154eaae287d02">degreeToRadian</a> (const double &amp;x)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a5f5f84c17fcc5b303c502d6753041d11">radianToDegree</a> (const double &amp;x)</td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="a00001.html">Angle</a>&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00020.html#a2f30b65f0cfd1115a91fb489697b27c3">operator*</a> (const T &amp;coef, const <a class="el" href="a00001.html">Angle</a> &amp;angle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#ab258bc7b1009ce222a33eebad6f97e07">cos</a> (const <a class="el" href="a00001.html">Angle</a> &amp;angle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#af327c73ae186517004c3082a2321dd00">sin</a> (const <a class="el" href="a00001.html">Angle</a> &amp;angle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020.html#a6c583b8a0ff1fd96c5944dd1f3f3a2e6">tan</a> (const <a class="el" href="a00001.html">Angle</a> &amp;angle)</td></tr>
@@ -151,7 +154,7 @@
           <td class="paramtype">const Angle &amp;&nbsp;</td>
           <td class="paramname"> <em>angle</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -212,6 +215,24 @@
 
 </div>
 </div>
+<a class="anchor" id="ad4aa97ea7ad4829e890154eaae287d02"></a><!-- doxytag: member="jrlMathTools::degreeToRadian" ref="ad4aa97ea7ad4829e890154eaae287d02" args="(const double &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double jrlMathTools::degreeToRadian </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a80d8d685e1ca23699d9eab7bd60e985b"></a><!-- doxytag: member="jrlMathTools::display" ref="a80d8d685e1ca23699d9eab7bd60e985b" args="(std::ostream &amp;os, const Angle &amp;angle)" -->
 <div class="memitem">
 <div class="memproto">
@@ -237,18 +258,18 @@
 </div>
 <div class="memdoc">
 
-<p>References <a class="el" href="a00006_source.html#l00098">jrlMathTools::Angle::display()</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="ad18d0f68aadf2103fc41d249d5a5f7eb"></a><!-- doxytag: member="jrlMathTools::operator*" ref="ad18d0f68aadf2103fc41d249d5a5f7eb" args="(const double &amp;coef, const Angle &amp;angle)" -->
+<a class="anchor" id="a2f30b65f0cfd1115a91fb489697b27c3"></a><!-- doxytag: member="jrlMathTools::operator*" ref="a2f30b65f0cfd1115a91fb489697b27c3" args="(const T &amp;coef, const Angle &amp;angle)" -->
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="a00001.html">Angle</a> jrlMathTools::operator* </td>
           <td>(</td>
-          <td class="paramtype">const double &amp;&nbsp;</td>
+          <td class="paramtype">const T &amp;&nbsp;</td>
           <td class="paramname"> <em>coef</em>, </td>
         </tr>
         <tr>
@@ -265,6 +286,8 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>References <a class="el" href="a00006_source.html#l00081">jrlMathTools::Angle::value()</a>.</p>
 
 </div>
 </div>
@@ -440,6 +463,26 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a5f5f84c17fcc5b303c502d6753041d11"></a><!-- doxytag: member="jrlMathTools::radianToDegree" ref="a5f5f84c17fcc5b303c502d6753041d11" args="(const double &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double jrlMathTools::radianToDegree </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="a00006_source.html#l00087">jrlMathTools::Angle::degree()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af327c73ae186517004c3082a2321dd00"></a><!-- doxytag: member="jrlMathTools::sin" ref="af327c73ae186517004c3082a2321dd00" args="(const Angle &amp;angle)" -->
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +493,7 @@ template&lt;typename T &gt; </div>
           <td class="paramtype">const Angle &amp;&nbsp;</td>
           <td class="paramname"> <em>angle</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -468,7 +511,7 @@ template&lt;typename T &gt; </div>
           <td class="paramtype">const Angle &amp;&nbsp;</td>
           <td class="paramname"> <em>angle</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
