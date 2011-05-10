@@ -50,19 +50,19 @@ namespace jrlMathTools
     {}
 
     /// \brief Angle value.
-    const double& value () const
+    inline const double& value () const
     {
       return attAngle;
     }
 
     /// \brief Cast into a double.
-    operator const double& () const
+    inline operator const double& () const
     {
       return attAngle;
     }
 
     /// \brief Operator = with a double
-    Angle& operator=(const double& value)
+    inline Angle& operator=(const double& value)
     {
       attAngle = value;
       setBetweenMinusAndPlusPI();
@@ -70,19 +70,19 @@ namespace jrlMathTools
     }
 
     /// \brief Difference between two angles
-    Angle operator-(const Angle& angle) const
+    inline Angle operator-(const Angle& angle) const
     {
       return Angle (attAngle - angle.attAngle);
     }
 
     /// \brief Sum of two angles.
-    Angle operator+(const Angle& angle) const
+    inline Angle operator+(const Angle& angle) const
     {
       return Angle (attAngle + angle.attAngle);
     }
 
     /// \brief Multiplication of an angle by a real number.
-    Angle operator* (const double& coef)
+    inline Angle operator* (const double& coef)
     {
       return Angle (coef * attAngle);
     };
@@ -93,21 +93,22 @@ namespace jrlMathTools
     /// \return an angle between this one and angle along the shortest arc.
     /// \li if alpha = 0, return this angle,
     /// \li if alpha = 1, return angle.
-    Angle interpolate (const double& alpha, const Angle& angle) const
+    inline Angle
+    interpolate (const double& alpha, const Angle& angle) const
     {
       Angle diffAngle = angle.attAngle - attAngle;
       return Angle(attAngle+alpha*diffAngle.attAngle);
     };
 
     /// \brief output to a stream.
-    std::ostream& display (std::ostream& os) const
+    inline std::ostream& display (std::ostream& os) const
     {
       os << attAngle;
       return os;
     }
 
     /// \brief Distance on unit circle.
-    double distance (const Angle& angle) const
+    inline double distance (const Angle& angle) const
     {
       Angle diffAngle = *this - angle;
       return fabs(diffAngle.attAngle);
@@ -117,7 +118,7 @@ namespace jrlMathTools
   protected:
 
     /// \brief Set angle between -PI and PI.
-    void setBetweenMinusAndPlusPI ()
+    inline void setBetweenMinusAndPlusPI ()
     {
       while (attAngle < -M_PI)
 	attAngle += 2*M_PI;
@@ -134,21 +135,20 @@ namespace jrlMathTools
     return Angle (coef * angle.value ());
   }
 
-  double cos(const Angle& angle)
+  inline double cos(const Angle& angle)
   {
     return std::cos (angle.value ());
   }
   
-  double sin(const Angle& angle)
+  inline double sin(const Angle& angle)
   {
     return std::sin (angle.value ());
   }
   
-  double tan(const Angle& angle)
+  inline double tan(const Angle& angle)
   {
     return std::tan (angle.value ());
   }
-
 
   inline std::ostream& display (std::ostream& os, const Angle& angle)
   {
