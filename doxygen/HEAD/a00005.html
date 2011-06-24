@@ -41,9 +41,11 @@ Collaboration diagram for jrlMathTools::Vector4D&lt; T &gt;:</div>
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#acf91f4ba8c24e00720991294e2d04c5b">Vector4D</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Default constructor: all fields are set to zero.  <a href="#acf91f4ba8c24e00720991294e2d04c5b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a3d0fc1529e11be023ac18926f358c7a0">Vector4D</a> (const T &amp;x, const T &amp;y, const T &amp;z, const T &amp;w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a0af07816550219ea5c61aabe562822c1">Vector4D</a> (const T &amp;x, const T &amp;y, const T &amp;z, const T &amp;w=1.)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00005.html">Vector4D</a>&lt; T &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a3678e5168e827bdc4d3596b43b25d45a">operator=</a> (const <a class="el" href="a00005.html">Vector4D</a>&lt; T &gt; &amp;v)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignement operator.  <a href="#a3678e5168e827bdc4d3596b43b25d45a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00005.html">Vector4D</a>&lt; T &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a7d00120786e3fbe779eb434739a8151a">operator=</a> (const <a class="el" href="a00004.html">Vector3D</a>&lt; T &gt; &amp;v)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Assignement operator from vector3d.  <a href="#a7d00120786e3fbe779eb434739a8151a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00005.html">Vector4D</a>&lt; T &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a52023115afa0d35b2788b7997a72d4df">operator-</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unary operator -.  <a href="#a52023115afa0d35b2788b7997a72d4df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">T &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html#a45f0d7470f80241f6459c8b19e144a49">operator[]</a> (unsigned i)</td></tr>
@@ -112,7 +114,7 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3d0fc1529e11be023ac18926f358c7a0"></a><!-- doxytag: member="jrlMathTools::Vector4D::Vector4D" ref="a3d0fc1529e11be023ac18926f358c7a0" args="(const T &amp;x, const T &amp;y, const T &amp;z, const T &amp;w)" -->
+<a class="anchor" id="a0af07816550219ea5c61aabe562822c1"></a><!-- doxytag: member="jrlMathTools::Vector4D::Vector4D" ref="a0af07816550219ea5c61aabe562822c1" args="(const T &amp;x, const T &amp;y, const T &amp;z, const T &amp;w=1.)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -140,7 +142,7 @@ template&lt;typename T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const T &amp;&nbsp;</td>
-          <td class="paramname"> <em>w</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>w</em> = <code>1.</code></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -504,6 +506,31 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a7d00120786e3fbe779eb434739a8151a"></a><!-- doxytag: member="jrlMathTools::Vector4D::operator=" ref="a7d00120786e3fbe779eb434739a8151a" args="(const Vector3D&lt; T &gt; &amp;v)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00005.html">Vector4D</a>&lt;T&gt; <a class="el" href="a00005.html">jrlMathTools::Vector4D</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">Vector3D</a>&lt; T &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>v</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assignement operator from vector3d. </p>
+<p>Set last component to 1. </p>
+
+<p>References <a class="el" href="a00017_source.html#l00038">jrlMathTools::Vector4D&lt; T &gt;::m_w</a>, <a class="el" href="a00016_source.html#l00036">jrlMathTools::Vector3D&lt; T &gt;::m_x</a>, <a class="el" href="a00017_source.html#l00035">jrlMathTools::Vector4D&lt; T &gt;::m_x</a>, <a class="el" href="a00016_source.html#l00037">jrlMathTools::Vector3D&lt; T &gt;::m_y</a>, <a class="el" href="a00017_source.html#l00036">jrlMathTools::Vector4D&lt; T &gt;::m_y</a>, <a class="el" href="a00016_source.html#l00038">jrlMathTools::Vector3D&lt; T &gt;::m_z</a>, and <a class="el" href="a00017_source.html#l00037">jrlMathTools::Vector4D&lt; T &gt;::m_z</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3678e5168e827bdc4d3596b43b25d45a"></a><!-- doxytag: member="jrlMathTools::Vector4D::operator=" ref="a3678e5168e827bdc4d3596b43b25d45a" args="(const Vector4D&lt; T &gt; &amp;v)" -->
 <div class="memitem">
 <div class="memproto">
@@ -614,7 +641,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="a00017_source.html#l00232">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00208">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00226">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00166">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00126">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00148">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00070">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00157">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00178">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00198">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00116">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00076">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
+<p>Referenced by <a class="el" href="a00017_source.html#l00243">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00230">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00237">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00177">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00200">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00137">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00159">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00081">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00168">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00209">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00127">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00087">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
 
 </div>
 </div>
@@ -631,7 +658,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="a00017_source.html#l00232">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00208">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00226">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00166">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00126">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00148">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00070">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00157">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00178">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00198">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00116">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00076">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
+<p>Referenced by <a class="el" href="a00017_source.html#l00243">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00230">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00237">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00177">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00200">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00137">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00159">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00081">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00168">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00209">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00127">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00087">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
 
 </div>
 </div>
@@ -648,7 +675,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="a00017_source.html#l00232">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00208">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00226">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00166">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00126">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00148">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00070">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00157">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00178">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00198">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00116">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00076">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
+<p>Referenced by <a class="el" href="a00017_source.html#l00243">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00230">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00237">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00177">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00200">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00137">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00159">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00081">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00168">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00209">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00127">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00087">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
 
 </div>
 </div>
@@ -665,7 +692,7 @@ template&lt;typename T&gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="a00017_source.html#l00232">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00208">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00226">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00166">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00126">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00148">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00070">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00157">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00178">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00198">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00116">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00076">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
+<p>Referenced by <a class="el" href="a00017_source.html#l00243">jrlMathTools::Vector4D&lt; T &gt;::display()</a>, <a class="el" href="a00017_source.html#l00230">jrlMathTools::Vector4D&lt; T &gt;::norm()</a>, <a class="el" href="a00017_source.html#l00219">jrlMathTools::Vector4D&lt; T &gt;::normalize()</a>, <a class="el" href="a00017_source.html#l00237">jrlMathTools::Vector4D&lt; T &gt;::normsquared()</a>, <a class="el" href="a00017_source.html#l00177">jrlMathTools::Vector4D&lt; T &gt;::operator*()</a>, <a class="el" href="a00017_source.html#l00200">jrlMathTools::Vector4D&lt; T &gt;::operator*=()</a>, <a class="el" href="a00017_source.html#l00137">jrlMathTools::Vector4D&lt; T &gt;::operator+()</a>, <a class="el" href="a00017_source.html#l00159">jrlMathTools::Vector4D&lt; T &gt;::operator+=()</a>, <a class="el" href="a00017_source.html#l00081">jrlMathTools::Vector4D&lt; T &gt;::operator-()</a>, <a class="el" href="a00017_source.html#l00168">jrlMathTools::Vector4D&lt; T &gt;::operator-=()</a>, <a class="el" href="a00017_source.html#l00189">jrlMathTools::Vector4D&lt; T &gt;::operator/()</a>, <a class="el" href="a00017_source.html#l00209">jrlMathTools::Vector4D&lt; T &gt;::operator/=()</a>, <a class="el" href="a00017_source.html#l00059">jrlMathTools::Vector4D&lt; T &gt;::operator=()</a>, <a class="el" href="a00017_source.html#l00127">jrlMathTools::Vector4D&lt; T &gt;::operator==()</a>, and <a class="el" href="a00017_source.html#l00087">jrlMathTools::Vector4D&lt; T &gt;::operator[]()</a>.</p>
 
 </div>
 </div>
