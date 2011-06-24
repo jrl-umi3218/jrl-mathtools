@@ -48,7 +48,7 @@ namespace jrlMathTools
     explicit Vector4D<T> (const T& x,
 			  const T& y,
 			  const T& z,
-			  const T& w)
+			  const T& w=1.)
     : m_x (x),
       m_y (y),
       m_z (z),
@@ -62,6 +62,17 @@ namespace jrlMathTools
       m_y = v.m_y;
       m_z = v.m_z;
       m_w = v.m_w;
+      return *this;
+    }
+
+    /// \brief Assignement operator from vector3d.
+    ///   Set last component to 1.
+    inline Vector4D<T> operator= (const Vector3D<T>& v)
+    {
+      m_x = v.m_x;
+      m_y = v.m_y;
+      m_z = v.m_z;
+      m_w = 1.;
       return *this;
     }
 
