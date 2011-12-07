@@ -1,5 +1,7 @@
                                                                 -*- outline -*-
 
+New in 1.5.1, 2011-12-07:
+* Fix compilation issues on x86_64 architectures.
 New in 1.5, 2011-06-24:
 * Added a Vector4D constructor that takes a Vector3D as input.
 
