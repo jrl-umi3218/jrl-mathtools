@@ -53,8 +53,8 @@ BOOST_AUTO_TEST_CASE (main_test)
 	}
     }
 
-  const unsigned int nJ = Jt.size1();
-  const unsigned int mJ = Jt.size2();
+  const matrixNxP::size_type nJ = Jt.size1();
+  const matrixNxP::size_type mJ = Jt.size2();
   Vt.resize(mJ,mJ);
   U.resize(nJ,mJ);
 
@@ -65,20 +65,6 @@ BOOST_AUTO_TEST_CASE (main_test)
   aof.open("V.txt", std::ofstream::out);
 
   matrixNxP M=prod(Jt,Jp);
-
-  bool result=true;
-  for(unsigned int i=0;i<3;i++)
-      for(unsigned int j=0;j<3;j++)
-	{
-	  if (i==j)
-	    {
-	      if (M(i,j)!=1.0)
-		result=false;
-	    }
-	  else
-	    if (M(i,j)>1e-15)
-	      result=false;
-	}
 
   double *vt = Vt.data().begin();
   for(unsigned int i=0;i<mJ;i++)

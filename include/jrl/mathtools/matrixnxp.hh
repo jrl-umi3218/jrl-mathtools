@@ -65,7 +65,7 @@ namespace jrlMathTools
 			    vectorN* Sref = 0,
 			    matrixNxP* Vref = 0)
   {
-    unsigned int NR = 0, NC = 0;
+    matrixNxP::size_type NR = 0, NC = 0;
     bool toTranspose = false;
     boost_ublas::matrix<double,boost_ublas::column_major> transpOrNot;
 
@@ -91,13 +91,14 @@ namespace jrlMathTools
     boost_ublas::vector<double> s(std::min(NR,NC));
     char Jobu='A'; /* Compute complete U Matrix */
     char Jobvt='A'; /* Compute complete VT Matrix */
-    char Lw; Lw='O'; /* Compute the optimal size for the working vector */
 
     {
       double vw;
       int lw=-1;
 
-      int linfo; const int n=NR,m=NC;
+      int linfo;
+      /* XXX BLAS expects integers, while matrix size is size_t */
+      const int n=static_cast<int>(NR),m=static_cast<int>(NC);
       int lda = std::max(m,n);
       int lu = traits::leading_dimension(U); // NR
       int lvt = traits::leading_dimension(VT); // NC
@@ -121,7 +122,7 @@ namespace jrlMathTools
     }
 
 
-    const unsigned int nsv = s.size();
+    const matrixNxP::size_type nsv = s.size();
     unsigned int rankJ = 0;
     boost_ublas::vector<double> sp(nsv);
     for( unsigned int i=0;i<nsv;++i )
@@ -171,7 +172,7 @@ namespace jrlMathTools
 			   vectorN* Sref = 0,
 			   matrixNxP* Vref = 0)
     {
-      unsigned int NR,NC;
+      matrixNxP::size_type NR,NC;
       bool toTranspose;
       boost_ublas::matrix<double,boost_ublas::column_major> I;
 
@@ -197,7 +198,6 @@ namespace jrlMathTools
       boost_ublas::vector<double> s(std::min(NR,NC));
       char Jobu='A'; /* Compute complete U Matrix */
       char Jobvt='A'; /* Compute complete VT Matrix */
-      char Lw; Lw='O'; /* Compute the optimal size for the working vector */
 
       /* Get workspace size for svd. */
       {
@@ -205,7 +205,9 @@ namespace jrlMathTools
 	{
 	  double vw;
 
-	  int linfo; const int n=NR,m=NC;
+	  int linfo;
+          /* XXX BLAS expects integers, while matrix size is size_t */
+          const int n=static_cast<int>(NR),m=static_cast<int>(NC);
 	  int lda = std::max(m,n);
 	  int lu = traits::leading_dimension(U); // NR
 	  int lvt = traits::leading_dimension(VT); // NC
@@ -229,7 +231,7 @@ namespace jrlMathTools
 
       }
 
-      const unsigned int nsv = s.size();
+      const matrixNxP::size_type nsv = s.size();
       unsigned int rankJ = 0;
       boost_ublas::vector<double> sp(nsv);
       for( unsigned int i=0;i<nsv;++i )

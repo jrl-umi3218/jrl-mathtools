@@ -51,8 +51,8 @@ BOOST_AUTO_TEST_CASE (main_test)
     }
   }
 
-  const unsigned int nJ = Jt.size1();
-  const unsigned int mJ = Jt.size2();
+  const matrixNxP::size_type nJ = Jt.size1();
+  const matrixNxP::size_type mJ = Jt.size2();
   V.resize(mJ,mJ);
   Jp.resize(mJ,nJ);
   jrlMathTools::pseudoInverse(Jt, Jp, 1e-15, NULL, NULL, &V);
@@ -68,4 +68,5 @@ BOOST_AUTO_TEST_CASE (main_test)
       } else if (M(i,j)>1e-15)
 	result=false;
     }
+  std::cout << result;
 }

@@ -53,8 +53,8 @@ BOOST_AUTO_TEST_CASE (main_test)
 	}
     }
 
-  const unsigned int nJ = Jt.size1();
-  const unsigned int mJ = Jt.size2();
+  const matrixNxP::size_type nJ = Jt.size1();
+  const matrixNxP::size_type mJ = Jt.size2();
   Vt.resize(mJ,mJ);
   U.resize(nJ,mJ);
 
