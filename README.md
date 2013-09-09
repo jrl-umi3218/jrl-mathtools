@@ -72,8 +72,35 @@ have to be available on your machine.
 
 ### Options
 
-- `-DCMAKE_INSTALL_PREFIX=<path>` defines the installation prefix to `<path>`.
+Additional options can be set on the command line through the
+following command: `-D<option>=<value>`.
 
+For instance: `cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..` will set
+the `CMAKE_BUILD_TYPE` option to the value `RelWithDebInfo`.
+
+
+Available options are:
+
+- `CMAKE_BUILD_TYPE` set the build profile that should be used (debug,
+  release, etc.). We recommend `RelWithDebInfo` as it will provide
+  performances while keeping debugging symbols enabled.
+- `CMAKE_INSTALL_PREFIX` set the installation prefix (the directory
+  where the software will be copied to after it has been compiled).
+
+
+### Running the test suite
+
+The test suite can be run from your build directory by running:
+
+```sh
+   make test
+```
+
+Contributing
+------------
+
+If you want to contribute, please refer to the
+[CONTRIBUTING.md](CONTRIBUTING.md) file
 
 Credits
 -------
