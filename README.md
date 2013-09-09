@@ -5,7 +5,7 @@ jrl-mathtools
 [![Coverage Status](https://coveralls.io/repos/jrl-umi3218/jrl-mathtools/badge.png?branch=master)](https://coveralls.io/r/jrl-umi3218/jrl-mathtools?branch=master)
 
 This package provides small/fixed-size matrices fast computation. It
-is released under [LGPL-3](COPYING.LESSER).
+is released under the [LGPL-3](COPYING.LESSER) license.
 
 
 **Warning:** this repository contains [Git
@@ -37,7 +37,7 @@ Compilation
 To compile this package, it is recommended to create a separate build
 directory:
 
-```shell
+```sh
     mkdir _build
     cd _build
     cmake [options] ..
@@ -61,6 +61,7 @@ have to be available on your machine.
    - [CMake][cmake-website] (>=2.6)
    - [pkg-config][pkg-config-website]
    - usual compilation tools (GCC/G++, make, etc.)
+     If you are using Ubuntu, these tools are gathered in the `build-essential` package.
 
 [boost-website]: http://www.boost.org/
 [lapack-website]: http://www.netlib.org/lapack/
