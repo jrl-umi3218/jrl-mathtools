@@ -4,6 +4,8 @@ jrl-mathtools
 [![Build Status](https://travis-ci.org/jrl-umi3218/jrl-mathtools.png)](https://travis-ci.org/jrl-umi3218/jrl-mathtools)
 [![Coverage Status](https://coveralls.io/repos/jrl-umi3218/jrl-mathtools/badge.png?branch=master)](https://coveralls.io/r/jrl-umi3218/jrl-mathtools?branch=master)
 
+![LGPL-3](https://www.gnu.org/graphics/lgplv3-88x31.png)
+
 This package provides small/fixed-size matrices fast computation. It
 is released under the [LGPL-3](COPYING.LESSER) license.
 
