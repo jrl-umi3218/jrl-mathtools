@@ -9,6 +9,7 @@ env:
   - GIT_DEPENDENCIES=""
   - PPA_URI="stack-of-tasks/snapshot"
   matrix:
+  - DIST="" # for development branch
   - DIST=unstable
   - DIST=saucy
   - DIST=raring
