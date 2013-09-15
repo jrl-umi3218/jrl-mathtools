@@ -1,0 +1,50 @@
+Source: jrl-mathtools
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Thomas Moulard <thomas.moulard@gmail.com>
+Section: libs
+Priority: extra
+Build-Depends: debhelper (>= 7), cmake,
+	       doxygen,
+	       libboost-dev,
+	       libboost-test-dev,
+	       libboost-filesystem-dev,
+	       libboost-system-dev,
+	       libboost-thread-dev,
+ 	       libboost-program-options-dev,
+	       liblapack-dev,
+	       gfortran
+Standards-Version: 3.9.4
+Vcs-Git: git://github.com/jrl-umi3218/jrl-mathtools.git
+Vcs-browser: http://github.com/jrl-umi3218/jrl-mathtools
+Homepage: http://github.com/jrl-umi3218/jrl-mathtools
+
+Package: libjrl-mathtools-dev
+Section: libdevel
+Architecture: any
+Depends: libboost-dev,
+	 liblapack-dev,
+	 libboost-test-dev,
+	 libboost-filesystem-dev,
+	 libboost-system-dev,
+	 libboost-thread-dev,
+ 	 libboost-program-options-dev,
+	 pkg-config,
+	 ${misc:Depends}
+Suggests: libjrl-mathtools-doc
+Multi-Arch: same
+Description: JRL mathematical tools library
+ The JRL mathematical tools is a header-only library providing efficient
+ computations for small and size fixed matrices.
+ .
+ This package contains development files (headers and pkg-config file).
+
+Package: libjrl-mathtools-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: documentation for the JRL mathematical tools library
+ The JRL mathematical tools is a header-only library providing efficient
+ computations for small and size fixed matrices.
+ .
+ This package contains the Doxygen documentation.

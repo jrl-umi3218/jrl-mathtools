@@ -1,0 +1,9 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: jrl-mathtools
+Upstream-Contact: hpp@laas.fr
+Source: http://www.github.com/jrl-umi3218/jrl-mathtools/
+
+Files: *
+Copyright: 2008, 2009, 2010, Olivier Stasse, Thomas Moulard, Florent Lamiraux, Francois Keith, CNRS/AIST
+License: LGPL-3
+ See `/usr/share/common-licenses/LGPL-3'.
