@@ -11,7 +11,6 @@ git_clone="git clone --quiet --recursive"
 
 # Setup environment variables.
 export LD_LIBRARY_PATH="$install_dir/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="$install_dir/lib/roboptim-core:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$install_dir/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # Make cmake verbose.
@@ -65,7 +64,7 @@ debian_build_package()
     sudo chmod -R 777 /var/cache/pbuilder/ccache
 
     # If orig tarball exists, delete it.
-    rm -f "$build_dir/export/roboptim-core_*.orig.tar*"
+    rm -f "$build_dir/export/*_*.orig.tar*"
     git-buildpackage					\
 	--git-submodules				\
 	--git-no-pristine-tar				\
