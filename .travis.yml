@@ -1,29 +1,31 @@
-compiler:
-- clang
-- gcc
-script: ./.travis/build
 language: cpp
+env:
+  global:
+  - DEBSIGN_KEYID=5AE5CD75
+  - secure: "DIabgVLlboievYmjdU0IB7jRK9GzxU5ntV2Oxt88hUrT8LmjOEK+rOZ4gShgnc3iQV4s3z5/Mz4iwf7YRvmrWlbnrIiWXzL7i2QH+EJbkctYVFes7265bNd87kvamzNrpM0E9OTwH9baontLA542uGqWMvuB3Tuos4sDUV5xlIA="
+  - secure: "b146P9weYgCHaNhPgUO3Dlp5QOnQM+KNml2IWEdJV1YQZbA7V0Pyr/gdD8rnctuHEpApSeQN4/C/SIUr+Lg/+IKVWngvPwkoB3SvvW3/LgWd70TSoDrgvMoMVeMc9zSxps8GHEtwRyGY17YoYU+QD5BnsJ1HSBdk1yr51KfBalA="
+  - secure: "FOQeo0f+2rRn4Xxukint9vM+4CS2Tg+MSRmbpGmPPjJqE3t2KlKHvndHpU7PG59ttnaaFwFx5+juG8ZxyMyqy/PTOtqE+n95eJ7OSOWYqQMQW4hWtPhIPU2LzlG+xHFiDmaMf+je3tfUked21S0t9QwwYqcBCx85m8eaG9Alqzc="
+  - APT_DEPENDENCIES="doxygen libboost-dev libboost-test-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev libboost-program-options-dev liblapack-dev gfortran"
+  - GIT_DEPENDENCIES=""
+  - PPA_URI="stack-of-tasks/snapshot"
+  matrix:
+  - DIST=unstable
+  - DIST=saucy
+  - DIST=raring
+  - DIST=quantal
+  - DIST=precise
+notifications:
+  hipchat:
+    rooms:
+      - secure: "jjFl4A7JgT0NwJqfvbNTnGXIHAHC6dYK2BvVSg6gg1ATQwV2DcbY5oVaD++sNQecg0bFKtVtlsOG5yNXSzCVDBYtJUv0JG9jDZAZGjQmDDxLliaiSBbdW10wqPwaF9Bdn5qoE2Ie5zN8Yei9fPGM2nz0EDWHdBGmSOSY6codIjc="
+  email:
+  - hpp-source@laas.fr
 branches:
   only:
   - master
-before_install:
-- git submodule update --init --recursive
-- sudo apt-get update -qq
-- sudo apt-get install -qq doxygen doxygen-latex libboost-all-dev libeigen3-dev libblas-dev liblapack-dev gfortran
-- sudo pip install cpp-coveralls --use-mirrors
-notifications:
-  email:
-  - hpp-source@laas.fr
-after_success:
-- coveralls -e _travis/install -e tests
-- git config --global user.name "Travis CI"
-- git config --global user.email "thomas.moulard+travis@gmail.com"
-- git remote set-url origin https://thomas-moulard:${GH_TOKEN}@github.com/jrl-umi3218/jrl-mathtools.git
-- git fetch origin gh-pages:gh-pages
-- cd _travis/build/doc && ../../../cmake/github/update-doxygen-doc.sh
-env:
-  global:
-    secure: LQWWQ3UJMMMePflEvdSNX3z5MTOFy2siLaz2/nIeOMk8pttB1eyFRhrJeE9tlJDEVg84FuBFJh0TmASeIJ/3Df2mzCRICnqaNByEVREU3JrElQ7K2Olw/r/s6NdlMpTA4V2wfs5PuM0DaZbxvYfo6nGKmVmM4+72jxs/Uv+BgyE=
-matrix:
-  allow_failures:
-  - compiler: clang
+  - debian
+script: ./.travis/build
+after_success: ./.travis/after_success
+compiler: gcc
+after_failure: ./.travis/after_failure
+before_install: ./.travis/before_install
