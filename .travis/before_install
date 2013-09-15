@@ -1,0 +1,69 @@
+#!/bin/sh
+set -ev
+
+# Directories.
+root_dir=`pwd`
+build_dir="/tmp/_travis/build"
+install_dir="/tmp/_travis/install"
+
+# Create layout.
+rm -rf "$build_dir" "$install_dir"
+mkdir -p "$build_dir"
+mkdir -p "$install_dir"
+
+# Setup Git identity.
+git config --global user.name "Thomas Moulard (Travis Automatic Builds)"
+git config --global user.email "thomas.moulard+travis@gmail.com"
+
+# Retrive the submodules.
+git submodule update --init --recursive
+
+# Update the apt local cache.
+sudo apt-get update -qq
+
+# Check if we are in a debian branch...
+if [ -d debian ]; then
+    echo "Target distribution: ${DIST}"
+    if `test x${DIST} = x`; then
+	echo "distribution is not set"
+	return 1
+    fi
+
+    # Fetch tags.
+    git fetch --tags
+
+    # If we are, we install Debian package development tools and
+    # create a sid pbuilder. Package dependencies will be installed
+    # automatically.
+    sudo apt-get install -qq			\
+	debootstrap devscripts			\
+	git-buildpackage debian-archive-keyring \
+	pkg-kde-tools dput eatmydata
+
+    # Remove previous sandbox.
+    sudo rm -rf /var/cache/pbuilder/base-${DEBIAN_TARGET_RELEASE}.cow
+
+    # Create a new one.
+    cp $root_dir/.travis/pbuilderrc $HOME/.pbuilderrc
+    sed -i "s|@DIST@|${DIST}|g" $HOME/.pbuilderrc
+
+    git-pbuilder create
+    echo "apt-get -y remove ccache" |			\
+	git-pbuilder login --save-after-exec
+    # Speed up pbuilder.
+    echo "echo \"force-unsafe-io\"" > /etc/dpkg/dpkg.cfg.d/02apt-speedup | \
+	git-pbuilder login --save-after-exec
+else
+    # ...otherwise we install the dependencies explicitly.
+    sudo apt-get install -qq		\
+	doxygen				\
+	libboost-dev			\
+	libboost-test-dev		\
+	libboost-filesystem-dev		\
+	libboost-system-dev		\
+	libboost-thread-dev		\
+ 	libboost-program-options-dev	\
+	liblapack-dev			\
+	gfortran
+    sudo pip install cpp-coveralls --use-mirrors
+fi
