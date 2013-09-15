@@ -7,7 +7,7 @@ env:
   - secure: "FOQeo0f+2rRn4Xxukint9vM+4CS2Tg+MSRmbpGmPPjJqE3t2KlKHvndHpU7PG59ttnaaFwFx5+juG8ZxyMyqy/PTOtqE+n95eJ7OSOWYqQMQW4hWtPhIPU2LzlG+xHFiDmaMf+je3tfUked21S0t9QwwYqcBCx85m8eaG9Alqzc="
   - APT_DEPENDENCIES="doxygen libboost-dev libboost-test-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev libboost-program-options-dev liblapack-dev gfortran"
   - GIT_DEPENDENCIES=""
-  - PPA_URI="stack-of-tasks/snapshot"
+  - PPA_URI="stack-of-tasks/snapshots"
   matrix:
   - DIST=unstable
   - DIST=saucy
