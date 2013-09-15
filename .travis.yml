@@ -21,10 +21,10 @@ branches:
   only:
   - master
   - debian
-script: ./.travis/build | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
-after_success: ./.travis/after_success | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
-after_failure: ./.travis/after_failure | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
-before_install: ./.travis/before_install | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
+script: ./.travis/build | sed -e 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g' -e 's|${GH_PUSH_URI}|\#EDITED\#|g'
+after_success: ./.travis/after_success | sed -e 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g' -e 's|${GH_PUSH_URI}|\#EDITED\#|g'
+after_failure: ./.travis/after_failure | sed -e 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g' -e 's|${GH_PUSH_URI}|\#EDITED\#|g'
+before_install: ./.travis/before_install | sed -e 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g' -e 's|${GH_PUSH_URI}|\#EDITED\#|g'
 matrix:
   allow_failures:
     - compiler: clang
