@@ -1,9 +1,0 @@
-Document: jrl-mathtools
-Title: Debian jrl-mathtools Manual
-Author: Thomas Moulard <thomas.moulard@gmail.com>
-Abstract: Doxygen documentation of jrl-mathtools.
-Section: Programming
-
-Format: HTML
-Index: /opt/openrobots/share/doc/jrl-mathtools/doxygen-html/index.html
-Files: /opt/openrobots/share/doc/jrl-mathtools/doxygen-html/*.html
