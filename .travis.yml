@@ -4,6 +4,9 @@ env:
   - DEBSIGN_KEYID=5AE5CD75
   - secure: "DIabgVLlboievYmjdU0IB7jRK9GzxU5ntV2Oxt88hUrT8LmjOEK+rOZ4gShgnc3iQV4s3z5/Mz4iwf7YRvmrWlbnrIiWXzL7i2QH+EJbkctYVFes7265bNd87kvamzNrpM0E9OTwH9baontLA542uGqWMvuB3Tuos4sDUV5xlIA="
   - secure: "b146P9weYgCHaNhPgUO3Dlp5QOnQM+KNml2IWEdJV1YQZbA7V0Pyr/gdD8rnctuHEpApSeQN4/C/SIUr+Lg/+IKVWngvPwkoB3SvvW3/LgWd70TSoDrgvMoMVeMc9zSxps8GHEtwRyGY17YoYU+QD5BnsJ1HSBdk1yr51KfBalA="
+  - APT_DEPENDENCIES="doxygen libboost-dev libboost-test-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev libboost-program-options-dev liblapack-dev gfortran"
+  - GIT_DEPENDENCIES=""
+  - PPA_URI="stack-of-tasks/snapshot"
   matrix:
   - DIST=unstable
   - DIST=saucy
