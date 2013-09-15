@@ -1,4 +1,7 @@
 language: cpp
+compiler:
+  - gcc
+  - clang
 env:
   global:
   - DEBSIGN_KEYID=5AE5CD75
@@ -8,13 +11,6 @@ env:
   - APT_DEPENDENCIES="doxygen libboost-dev libboost-test-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev libboost-program-options-dev liblapack-dev gfortran"
   - GIT_DEPENDENCIES=""
   - PPA_URI="stack-of-tasks/snapshot"
-  matrix:
-  - DIST="" # for development branch
-  - DIST=unstable
-  - DIST=saucy
-  - DIST=raring
-  - DIST=quantal
-  - DIST=precise
 notifications:
   hipchat:
     rooms:
@@ -25,8 +21,10 @@ branches:
   only:
   - master
   - debian
-script: ./.travis/build
-after_success: ./.travis/after_success
-compiler: gcc
-after_failure: ./.travis/after_failure
-before_install: ./.travis/before_install
+script: ./.travis/build | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
+after_success: ./.travis/after_success | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
+after_failure: ./.travis/after_failure | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
+before_install: ./.travis/before_install | sed 's|${GNUPG_PASSPHRASE}|\#EDITED\#|g'
+matrix:
+  allow_failures:
+    - compiler: clang
