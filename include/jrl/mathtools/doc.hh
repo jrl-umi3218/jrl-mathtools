@@ -1,5 +1,4 @@
-// Copyright 2008, 2009, 2010, Olivier Stasse,
-//                             Florent Lamiraux, CNRS/AIST
+// Copyright (C) 2008-2013 LAAS-CNRS, JRL AIST-CNRS.
 //
 // This file is part of jrl-mathtools.
 // jrl-mathtools is free software: you can redistribute it and/or modify
