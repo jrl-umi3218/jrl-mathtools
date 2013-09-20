@@ -1,0 +1,232 @@
+CHANGELOG
+----------------------
+
+[Current]
+
+[v1.5.3]
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Fix copyright headers
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * [travis] Make sure secure variables are not displayed
+ * [travis] Update travis.yml
+ * Synchronize
+ * Synchronize
+ * [travis] Use jrl-travis
+ * Remove debian/ directory
+ * Improve documentation [skip ci].
+ * Improve documentation [skip ci].
+ * Improve REAMDE.md [skip ci]
+ * Improve REAMDE.md [skip ci]
+ * Improve REAMDE.md [skip ci]
+ * Synchronize
+ * Synchronize
+ * [travis] Add missing dependencies
+ * [travis] Add Travis and coveralls.io support
+ * Synchronize
+
+[v1.5.2]
+ * Synchronize
+ * Synchronize.
+ * Synchronize.
+
+[v1.5.1]
+ * Update NEWS.
+ * Fix compilation issues on x86_64 architectures.
+
+[v1.5]
+ * Add constructor of Vector4D from Vector3D.
+ * Improve angle class.
+ * Make sure all methods in Angles are inlined.
+ * Synchronize
+ * Synchronize.
+ * [debian] Last modifications to make the package on Launchpad.
+
+[v1.4.4]
+ * Update changelog and control to fix debian package binary generation.
+
+[v1.4.3]
+ * [debian] Fix some variables to generate debian binary package
+ * Synchronize
+ * Synchronize.
+
+[v1.4.2]
+ * Synchronize.
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize
+ * Synchronize.
+ * Synchronize.
+ * Synchronize.
+ * Switch to automatic version number computation.
+ * Fix cmake bugs for generating debian package for ubuntu 8.04.
+ * Use MAL_S3_VECTOR_TYPE instead of MAL_S3_VECTOR_
+ * Fix warnings.
+ * Fix warning.
+ * Fix warnings.
+ * Synchronize.
+ * Synchronize cmake
+ * Reinforce filename guidelines.
+ * Fix project URL.
+ * Reinforce filename guidelines.
+ * Synchronize.
+ * Switch to new Boost/LAPACK detection macro.
+ * Add Boost include and library paths to pkg-config file.
+ * No more symbolic links.
+ * Correct the inclusions in files of the jrlMathTools folder
+ * Replace the symbolic link of jrlMathTools by real files.
+ * Remove unwanted files.
+ * Synchronize submodule.
+ * Synchronize.
+ * Synchronize cmake.
+ * Synchronize cmake.
+ * Synchronize.
+ * Remove unwanted files.
+ * Synchronize.
+ * Update HEAD Doxygen documentation. Source commit id: bcbe62bdb055a464fa3299cd8a8db697f9ebedd2
+ * Synchronize.
+ * Update HEAD Doxygen documentation. Source commit id: f52caffb8048d991c69ffbb19cd4230bfd645147
+ * Synchronize.
+ * Synchronize.
+ * Remove custom header/footer.
+ * Synchronize.
+ * Update HEAD Doxygen documentation. Source commit id: 56cf19df5c37fa889e9560e7e3e86cffc46cf34d
+ * Synchronize.
+ * Synchronize cmake.
+ * Update HEAD Doxygen documentation.
+ * Synchronize cmake.
+ * Synchronize.
+ * Synchronize.
+ * Synchronize cmake.
+ * Synchronize cmake.
+ * Fix debian/watch file.
+ * Synchronize submodule.
+ * Update HEAD Doxygen documentation.
+ * Synchronize submodule.
+ * Add missing files in the install procedure.
+ * Add Doxygen documentation.
+ * Synchronize.
+ * Add const to display methods.
+ * Fix installation directory.
+ * Add simple test for matrix types. Share custom numeric types for tests in a separate header.
+ * Replace 0. by T () in vector classes to enhance genericity.
+ * Fix CMakeLists.txt error: library directory was added to the include directories.
+ * Correct boost inclusion.
+ * Update CMakeModules to avoid wrong header inclusion.
+ * Remove useless test case in tests/vector4.cc.
+ * Test and debug vector4D.
+ * Add dependency information in README.md
+ * Remove CMakeModules.
+ * Switch to CMake submodule, apply coding style rules, test with Boost.Test.
+ * Fix Boost inclusion.
+ * Replace math.h by cmath.
+ * Add missing dependencies.
+ * Tag the Debian documentation package as architecture independant.
+ * Enhance the Debian package (suggest to install the documentation).
+ * Update mailmap file.
+ * Fix typo in Debian control file.
+ * Update AUTHORS file.
+ * Add mailmap file to fix bad commit name.
+ * Upload docunentation.
+ * github generated gh-pages branch
+ * Fix CMakeLists to match new README file name.
+ * Fix documentation list in debian/docs.
+ * Update NEWS file.
+ * Fix Markdown syntax.
+ * Modernize the package.
+ * Rename debian doc-base file.
+ * Update debian package.
+ * Short names generation for documentation
+ * Implements debian package for 10.04.01 LTS (Lucid)
+ * Fix a problem in doc generation + add proper error messages
+ * Explicit LGPLv3 Licence
+ * Initial work on Debian package.
+ * Correct a typo in the macro of the header.
+ * Remove a file that caused a lingering git issue
+
+[v1.4.1]
+ * Release 1.4.0
+ * Normalize package name to lower cases.
+
+[v1.4.0]
+ * Release 1.4.0
+ * Add necessary option for cmake 2.8.2
+ * Remove explicit reference to CMAKE_INSTALL_PREFIX
+ * Make CMAKE_INSTALL_PREFIX implicit for installing doc.
+ * Add package generation target.
+ * Add uninstall
+ * Win32 users: Give a patch for those who want to compile with boost >= 1.40
+ * Remove unnecessary dependency in boost_thread
+ * Disable classic and too verbose warnings in order to reveal important ones (for win32)
+ * Fix a compil test related to Boost 1.40.0.
+ * Fix a pb for 4x4 matrix multiply by a constant.
+ * Fix the logic of detection and compilation.
+ * Force the win32 user who wants to use Boost 1.40 to explicitely confirm it.
+ * Reinforce the syntax of the SET_TARGET_PROPERTIES commands by adding quotes
+ * Handle both boost-1.40.0 and boost-1.34.1 with boost-sandbox.
+ * Adapt tests to boost 1.40.0
+ * Adapt to boost 1.40.0
+ * Dump current version as 1.3.0.99.
+
+[v1.3.0]
+
+[1.3.0]
+ * Release 1.3.0
+ * Add missing std::
+ * Remove "using namespace std" from headers
+ * Import damped inverse computation from MatrixAbstractLayer
+ * Implementation of pseudo-inverse now working
+ * Import pseudo inverse implementation from MatrixAbstractLayer
+ * Add an option allowing to (dis)able doxygen documentation generation
+ * Wrong matrix returns in Inversion(). How this bug could pass unnoticed for so long ???
+ * Add missing const
+ * Dump current version as 1.2.99.
+ * Release 1.1
+ * Fixed generation of jrlMathTools.pc.
+
+[1.2]
+ * Release V1.2.
+ * Add accessor functions with const.
+ * Add the function  operator *= for T type
+ * Bug correction
+ * Improve matrix3d -- add a constructor -- added const when possible
+ * Improve matrix4x4.h -- add an operator*=  (m *= d) -- add const whenever it's possible
+ * Improve vector3.h -- the operator* in v1*v2 corresponds now to a dot product. 	the cross product is still v1^v2 -- add const whenever it's possible
+ * Correct and improve vector4d.h
+ * Win32 compatibility : Correct the documentation command
+
+[1.1]
+ * Release 1.1
+ * Fixed generation of jrlMathTools.pc.
+ * Removed obsolete autotools files. (forgot -a option)
+ * Removed obsolete autotools files.
+ * Win32 compatibility : correct the documentation command
+ * Addition of access function.
+ * constants becomes jrlConstants.h
+ * constants.h becomes jrlConstants.h
+ * Add constants.h, file that will contain missing constant definition (e.g. the definition of M_PI for win32)
+ * Fixed a problem in the way the pkg-config file was generated to avoid a crash during the first cmake if CMAKE_PREFIX_INSTALL is set to an unauthorized directory. Now it failed at the proper phase: during the installation process.
+ * Minor bug fixing
+ * Added cmake compatibility.
+ * Dump current version as 1.0.99
+
+[1.0]
+ * Release 1.0
+ * Added missing operator * for backward compatibility.
+ * Added a new constructor for vector3d
+ * Some corrections - return value for operator * with vector 3 - division by determinant in inversion operation.
+ * Added main documentation page, foot page pictures and fixed class documentation.
+ * Removed reference to libtool.
+ * New package including basic mathematical tools.
