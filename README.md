@@ -119,3 +119,20 @@ Credits
 -------
 
 This package authors are credited in the [AUTHORS](AUTHORS) file.
+
+[doxygen-documentation]: http://jrl-umi3218.github.io/jrl-mathtools/doxygen/HEAD/
+
+[jrl-mathtools]: https://github.com/jrl-umi3218/jrl-mathtools
+
+[git-submodules]: http://git-scm.com/book/en/Git-Tools-Submodules
+
+[Boost]: http://www.boost.org/
+[CMake]: htttp://www.cmake.org/
+[Doxygen]: http://www.stack.nl/~dimitri/doxygen/
+[Eigen]: http://eigen.tuxfamily.org/
+[Git]: http://git-scm.com/
+[Lapack]: http://www.netlib.org/lapack/
+[Libtool]: https://www.gnu.org/software/libtool/
+[RobotPkg]: http://robotpkg.openrobots.org/
+[log4cxx]: https://logging.apache.org/log4cxx/
+[pkg-config]: http://www.freedesktop.org/wiki/Software/pkg-config/
