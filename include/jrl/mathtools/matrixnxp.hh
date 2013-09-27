@@ -105,7 +105,8 @@ namespace jrlMathTools
 	      0, 0, &m, 0, &n, &vw, &lw, &linfo);
       lw = int(vw)+5;
 
-      boost_ublas::vector<double> w(lw);
+      boost_ublas::vector<double> w
+	(static_cast<boost_ublas::vector<double>::size_type>(lw));
       dgesvd_(&Jobu, &Jobvt,&n,&m,
 	      MRAWDATA(transpOrNot),
 	      &lda,
@@ -214,7 +215,8 @@ namespace jrlMathTools
 		  0, 0, &m, 0, &n, &vw, &lw, &linfo);
 	  lw = int(vw)+5;
 
-	  boost_ublas::vector<double> w(lw);
+	  boost_ublas::vector<double> w
+	    (static_cast<boost_ublas::vector<double>::size_type>(lw));
 	  dgesvd_(&Jobu, &Jobvt,&n,&m,
 		  MRAWDATA(I),
 		  &lda,
