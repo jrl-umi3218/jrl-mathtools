@@ -14,7 +14,7 @@
 // along with jrl-mathtools.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef JRL_MATHTOOLS_FWD_HH
-# define JRLMATHTOOLS_FWD_H
+# define JRL_MATHTOOLS_FWD_HH
 
 namespace jrlMathTools
 {
